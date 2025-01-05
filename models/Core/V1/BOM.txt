@@ -1,0 +1,18 @@
+Qty	Name					URL
+6	M5x12 SHCS				https://amzn.to/492KY4J
+14	M5x6 SHCS				https://amzn.to/3CN3PVy
+14	M5 T-Nuts				https://amzn.to/3B0aY4b
+4	M3 T-Nuts				https://amzn.to/3V9mCjU
+4	M3x5 - FHCS				https://amzn.to/4i1SBfT
+4	M3x30 - SHCS				https://amzn.to/3Z7kBWQ
+2	250mm 2020 Aluminum Extrusion		https://amzn.to/4fLjwLw
+18	6x3 Magnets				https://amzn.to/497vUTt
+1	M3 Heat Set Insert			https://amzn.to/3B5HcLe
+6	M4 Heat Set Insert			https://amzn.to/4fGiSyR
+2	M8 Heat Set Insert			https://amzn.to/499mxTq
+1	25 Fret Neck				https://amzn.to/4g3IllC
+1	Neck Plate + Screws			https://amzn.to/3CClwqv
+1	Tune-o-Matic Bridge - Lrg Metric	https://amzn.to/4eQ2hqS
+1	Guitar Strings				https://amzn.to/3Z5oRpR
+1	Wiring Harness				https://amzn.to/4g5FzvR
+2	Pickups					https://amzn.to/3Zoe23e
