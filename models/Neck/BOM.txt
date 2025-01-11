@@ -7,3 +7,18 @@ M5x6 BHCS			8	https://amzn.to/40ad3Di
 M5x10 BHCS			12	https://amzn.to/40t1uYX
 M5 2020 Slide Nuts		20	https://amzn.to/40tPEOo
 500mm 2020 Aluminum Extrusion	1	https://amzn.to/40dqOAR
+Fret Wire			1	https://amzn.to/4abYcNa
+
+Adapter
+===
+M5x5.8x7.1 Heat Set Inserts	4	https://amzn.to/40r0apI
+
+Optional Lighting
+===
+Prewired SMD Led 0603		20	https://amzn.to/4g1B8SI
+
+
+Tools
+===
+Fret Wire Bender		1	https://amzn.to/3E202E7
+CA Glue				1	https://amzn.to/3C5g27S
