@@ -1,8 +1,8 @@
 Neck
 ===
 
-M2x3x3 Heat Set Inserts		20
-M2x6 SHCS			20
-M5x6 BHCS			8
-M5x10 BHCS			12
-M5 2020 Slide Nuts		20
+M2x3x3.5 Heat Set Inserts	20	https://amzn.to/4jeeI36
+M2x6 SHCS			20	https://amzn.to/3Wg7lyi
+M5x6 BHCS			8	https://amzn.to/40ad3Di
+M5x10 BHCS			12	https://amzn.to/40t1uYX
+M5 2020 Slide Nuts		20	https://amzn.to/40tPEOo
