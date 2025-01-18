@@ -1,5 +1,6 @@
-M3x4x4 Heat Set Inserts		8	https://amzn.to/4gSAk3M
-M5x6 BHCS			3	https://amzn.to/4jeqLxq
-M5x12 BHCS			1	https://amzn.to/4jeqLxq
-M5 Slide In Nut			3	https://amzn.to/40tPEOo
-M3x25 SHCS			2	https://amzn.to/4jePKRd
+Qty	Name				Url
+8	M3x4x4 Heat Set Inserts		https://amzn.to/4gSAk3M
+3	M5x6 BHCS			https://amzn.to/4jeqLxq
+1	M5x12 BHCS			https://amzn.to/4jeqLxq
+3	M5 Slide In Nut			https://amzn.to/40tPEOo
+2	M3x25 SHCS			https://amzn.to/4jePKRd
