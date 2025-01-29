@@ -10,4 +10,5 @@ Qty	Name			URL
 4	625ZZ Bearing		https://amzn.to/4jxuo1M
 1	M8x70 Hex Bolt		https://amzn.to/4hCrRS0
 1	M8x65 Hex Bolt		(Packaged with above)
-3 	M8 Washer		https://amzn.to/3WF9wfj
+5 	M8 Washer		https://amzn.to/3WF9wfj
+2	M8 Lock Nut		https://amzn.to/40QzG14
