@@ -4,8 +4,10 @@ Qty	Name			URL
 2	MR128ZZ Bearing		https://amzn.to/4ggqnvU
 1	M5x45 SHCS		https://amzn.to/3PUMzRy
 2	M5x35 BHCS		https://amzn.to/3WBjoXa
-10	M3x4x5 Heat Set Insert	https://amzn.to/4jC6T7C
-3	M3x6 Grub Screw		https://amzn.to/4aDq4K4
+7	M3x4x5 Heat Set Insert	https://amzn.to/4jC6T7C
 3	M3 Washer		https://amzn.to/3Ea3Vaq
-4	M3x30 BHCS		https://amzn.to/42AMfPd
+4	M3x20 BHCS		https://amzn.to/42AMfPd
 4	625ZZ Bearing		https://amzn.to/4jxuo1M
+1	M8x70 Hex Bolt		https://amzn.to/4hCrRS0
+1	M8x65 Hex Bolt		(Packaged with above)
+3 	M8 Washer		https://amzn.to/3WF9wfj
