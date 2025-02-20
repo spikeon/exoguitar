@@ -1,4 +1,6 @@
-Qty	Name				Url
-30	M2x25 SHCS			https://amzn.to/4gKrtAa
+Qty	Name				Url				Note
+30	M2x25 SHCS			https://amzn.to/4gKrtAa 	Use EITHER M2x25 screws OR 2mm Pins.
+10	2mm x 30mm Pin			https://amzn.to/3CVybpb
+10	2mm x 60mm Pin			https://amzn.to/4gU5Ey2
 2	M5x10 BHCS			https://amzn.to/3X5iHpx			
 2	M5 Slide In Nuts		https://amzn.to/3B0aY4b
