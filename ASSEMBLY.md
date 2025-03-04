@@ -12,32 +12,32 @@ There are 7 main parts that each have their own options:
 
 1. [Shoulder](/models/Shoulders/)
     - Offset 
-        - [ExoGuitar Neck](/models/Shoulders/Offset%20-%20ExoGuitar%20Neck/)
-        - [Wood Neck](/models/Shoulders/Offset%20-%20Regular%20Neck/)
+        - [ExoGuitar Neck](/models/Shoulders/Offset%20-%20ExoGuitar%20Neck/ASSEMBLY.md)
+        - [Wood Neck](/models/Shoulders/Offset%20-%20Regular%20Neck/ASSEMBLY.md)
     - Paralell
-        - [Wood Neck](/models/Shoulders/Parallel%20-%20Regular%20Neck/)
+        - [Wood Neck](/models/Shoulders/Parallel%20-%20Regular%20Neck/ASSEMBLY.md)
 2. [Neck](/models/Neck/) - Note: you can skip this if you use a wooden neck
-    - [Metal Frets](/models/Neck/Neck%20with%20Metal%20Frets/) - Note: this is a REALLY intensive build
-    - [Printed Frets](/models/Neck/Neck%20with%20Printed%20Frets/)  - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
+    - [Metal Frets](/models/Neck/Neck%20with%20Metal%20Frets/ASSEMBLY.md) - Note: this is a REALLY intensive build
+    - [Printed Frets](/models/Neck/Neck%20with%20Printed%20Frets/ASSEMBLY.md)  - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
 3. [Head](/models/Head/) - Note: you can skip this if you use a wooden neck
     - [Classical](/models/Head/Classical/ASSEMBLY.md) - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
-    - [Regular](/models/Head/Head/)
-    - [Headless](/models/Head/Headless%20Adjustable%20Nut/)
+    - [Regular](/models/Head/Head/ASSEMBLY.md)
+    - [Headless](/models/Head/Headless%20Adjustable%20Nut/ASSEMBLY.md)
 4. [Bridge](/models/Bridge/)
     - Headless 
-        - [Headless for Bearing Bridge](/models/Bridge/Headless%20Bridge%20Plate/)
-        - [Alnicov 6 Strings Saddle Headless](/models/Bridge/Alnicov%206%20Strings%20Saddle%20Headless/)
+        - [Headless for Bearing Bridge](/models/Bridge/Headless%20Bridge%20Plate/ASSEMBLY.md)
+        - [Alnicov 6 Strings Saddle Headless](/models/Bridge/Alnicov%206%20Strings%20Saddle%20Headless/ASSEMBLY.md)
     - Head
-        - [Thru-Body Bearing Bridge](/models/Bridge/Thru-Body%20Bridge%20Plate%20-%20Bearing%20Bridge/)
-        - [Thru-Body for Tune-o-Matic](/models/Bridge/Thru-Body%20Bridge%20Plate%20-%20Tune-O-matic/)
+        - [Thru-Body Bearing Bridge](/models/Bridge/Thru-Body%20Bridge%20Plate%20-%20Bearing%20Bridge/ASSEMBLY.md)
+        - [Thru-Body for Tune-o-Matic](/models/Bridge/Thru-Body%20Bridge%20Plate%20-%20Tune-O-matic/ASSEMBLY.md)
         - [Blank](/models/Bridge/Blank/) - Note: this is a starting point for you to model your own bridge
 5. [Face Plate](/models/Face%20Plates/)
-    - [Acoustic](/models/Face%20Plates/Acoustic/)
-    - [Dual Humbucker](/models/Face%20Plates/Dual%20Humbucker/)
-    - [Single Humbucker](/models/Face%20Plates/Single%20Humbucker/)
-    - [Telecaster](/models/Face%20Plates/Telecaster/)
-    - [Stealth Plate](/models/Face%20Plates/StealthPlate/) - Note: This is an experimental face plate that covers the pickups with a thin piece of plastic that you can add decoration to.  It's fun but likely not the best sounding option. 
-    - [Clip-in Compartment](/models/Face%20Plates/Clip-In%20Compartment/) - Note: This is my initial prototype face plate.  It is not recommended unless you want to swap faces often.
+    - [Acoustic](/models/Face%20Plates/Acoustic/ASSEMBLY.md)
+    - [Dual Humbucker](/models/Face%20Plates/Dual%20Humbucker/ASSEMBLY.md)
+    - [Single Humbucker](/models/Face%20Plates/Single%20Humbucker/ASSEMBLY.md)
+    - [Telecaster](/models/Face%20Plates/Telecaster/ASSEMBLY.md)
+    - [Stealth Plate](/models/Face%20Plates/StealthPlate/ASSEMBLY.md) - Note: This is an experimental face plate that covers the pickups with a thin piece of plastic that you can add decoration to.  It's fun but likely not the best sounding option. 
+    - [Clip-in Compartment](/models/Face%20Plates/Clip-In%20Compartment/ASSEMBLY.md) - Note: This is my initial prototype face plate.  It is not recommended unless you want to swap faces often.
 6. [Back](/models/Back/)
     Note: The accoustic face plate has it's own back as part of it's resonation chamber. 
     - [Screw On](/models/Back/Screw%20On/) - Do you want to be able to get to your electronics from the back?  This is the option for you
