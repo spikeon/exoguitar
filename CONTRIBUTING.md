@@ -13,6 +13,8 @@ Please follow the file structure already in place in your PR.
 
 To add it to this project, please fork this project and then submit a PR to me with the files in it.  
 
+This project was built in OnShape and you are welcome to copy the it as a starting point for your build.  [Check it out here!](https://cad.onshape.com/documents/f8519e054e386d34fe7f717c/w/4b68044692bbe5e682fcb1e9/e/030bc3a27bf0944a8a68be66?renderMode=0&uiState=67c742332bca82445e94f5f6).  While I am providing this as a resource, I am not apologizing for how disorganized or inefficient it may be.  This is a passion project I've been doing in my spare time.  
+
 ## Wing Sets
 
 Wing sets should include options for solid-face and hollow if possible.  
