@@ -18,9 +18,9 @@ There are 7 main parts that each have their own options:
         - [Wood Neck](/models/Shoulders/Parallel%20-%20Regular%20Neck/)
 2. [Neck](/models/Neck/) - Note: you can skip this if you use a wooden neck
     - [Metal Frets](/models/Neck/Neck%20with%20Metal%20Frets/) - Note: this is a REALLY intensive build
-    - [Printed Frets](/models/Neck/Neck%20with%20Printed%20Frets/)
+    - [Printed Frets](/models/Neck/Neck%20with%20Printed%20Frets/)  - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
 3. [Head](/models/Head/) - Note: you can skip this if you use a wooden neck
-    - [Classical](/models/Head/Classical/ASSEMBLY.md)
+    - [Classical](/models/Head/Classical/ASSEMBLY.md) - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
     - [Regular](/models/Head/Head/)
     - [Headless](/models/Head/Headless%20Adjustable%20Nut/)
 4. [Bridge](/models/Bridge/)
@@ -64,7 +64,44 @@ Once you have picked your parts, get the BOM.txt file from each part and figure 
 
 ## Begin Assembly
 
+### Shoulder
+
 I have found that it's easiest to start with the shoulder and then build out from there.  The first thing I would suggest doing is tapping the ends of all of your 2020 extrusion.  Some 2020 extrusion comes with a 5mm hole and some come with a 6mm hole, so make sure you tap it with the right size.  You will need to tap at least one end of each piece of extrusion depending on the parts you are using.  It may be a good idea to tap all of them; just in case.  
 
 Note for those who have never tapped before:  Use cutting fluid.  Go SLOW.  Like slower than you think.  Go a few turns and then do at least one full rotation backwards, then repeat.  If you're using a drill, make sure to set it to like 6-7 so it won't snap your tap.  
+
+Beyond this, follow the assembly guide in your chosen shoulder and then come back here
+
+### Face Plate
+
+Follow the assembly guide in your chosen face plate, and then come back here
+
+### Bridge 
+
+If you chose to do a Bearing Bridge, follow the assembly documentation in that and then come back here. 
+
+Follow the assembly guide in your chosen bridge plate, then come back here.
+
+### Wing Set
+
+All wing sets follow a certain pattern, so I'll just describe it here in general for now. 
+- If you are printing an electric you need to print the solid part with the electronics compartment and assemble that.  If you are printing an accoustic, you can print whatever part you feel makes it look coolest. 
+- There should be blank files if you want a different knob / switch / User Interface setup than the one in the standard files. 
+- The back of the electronics compartment will be held on by press-insert magnets.  Insert them into the body and then pop a magnet onto the ones you have inserted and then press the back onto those magnets to ensure that you have the correct polarity.  They should be press fit but if that doesn't work you can use super glue to hold them in
+- All wing pieces attach to the sides of the 2020 extrusion using M5x10 BHCS bolts and M5 Slide in Nuts.  If there wasn't enough clearance to get a screw driver into the wing to tighten the bolt, a hole should've been added to the outside of the part to allow for access. 
+- I recommend putting some super glue between the pieces when you attach them to the 2020 so that you reduce potential rattling or wiggle if any of the screws start to come out over time.
+- I recommend when installing the electronics to put a disconnect on all wires going into the electronics compartment so if you need to change the wing set or the face plate you don't have to desolder anything. 
+- Some wing sets have parts that are screwed to each other for stability.  See the BOM for the hardware needed for this.  
+
+### Back
+ - For the screw on backs, use slide-in nuts and the screws that the back requires to mount them to the 2020 extrusion. 
+ - For the slide-in back, put in the pieces making sure that the holes allow access to the sections that need adjustment. 
+
+### Head
+- If you are using a wooden neck, you can skip this
+- If you are using Nylon Strings, you want the classical Head.  
+
+### Neck
+ - If you chose to use a wooden neck, you can attach it to the shoulder using a metal neck plate and the basic wood screws that come with the neck plate. 
+ - If you are using a printed neck, follow the assembly guide and then come back here. 
 
