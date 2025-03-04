@@ -22,6 +22,12 @@ Wings should be 50mm thich where they meet the extrusion and should attach with 
 The M5 bolts should be positioned 10mm from the center of the hole to the bottom of the piece.  
 If there isn't 100mm of clearance above the M5 bolt to get a screw driver in there to tighten the bolt, then a 12mm hole needs to be put in the side of the piece to allow for access.   If you feel so inclined you can provide plugs that users can glue in after the fact. 
 
+If you are designing for the Offset Neck, you need to plan for at least 250mm of 2020 extrusion on the left side and 200mm on the right side.  
+If you are designing for the Paralell neck, you need to plan for at least 250mm of 2020 extrusion on both sides. 
+
+You are free to extend the size of the extrusion needed, but you cannot reduce it. 
+
+You will need to have a Left Side, a Right Side, and a middle.  The middle must line up with the 2020 extrusion.  This is so if someone is building with a longer or shorter bridge than the basic thru-body they would only have to change one part rather than the entire wing set.  
 
 ## Bridge
 
