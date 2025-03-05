@@ -5,7 +5,9 @@
 ![Back](./exploded%20views/Step%201%20-%20Heat%20Set%20Inserts%20-%20Back.png)
 
 ## Step 2: Install Ground wire
+
 Solder this wire to the heat set inserts. 
+
 ![Wire](./exploded%20views/Step%202%20-%20Install%20Ground%20Wire.png)
 
 ## Step 3: Install Nut Adjustment Screws
