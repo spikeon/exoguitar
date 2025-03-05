@@ -34,6 +34,10 @@
 ### Clip off excess Fret Wire
 ![Clip](./photos/Step%207e%20-%20Install%20Fret%20-%20Clip%20off%20End.jpg)
 
+### Install LED's or Filament dots
+Install LED's into the holes in the side of the front plate, wire them together inside of the neck.  Further documentation may come at some point. 
+If you don't want the LED's to light up, just shove a piece of a contrasting filament into the hole with some glue and clip it off. 
+
 ### Repeat for all Frets
 ![Finished - Single](./photos/Step%207f%20-%20Neck%20Front%20Plate%20-%20Frets%20Installed.jpg)
 
