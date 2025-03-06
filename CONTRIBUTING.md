@@ -15,6 +15,12 @@ To add it to this project, please fork this project and then submit a PR to me w
 
 This project was built in OnShape and you are welcome to copy the it as a starting point for your build.  [Check it out here!](https://cad.onshape.com/documents/f8519e054e386d34fe7f717c/w/4b68044692bbe5e682fcb1e9/e/030bc3a27bf0944a8a68be66?renderMode=0&uiState=67c742332bca82445e94f5f6).  While I am providing this as a resource, I am not apologizing for how disorganized or inefficient it may be.  This is a passion project I've been doing in my spare time.  
 
+## Interface .step file
+
+I am providing an interface here that includes the 2020 extrusions, shoulder, faceplate, and bridge plate.  You should be able to import this into any CAD program you want and then design your parts off of this.  
+
+[Interface File](/models/Extras/Interface/Interface.step)
+
 ## Wing Sets
 
 Wing sets should include options for solid-face and hollow if possible.  
@@ -36,3 +42,4 @@ I have provided a [blank template file](/models/Bridge/Blank/) that you can use 
 ## Head
 
 I have provided a [blank template file](/models/Head/Blank/ExoGuitar%20-%20Head%20-%20Blank.step) that you can use as a starting point to create your own bridge.  It includes the 2020 mount points, the battery + switch, and the Adjustable Nut; this way you can focus on just creating the styled head of your dreams.  
+
