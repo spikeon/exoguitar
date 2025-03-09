@@ -1,8 +1,9 @@
-Qty	Name			Url
+Qty	Name			        Url
 10	M3x4x4 Heat Set Inserts	https://amzn.to/4gSAk3M 
-2	M5x12 BHCS		https://amzn.to/4jeqLxq 
-1	M5x45 SHCS		https://amzn.to/4akIBuH 
-2	M5 Slide In Nut		https://amzn.to/40tPEOo 
-8	M3x25 SHCS		https://amzn.to/4jePKRd 
-6	M2x16 SHCS		https://amzn.to/4ij7Lgc
-6	M3 Washer		https://amzn.to/3ETb4fq
+2	M5x12 BHCS		        https://amzn.to/4jeqLxq 
+1	M5x45 SHCS		        https://amzn.to/4akIBuH 
+2	M5 Slide In Nut		    https://amzn.to/40tPEOo 
+8	M3x25 SHCS		        https://amzn.to/4jePKRd 
+6	M2x16 SHCS		        https://amzn.to/4ij7Lgc
+6	M3 Washer		        https://amzn.to/3ETb4fq
+12  MR128ZZ Bearings        https://amzn.to/4kudK3t

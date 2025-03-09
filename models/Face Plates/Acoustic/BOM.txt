@@ -1,1 +1,12 @@
-Qty	Name					Url
+Qty	Name					            Url
+1	2020 Aluminum Extrusion - 250mm	    https://amzn.to/4ig9fHU   
+1	2020 Aluminum Extrusion - 200mm	    https://amzn.to/4iloM9A 
+8	M3 Slide In Nut	                    https://amzn.to/4i9GfBE 
+7	M5 Slide In Nut	                    https://amzn.to/40tPEOo 
+3	M5x8 BHCS	                        https://amzn.to/4bmHoDI 
+4	M5x30 BHCS 	                        https://amzn.to/3D6UoRf 
+3	M3x8 BHCS	                        https://amzn.to/4hWLhlj 
+6	M3x5x4 Heat Set Inserts	            https://amzn.to/4jk12nw 
+2	M3x8 Grub Screws	                https://amzn.to/3QIKW9T  
+1	Nylon Strings	                    https://amzn.to/3XgaFKf 
+1	Piezo Pickups (Optional)	        https://amzn.to/3Xm2SKZ 
