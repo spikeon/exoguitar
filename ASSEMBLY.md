@@ -12,7 +12,7 @@ There are 7 main parts that each have their own options:
 
 1. [Shoulder](/models/Shoulders/)
     - Offset 
-        - [ExoGuitar Neck](/models/Shoulders/Offset%20-%20ExoGuitar%20Neck/ASSEMBLY.md)
+        - ExoGuitar Neck - See Chosen ExoGuitar Neck Assembly
         - [Wood Neck](/models/Shoulders/Offset%20-%20Regular%20Neck/ASSEMBLY.md)
     - Paralell
         - [Wood Neck](/models/Shoulders/Parallel%20-%20Regular%20Neck/ASSEMBLY.md)
