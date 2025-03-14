@@ -1,5 +1,7 @@
 # Assembly
 
+After printing, make sure you clean out ALL support material.  The smallest amount in the gearboxes can cause interference, the tollerances are very tight.  
+
 ## Step 1: Put in Heat Set Inserts
 
 ![Heat Inserts - Exploded View](./exploded%20views/Step%201%20-%20Heat%20Set%20Inserts.png)
@@ -20,7 +22,7 @@ Cut 6x 5mm long pieces of TPU filament.  A model for a jig to cut these to size 
 
 ![Shaft](./exploded%20views/Step%203a%20-%20Tensioner%20Shaft%20x6.png)
 
-Note that the TPU filament pieces are inserted BEFORE the heat set insert is installed. 
+Note that the TPU filament piece is inserted BEFORE the heat set insert is installed. 
 
 #### Step 3c: Assemble Knob
 
