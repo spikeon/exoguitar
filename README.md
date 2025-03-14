@@ -42,8 +42,16 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 ### Faceplatae
 - [Stealth Plate v2](https://makerworld.com/en/models/946400-exoguitar-stealth-plate-v2)
 
-# Extras 
+### Extras 
 - [Strap](https://makerworld.com/en/models/1154218-exoguitar-strap)
 - [Dials](https://makerworld.com/en/models/946440-exoguitar-spiral-dials-and-switch)
 - [Strap Hooks](https://makerworld.com/en/models/965746-exoguitar-strap-hooks-wall-mount)
 - [Fret Press Jig](https://makerworld.com/en/models/965720-exoguitar-fret-press-jig)
+
+## Multi-Neck Configuration
+
+The sides of the core are made out of 2020 aluminum extrusion and the core terminates exactly along the edge of it.  It was not indended from the beginning, but it DOES allow you to swap out the 2020 for 2040 aluminum extrusion to attach 2 or more cores together to create multiple neck guitars. 
+
+I haven't made a Wing Set specifically for this purpose yet, but the BC Rich may be a good fit for it.  
+
+![Proof of Concept](./pictures/MultiNeck.JPEG)
