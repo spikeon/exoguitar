@@ -1,4 +1,4 @@
-# Assembly Neck with Printed Frets
+# Assembly for Jack's Son's Head
 
 ## Step 1: Install Heat Set Inserts
 ![Tree Inserts](./exploded%20views/Step%201a%20-%20Insert%20Tree%20Heat%20Inserts.png)
