@@ -68,7 +68,7 @@ For this list, QTY is the number of the linked product to buy, not the number of
 | 1   | 2mm x 30mm Pin | [Amazon](https://amzn.to/3CVybpb) |
 | 1   | 2mm x 60mm Pin | [Amazon](https://amzn.to/4gU5Ey2) |
 | 1   | M3x4.8x4.6 Flanged Heat Set Inserts | [Amazon](https://amzn.to/4kOFT5J) |
-| 1   | M2x3x3.5 Heat Set Inserts | [Amazon]([Amazon](https://amzn.to/4jeeI36)) |
+| 1   | M2x3x3.5 Heat Set Inserts | [Amazon](https://amzn.to/4jeeI36) |
 | 1   | M3x4x4 Heat Set Inserts x 100 | [Amazon](https://amzn.to/4i5ozHH) |
 | 1   | M3x4x5 Heat Set Inserts x 130 | [Amazon](https://amzn.to/4kBjzwc) |
 | 1   | M4x6x6 Heat Set Inserts x 110 | [Amazon](https://amzn.to/3WdVVLz) |
