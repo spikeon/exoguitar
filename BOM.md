@@ -53,6 +53,7 @@ For simplicity, This list only contains suggested hardware.  I will list recomme
 | 3	  | Jumper Wire |
 | 1	  | CA Glue	|
 | 1	  | Super Lube |
+| 1   | Locktite Red | 
 
 ## Links
 
@@ -91,6 +92,7 @@ For this list, QTY is the number of the linked product to buy, not the number of
 | 1   | CR2032 Battery | [Amazon](https://amzn.to/4aeYF1d) |
 | 1	  | 5mmx2mm Slide Switch | [Amazon](https://amzn.to/4hd0GNI) |
 | 1   | Jumper Wire | [Amazon](https://amzn.to/40c2IXh) |
+| 1   | Locktite Red | [Amazon](https://amzn.to/4iA8NEI) |
 
 ### Hardware
 
