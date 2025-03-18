@@ -8,4 +8,4 @@ Qty	Name				Url
 6	3x10x3 V-Bearing		https://amzn.to/4fW4pOq
 6	M3x4x5 Heat Set Insert		https://amzn.to/4jk12nw
 6	M3x35 BHCS			https://amzn.to/4a9PA9D
-6	Super Lube			https://amzn.to/3WeCouC
+1	Super Lube			https://amzn.to/3WeCouC
