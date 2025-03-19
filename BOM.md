@@ -105,6 +105,11 @@ Before we get to the totals, just a reminder that this document is a One-Size-Fi
 - Price to buy all of this and build only one: $451
 - Price Per Guitar if building many: $115.30
 
+If we remove the items only needed for the "Luxury features" on the neck (Metal Frets, M2x6 screws, All electronics items from above list) we get a more reasonable result:
+
+- Price to buy all of this and build only one: $361
+- Price Per Guitar if building many: $82.88
+
 I will be looking into either assembling and selling hardware kits myself or partnering with a company to provide them ASAP so we can get these two numbers closer to each other. 
 
 ### Hardware
