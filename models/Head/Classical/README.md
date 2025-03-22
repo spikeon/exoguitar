@@ -25,6 +25,8 @@ I have had very good results using PLA Tough for the gears.  I did NOT have good
 
 ## Important Note about the printed gears: 
 
+I have decided to deprecate the printed worm gear due to it being too much of a challenge to save $8.
+
 The printed gears are a challenging print and require a 0.2 nozzle.  They are not forgiving.
 
 If you have trouble with the printed gears, you can use [these](https://amzn.to/4l2Nihy) instead.  Glue them to the M2 screw instead of using locktite.  The issue that caused me to remove these from the BOM and design my own printed screws is that the glue doesn't always hold and you may end up having to re-apply glue before you can tune it again, but if for whatever reason you can't get your strings up to tune due to printing defects that'd likely be less of an issue. 

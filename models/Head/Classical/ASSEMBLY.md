@@ -24,18 +24,22 @@ Cut 6x 5mm long pieces of TPU filament.  A model for a jig to cut these to size 
 
 Note that the TPU filament piece is inserted BEFORE the heat set insert is installed. 
 
-#### Step 3c: Assemble Knob
+#### Step 3e: Prep Worm gear
+ 
+Using a 3/32 drill bit, remove 3mm of material from one side of the worm gear hole.  Then install the heat set insert into that hole.  BE CAREFUL and make sure you go in straight and that you don't melt the gear teeth. 
+
+#### Step 3f: Assemble Knob
 
 ![](./exploded%20views/Step%203b%20-%20Tensioner%20Knob%20x6.png)
 
 The screw should go right up to the end of the worm gear but not stick out of it.   
 Use locktite or super glue to lock the screw into the gear.  I recommend Locktite Red
 
-#### Step 3d: Install Tensioners
+#### Step 3r: Install Tensioners
 
 ![Tension](./exploded%20views/Step%203c%20-%20Tensioners.png)
 
-#### Step 3e: Lubricate gears with Synthetic Grease
+#### Step 3f: Lubricate gears with Synthetic Grease
 
 ## Step 4: Install Side Panels
 
