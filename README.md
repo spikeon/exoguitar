@@ -36,13 +36,15 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 
 ### Head
 - [Classical Head](https://makerworld.com/en/models/1158327-exoguitar-classical-head-printed-tuners)
-- [3L3R](https://makerworld.com/en/models/977949-exoguitar-head)
+- [Arrow](https://makerworld.com/en/models/977949-exoguitar-head)
 - [Headless](https://makerworld.com/en/models/977972-exoguitar-headless-adjustable-nut)
-
-### Faceplatae
-- [Stealth Plate v2](https://makerworld.com/en/models/946400-exoguitar-stealth-plate-v2)
+- [Jack's Son](https://makerworld.com/en/models/1223137-exoguitar-head-jack-s-son)
+- Explorer - Coming Soon!
+- Less Paul - Coming Soon!
+- Firebird - Coming Soon!
 
 ### Extras 
+- [Stealth Plate v2](https://makerworld.com/en/models/946400-exoguitar-stealth-plate-v2)
 - [Strap](https://makerworld.com/en/models/1154218-exoguitar-strap)
 - [Dials](https://makerworld.com/en/models/946440-exoguitar-spiral-dials-and-switch)
 - [Strap Hooks](https://makerworld.com/en/models/965746-exoguitar-strap-hooks-wall-mount)
