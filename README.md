@@ -39,9 +39,9 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 - [Arrow](https://makerworld.com/en/models/977949-exoguitar-head)
 - [Headless](https://makerworld.com/en/models/977972-exoguitar-headless-adjustable-nut)
 - [Jack's Son](https://makerworld.com/en/models/1223137-exoguitar-head-jack-s-son)
-- Explorer - Coming Soon!
-- Less Paul - Coming Soon!
-- Firebird - Coming Soon!
+- [Explorer](https://makerworld.com/en/models/1242688-exoguitar-head-explorer)
+- [Less Paul](https://makerworld.com/en/models/1242379-exoguitar-head-less-paul)
+- [Firebird](https://makerworld.com/en/models/1242697-exoguitar-head-firebird)
 
 ### Extras 
 - [Stealth Plate v2](https://makerworld.com/en/models/946400-exoguitar-stealth-plate-v2)
