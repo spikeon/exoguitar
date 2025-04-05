@@ -30,9 +30,17 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 - [Core V1](https://makerworld.com/en/models/887441-exoguitar-core)
 
 ### Bridge
+_Saddle and Anchor combined_
 - [Headless](https://makerworld.com/en/models/988538-exoguitar-headless-bridge-plate)
 - [Bearing Bridge](https://makerworld.com/en/models/969432-exoguitar-bearing-bridge)
 - [Alnicov Saddle](https://makerworld.com/en/models/946216-exoguitar-bridge-alnicov-saddle-headless)
+
+### Saddle
+- [Tune O' Matic](https://makerworld.com/en/models/1288679-exoguitar-saddle-tune-o-matic#profileId-1318404)
+
+### Anchor
+- Tune O' Matic - Coming Soon!
+- [Flat Top Tremolo](https://makerworld.com/en/models/1288644)
 
 ### Head
 - [Classical Head](https://makerworld.com/en/models/1158327-exoguitar-classical-head-printed-tuners)

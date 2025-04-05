@@ -1,6 +1,6 @@
 Qty	Name				Url
 8	M3x4x4 Heat Set Inserts		https://amzn.to/4gSAk3M
-1	6R Tuning Pegs		https://amzn.to/4kwxHGX
+1	6R Tuning Pegs			https://amzn.to/4kwxHGX
 2	M5x12 BHCS			https://amzn.to/4jeqLxq
 1	M5x45 SHCS			https://amzn.to/4akIBuH
 2	M5 Slide In Nut			https://amzn.to/40tPEOo
