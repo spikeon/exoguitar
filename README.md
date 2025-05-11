@@ -19,6 +19,7 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 - [Rich](https://makerworld.com/en/models/1078060-exoguitar-wings-rich)
 - [Firebird](https://makerworld.com/en/models/988586-exoguitar-wings-firebird)
 - [Cyber Butterfly](https://makerworld.com/en/models/946179-exoguitar-cyber-butterfly-wings)
+- [Warlock](https://makerworld.com/en/models/1391383-exoguitar-wing-set-warlock)
 
 ### Necks
 - [Printed Frets](https://makerworld.com/en/models/1158373-exoguitar-neck-printed-frets)
@@ -39,7 +40,6 @@ _Saddle and Anchor combined_
 - [Tune O' Matic](https://makerworld.com/en/models/1288679-exoguitar-saddle-tune-o-matic#profileId-1318404)
 
 ### Anchor
-- Tune O' Matic - Coming Soon!
 - [Flat Top Tremolo](https://makerworld.com/en/models/1288644)
 
 ### Head
@@ -49,6 +49,7 @@ _Saddle and Anchor combined_
 - [Jack's Son](https://makerworld.com/en/models/1223137-exoguitar-head-jack-s-son)
 - [Explorer](https://makerworld.com/en/models/1242688-exoguitar-head-explorer)
 - [Less Paul](https://makerworld.com/en/models/1242379-exoguitar-head-less-paul)
+- [King Paul](https://makerworld.com/en/models/1405761-exoguitar-head-king-paul)
 - [Firebird](https://makerworld.com/en/models/1242697-exoguitar-head-firebird)
 
 ### Extras 
@@ -57,6 +58,7 @@ _Saddle and Anchor combined_
 - [Dials](https://makerworld.com/en/models/946440-exoguitar-spiral-dials-and-switch)
 - [Strap Hooks](https://makerworld.com/en/models/965746-exoguitar-strap-hooks-wall-mount)
 - [Fret Press Jig](https://makerworld.com/en/models/965720-exoguitar-fret-press-jig)
+- [Bow](https://makerworld.com/en/models/1285015-exoguitar-bow)
 
 ## Multi-Neck Configuration
 

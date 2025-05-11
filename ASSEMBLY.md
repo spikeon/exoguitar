@@ -21,7 +21,12 @@ There are 7 main parts that each have their own options:
     - [Printed Frets](/models/Neck/Neck%20with%20Printed%20Frets/ASSEMBLY.md)  - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
 3. [Head](/models/Head/) - Note: you can skip this if you use a wooden neck
     - [Classical](/models/Head/Classical/ASSEMBLY.md) - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
-    - [Regular](/models/Head/Head/ASSEMBLY.md)
+    - [Arrow](/models/Head/Head/ASSEMBLY.md)
+    - [Explorer](/models/Head/Explorer/ASSEMBLY.md)
+    - [Firebird](/models/Head/Firebird/ASSEMBLY.md)
+    - [Jack's Son](/models/Head/Jack's%20Son/ASSEMBLY.md)
+    - [Less Paul](/models/Head/Less%20Paul/ASSEMBLY.md)
+    - [Loop](/models/Head/Loop/ASSEMBLY.md)
     - [Headless](/models/Head/Headless%20Adjustable%20Nut/ASSEMBLY.md)
 4. [Bridge](/models/Bridge/)
     - Headless 
@@ -123,9 +128,7 @@ Now for the fine tuning:
 - Play each string without pressing on any frets.  If you hear any fret-buzz with the string open, you need to raise the strings using the nut using the screws on the back of the head. You will want to lower the nut as much as possible on both sides WITHOUT getting any fret buzz when the strings are open.  
 - Play each string at each of the marked frets and listen for fret buzz.  If you have fret buzz at more than one fret, you need to raise the string at the saddle.  If you have fret buzz on only one of the frets (unless it's the last one) then you have a high fret that needs to be sanded down.  Please look up an actual luthier's guide for how to level your frets; but if you're using printed frets know that you need to consider them to be made of paly-dough in comparison to the metal ones so sand / file very lightly.  Once you sand the plastic away you can't put it back. 
 
-If you are building an acoustic and you don't want to install pezio mics, your build is now complete!
-
-If you ARE building an acoustic and you want to install Pezio Mics, remove the back panel and place the microphones in these locations: ![alt text](./models/Face%20Plates/Acoustic/exploded%20views/Pezio%20Locations.png)  This will give you Highs, Lows, and taps (if you tap on the guitar body).  If you don't want taps, you can just put all three of them in a line across the thick part.  And now you're done too!
+For Acoustic core, and want to add Piezo Microphones, follow [these instructions](/models/Face%20Plates/Acoustic/OPTIONAL_ASSEMBLY_PIEZO.md)
 
 Now that you have your electronics installed and your strings are on, plug it into an amp and check that you are getting sound.  If you aren't, check your wires.  I found in my builds that the most likely culprit was the ground wire to the strings.  Once you get sound going, you're done as well!
 
