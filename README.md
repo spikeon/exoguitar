@@ -20,6 +20,7 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 - [Firebird](https://makerworld.com/en/models/988586-exoguitar-wings-firebird)
 - [Cyber Butterfly](https://makerworld.com/en/models/946179-exoguitar-cyber-butterfly-wings)
 - [Warlock](https://makerworld.com/en/models/1391383-exoguitar-wing-set-warlock)
+- [Dread-Not](https://makerworld.com/en/models/1357129-exoguitar-acoustic-dread-not-guitar#profileId-1400996) by [TinkerCraft](https://makerworld.com/en/@user_2122378174)
 
 ### Necks
 - [Printed Frets](https://makerworld.com/en/models/1158373-exoguitar-neck-printed-frets)
