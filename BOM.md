@@ -122,7 +122,8 @@ I am also in talks with a company about providing these kits for me; which will 
 
 - [Fret Wire Bender](https://amzn.to/3E202E7) - There is a printable one (with it's own BOM) in this project [here](./models/Neck/tools/Fret%20Bender/ASSEMBLY.md)
 - [Metric Tap Bits](https://amzn.to/41XLL3B)
-- [Fanttik E2 Ultra](https://amzn.to/41XLL3B) - There are a lot of screws in this project.  This helps. 
+- [Fanttik E2 Ultra Precision Screwdriver](https://amzn.to/41XLL3B) - There are a lot of screws in this project.  This helps. 
+- [Fanttik T1 Max Soldering Iron](https://www.amazon.com/dp/B0D41ZMDPD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.2TDDOHR1DT4TG&linkCode=tr1&tag=spikeon-20&linkId=amzn1.campaign.2TDDOHR1DT4TG_1748061889591) - This wireless Soldering Iron comes in really handy for soldering parts inside of a guitar. 
 
 ### Recommended Guitar Parts
 - [Locking Tuning Pegs - 6R](https://amzn.to/4kwxHGX)
