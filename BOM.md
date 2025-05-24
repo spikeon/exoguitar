@@ -110,7 +110,13 @@ If we remove the items only needed for the "Luxury features" on the neck (Metal 
 - Price to buy all of this and build only one: $361
 - Price Per Guitar if building many: $82.88
 
-I will be looking into either assembling and selling hardware kits myself or partnering with a company to provide them ASAP so we can get these two numbers closer to each other. 
+### Kits
+
+I currently offer a DIY Kit that includes the above BOM on my Etsy.
+
+[Check it out here!](https://www.etsy.com/listing/4309899889/exoguitar-diy-kit)
+
+I am also in talks with a company about providing these kits for me; which will have a much faster processing time. 
 
 ### Hardware
 
