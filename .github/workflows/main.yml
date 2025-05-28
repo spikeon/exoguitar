@@ -25,22 +25,20 @@ jobs:
       shell: bash
       working-directory: ./docs
 
-    - run : git config user.name github-actions
-      shell: bash
-      working-directory: ./docs
+    - name: Upload static files as artifact
+      id: deployment
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: .docs/build
 
-    - run : git config user.email github-actions@github.com
-      shell: bash
-      working-directory: ./docs
-
-    - run : git --work-tree build add --all
-      shell: bash
-      working-directory: ./docs
-
-    - run : git commit -m "Automatic Build and Deploy run by GitHub Actions"
-      shell: bash
-      working-directory: ./docs
-
-    - run : git push origin HEAD:gh-pages --force
-      shell: bash
-      working-directory: ./docs
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
