@@ -29,7 +29,7 @@ jobs:
       id: deployment
       uses: actions/upload-pages-artifact@v3
       with:
-        path: .docs/build
+        path: ./docs/build
 
   # Deployment job
   deploy:
