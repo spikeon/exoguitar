@@ -1,0 +1,24 @@
+{
+  "name": "exoguitar",
+  "version": "1.0.0",
+  "description": "This is the Repo for the ExoGuitar project",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-missing-docs": "node ./scripts/check_missing_docs.js",
+    "generate-json-files" : "node ./scripts/generate_json_files.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spikeon/exoguitar.git"
+  },
+  "author": "Mike Flynn (spikeon@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spikeon/exoguitar/issues"
+  },
+  "homepage": "https://github.com/spikeon/exoguitar#readme"
+}
