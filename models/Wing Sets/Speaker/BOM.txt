@@ -1,7 +1,0 @@
-Qty     Name				                                            Url
-1       DC5521 Jack Socket                                              https://amzn.to/3Ftocsn
-1       12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521         https://amzn.to/3Zx7X4g
-1       PAM8610 10W+10W 12V DC                                          https://amzn.to/4kewzY1
-1       Speaker 4Ohm 5W                                                 https://amzn.to/43AWF0g
-1       Toggle Switch 3 Positions 9 Pin 15A 250VAC                      https://amzn.to/4k68T80
-1       2mm Clear Fiber Optic Rod                                       https://amzn.to/4mD4w6i 

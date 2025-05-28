@@ -1,3 +1,0 @@
-Qty	Name				Url
-1	Rosin				https://amzn.to/43BsGqF
-

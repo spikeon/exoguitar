@@ -1,4 +1,0 @@
-Qty	Name		URL
-10	M5x6 SHCS	https://amzn.to/3CN3PVy
-10	M5 T-Nuts	https://amzn.to/3B0aY4b
-8	6x3 Magnets	https://amzn.to/497vUTt
