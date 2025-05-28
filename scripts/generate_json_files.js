@@ -81,6 +81,8 @@ function parseBOMFile(filePath) {
 
 /**
  * Add item to unified BOM with quantity aggregation
+ * 
+ * TODO: This needs logic so that items from the same group don't get counted more than once.  If one head needs 3 M3x5 screws and another head needs 5, then this should end up with 5 and not 8.
  */
 function addToUnifiedBOM(item) {
     // Normalize name for better aggregation
@@ -159,7 +161,13 @@ function scanDirectory(dirPath, section) {
                 const hasBOM = fs.existsSync(bomPath);
                 const hasAssembly = fs.existsSync(assemblyPath);
                 
-                if (hasBOM || hasAssembly) {
+                const isWingSet = bomPath.includes("Wing Sets")
+                
+                const isWingSetParentFolder = bomPath.endsWith("Wing Sets")
+                const isBlank = bomPath.endsWith("Blank")
+                const isInterface = bomPath.endsWith("Interface")
+                
+                if ((hasBOM || hasAssembly) && !isWingSetParentFolder && !isBlank && !isInterface) {
                     // This is a part
                     const relativePath = path.relative(modelsPath, itemPath);
                     const partPath = relativePath.replace(/\\/g, '/');
@@ -185,6 +193,26 @@ function scanDirectory(dirPath, section) {
                             for (const bomItem of bomItems) {
                                 addToUnifiedBOM(bomItem);
                             }
+                        }
+                        if(isWingSet){
+                            const bomItems = parseBOMFile(path.normalize(bomPath+"/.."))
+                            
+                            partsBOM[partPath] = [... partsBOM[partPath], ...bomItems] || [];
+                            
+                            for(const bomItem of bomItems){
+                                addToUnifiedBOM(bomItem)
+                            }                            
+                        }
+                    } else if (isWingSet) {
+                        part.hasBOM = true;
+                        part.hasAssembly = true;
+
+                        const bomItems = parseBOMFile(path.normalize(bomPath+"/.."))
+                        
+                        partsBOM[partPath] = bomItems || [];
+                        
+                        for(const bomItem of bomItems){
+                            addToUnifiedBOM(bomItem)
                         }
                     }
                     

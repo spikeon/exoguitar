@@ -132,11 +132,14 @@ function isPartDirectory(dirPath, dirName) {
         // Check for documentation files
         const hasBOM = items.includes('BOM.txt');
         const hasAssembly = items.includes('ASSEMBLY.md');
-        
-        if (hasBOM || hasAssembly) {
-            return true;
-        }
-        
+
+        // Handle Special Cases
+        if(dirName == "Wing Sets") return false;
+        if(dirName == "Interface") return false;
+        if(dirName == "Blank") return false;
+
+        if ((hasBOM || hasAssembly)) return true;
+
         // Check for 3D model files
         const has3DFiles = items.some(item => 
             item.match(/\.(stl|3mf|step)$/i)
@@ -187,8 +190,14 @@ function scanDirectory(dirPath, section, depth = 0) {
                     };
                     
                     // Categorize the part based on documentation status
-                    const hasMeaningfulBOM = bomStatus.exists && bomStatus.hasContent;
-                    const hasMeaningfulAssembly = assemblyStatus.exists && assemblyStatus.hasContent;
+                    let hasMeaningfulBOM = bomStatus.exists && bomStatus.hasContent;
+                    let hasMeaningfulAssembly = assemblyStatus.exists && assemblyStatus.hasContent;
+
+                    // Wing Sets have a default BOM and Assembly file. 
+                    if(bomPath.includes("Wing Sets")){
+                        hasMeaningfulAssembly = true;
+                        hasMeaningfulBOM = true;
+                    }
                     
                     if (!hasMeaningfulBOM && !hasMeaningfulAssembly) {
                         partsData.missingBoth.push(partInfo);

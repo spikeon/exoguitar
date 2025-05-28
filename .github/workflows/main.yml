@@ -15,6 +15,12 @@ jobs:
 
     - run : npm i
       shell: bash
+
+    - run : npm run generate-json-files
+      shell: bash
+
+    - run : npm i
+      shell: bash
       working-directory: ./docs
 
     - run : npm ci
