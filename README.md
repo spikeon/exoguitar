@@ -67,4 +67,5 @@ The sides of the core are made out of 2020 aluminum extrusion and the core termi
 
 I haven't made a Wing Set specifically for this purpose yet, but the BC Rich may be a good fit for it.  
 
+
 ![Proof of Concept](./pictures/MultiNeck.JPEG)
