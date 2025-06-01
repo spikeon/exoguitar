@@ -34,8 +34,8 @@ const path = require('path');
 
 // Configuration
 const modelsPath = path.join(__dirname, '..', 'models');
-const outputPath = path.join(__dirname, '..', 'docs', 'public', 'data');
-const imagesOutputPath = path.join(__dirname, '..', 'docs', 'public', 'images');
+const outputPath = path.join(__dirname, '..', 'docs', 'src', 'data');
+const imagesOutputPath = path.join(__dirname, '..', 'docs', 'src', 'images');
 
 // Data structures
 const parts = [];
