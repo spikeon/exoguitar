@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <StyledEngineProvider injectFirst>
-      <BrowserRouter>
+      <BrowserRouter basename="exoguitar">
         <App />
       </BrowserRouter>
     </StyledEngineProvider>
