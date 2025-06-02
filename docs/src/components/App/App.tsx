@@ -3,6 +3,8 @@ import './App.scss';
 import Header from '../Header/Header';
 import { Card, CardContent, Container, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import Router from '../../Router';
+import { PartsProvider } from '../../contexts/parts/provider';
+import partsRawData from "../../data/parts.json"
 
 export const theme = createTheme({
   palette: {
@@ -46,7 +48,9 @@ function App(props: {}) {
             marginTop: theme.spacing(14)
           }} >
           <CardContent>
-            <Router />
+            <PartsProvider data={partsRawData}>
+              <Router />
+            </PartsProvider>
           </CardContent>
         </Card>
       </Container>

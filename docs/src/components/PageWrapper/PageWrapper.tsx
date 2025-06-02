@@ -8,7 +8,7 @@ type PageWrapperProps = {
 
 const PageWrapper = ({title, children}:PageWrapperProps) => {
     return (<>
-        <Typography variant="h4">
+        <Typography variant="h4" sx={{mb:2}}>
             {title}
         </Typography>
         <Divider />

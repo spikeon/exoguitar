@@ -1,11 +1,14 @@
 import PageWrapper from "../../components/PageWrapper/PageWrapper"
+import { MaterialsProvider } from "../../contexts/materials/provider"
 
 const Generator = () => {
 
     return (
-        <PageWrapper title="Generator">
-            <>Coming Soon</>
-        </PageWrapper>
+        <MaterialsProvider>
+            <PageWrapper title="Generator">
+                <>Coming Soon</>
+            </PageWrapper>
+        </MaterialsProvider>
     )
 }
 
