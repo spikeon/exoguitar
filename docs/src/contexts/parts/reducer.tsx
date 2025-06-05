@@ -8,25 +8,7 @@ const reducer = (state: PartsState, action: PartsAction) => {
                 parts: action.payload.parts
             }
 
-        case ACTION.ADD_PARTS_PART: 
-            return {
-                ...state,
-                parts: [
-                    ...state.parts.filter((a) => a.name !== action.payload.part.name),
-                    action.payload.part
-                ]
-            }
-
-        case ACTION.REMOVE_PARTS_PART: {
-            return {
-                ...state,
-                parts: [
-                    ...state.parts.filter((a) => a.name !== action.payload.part.name)
-                ]
-            }
-
-        }
-        default: {
+            default: {
             //@ts-ignore
             return ((x:never) => x)(action)
         }

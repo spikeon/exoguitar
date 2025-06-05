@@ -1,12 +1,17 @@
 import PageWrapper from "../../components/PageWrapper/PageWrapper"
 import { MaterialsProvider } from "../../contexts/materials/provider"
+import { usePartsContext } from "../../contexts/parts/context"
+import GeneratorSection from "./section";
 
 const Generator = () => {
+    const {parts, sections} = usePartsContext();
 
     return (
         <MaterialsProvider>
             <PageWrapper title="Generator">
-                <>Coming Soon</>
+                {sections.map((section) => (
+                    <GeneratorSection section={section} />
+                ))}
             </PageWrapper>
         </MaterialsProvider>
     )

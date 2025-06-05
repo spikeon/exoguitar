@@ -1,7 +1,8 @@
 import { PartsState } from "./types";
 
 const initialState: PartsState = {
-    parts: []
+    parts: [], 
+    sections: []
 }
 
 export default initialState;

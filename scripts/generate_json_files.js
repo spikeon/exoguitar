@@ -158,8 +158,12 @@ function scanDirectory(dirPath, section) {
             if (stat.isDirectory()) {
                 const bomPath = path.join(itemPath, 'BOM.txt');
                 const assemblyPath = path.join(itemPath, 'ASSEMBLY.md');
+                const metaPath = path.join(itemPath, 'meta.json');
                 const hasBOM = fs.existsSync(bomPath);
                 const hasAssembly = fs.existsSync(assemblyPath);
+
+                const hasMeta = fs.existsSync(metaPath)
+                const meta = !hasMeta ? {} : JSON.parse(fs.readFileSync(metaPath))
                 
                 const isWingSet = bomPath.includes("Wing Sets")
                 
@@ -177,7 +181,8 @@ function scanDirectory(dirPath, section) {
                         section: section,
                         path: partPath,
                         hasBOM: hasBOM,
-                        hasAssembly: hasAssembly
+                        hasAssembly: hasAssembly,
+                        ...meta
                     };
                     
                     parts.push(part);
@@ -243,7 +248,23 @@ function main() {
     const sections = fs.readdirSync(modelsPath).filter(item => {
         const itemPath = path.join(modelsPath, item);
         return fs.statSync(itemPath).isDirectory() && !item.startsWith('.');
+    }).filter((section) => {
+        // Skip extras
+        if(section.endsWith("Extras")) return false
+        // Skip straps
+        if(section.endsWith("Strap")) return false
+
+        return true
     });
+
+    const sectionsFileData = sections.map((name) => {
+        const metaPath = path.join(modelsPath, name, "meta.json")
+        const extraData = fs.existsSync(metaPath) ? JSON.parse(fs.readFileSync(metaPath)) : {}
+        return {
+            name,
+            ...extraData
+        }
+    })
     
     for (const section of sections) {
         console.log(`📁 Scanning section: ${section}`);
@@ -258,6 +279,12 @@ function main() {
     const unifiedBOMArray = Array.from(unifiedBOM.values());
     
     // Write files
+
+    fs.writeFileSync(
+        path.join(outputPath, 'sections.json'),
+        JSON.stringify(sectionsFileData, null, 2)
+    );
+
     fs.writeFileSync(
         path.join(outputPath, 'parts.json'),
         JSON.stringify(parts, null, 2)
