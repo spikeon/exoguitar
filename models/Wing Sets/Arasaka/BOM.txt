@@ -1,4 +1,5 @@
-Qty     Name				                                            Url
+Qty     Name                Url
+1       3mm 12v COB LED     https://amzn.to/4kOSzsf
 1       DC5521 Jack Socket                                              https://amzn.to/3Ftocsn
 1       12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521         https://amzn.to/3Zx7X4g
 1       PAM8610 10W+10W 12V DC                                          https://amzn.to/4kewzY1
