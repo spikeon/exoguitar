@@ -4,7 +4,7 @@ import { usePartsContext } from "../../contexts/parts/context"
 import GeneratorSection from "./section";
 
 const Generator = () => {
-    const {parts, sections} = usePartsContext();
+    const {sections} = usePartsContext();
 
     return (
         <MaterialsProvider>
