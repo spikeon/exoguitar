@@ -16,9 +16,11 @@ There are 7 main parts that each have their own options:
         - [Wood Neck](/models/Shoulders/Offset%20-%20Regular%20Neck/ASSEMBLY.md)
     - Paralell
         - [Wood Neck](/models/Shoulders/Parallel%20-%20Regular%20Neck/ASSEMBLY.md)
-2. [Neck](/models/Neck/) - Note: you can skip this if you use a wooden neck
-    - [Metal Frets](/models/Neck/Neck%20with%20Metal%20Frets/ASSEMBLY.md) - Note: this is a REALLY intensive build
-    - [Printed Frets](/models/Neck/Neck%20with%20Printed%20Frets/ASSEMBLY.md)  - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
+2. [Neck](/models/Neck/) - Note: you can skip this if you use a wooden neck. 
+    - [Metal Frets](/models/Neck/Horizontal/ASSEMBLY.md) - Note: this is a REALLY intensive build
+    - [Filament Frets](/models/Neck/Vertical/Filament%20Frets/ASSEMBLY.md) - Note: This is my recommendation.
+    - [Fretless](/models/Neck/Vertical/Fretless/ASSEMBLY.md)
+    - [Printed Frets](/models/Neck/Neck%20with%20Printed%20Frets/ASSEMBLY.md)
 3. [Head](/models/Head/) - Note: you can skip this if you use a wooden neck
     - [Classical](/models/Head/Classical/ASSEMBLY.md) - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
     - [Arrow](/models/Head/Head/ASSEMBLY.md)
