@@ -66,6 +66,9 @@ There are 7 main parts that each have their own options:
         - [Training-V](/models/Wing%20Sets/Training-V/)
     - Both
         - [Cyber Butterfly](/models/Wing%20Sets/Cyber%20Butterfly/)
+8. [Strap](/models/Strap/)
+    - [Printed Strap](./models/Strap/Chain%20Link%20Strap/ASSEMBLY.md) - Works but you must be gentile with it; any twisting could break it. 
+    - [Nylon Strap](./models/Strap/Nylon%20Strap/ASSEMBLY.md) - Requires a Heavy Duty Sewing Machine
     
 ## Ordering your Hardware
 
