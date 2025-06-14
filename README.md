@@ -52,6 +52,7 @@ _Saddle and Anchor combined_
 - [Less Paul](https://makerworld.com/en/models/1242379-exoguitar-head-less-paul)
 - [King Paul](https://makerworld.com/en/models/1405761-exoguitar-head-king-paul)
 - [Firebird](https://makerworld.com/en/models/1242697-exoguitar-head-firebird)
+- [Kumiko](https://makerworld.com/en/models/1517226-exoguitar-wings-kumiko)
 
 ### Extras 
 - [Stealth Plate v2](https://makerworld.com/en/models/946400-exoguitar-stealth-plate-v2)

@@ -42,6 +42,7 @@ There are 7 main parts that each have their own options:
     - [Acoustic](/models/Face%20Plates/Acoustic/ASSEMBLY.md)
     - [Dual Humbucker](/models/Face%20Plates/Dual%20Humbucker/ASSEMBLY.md)
     - [Single Humbucker](/models/Face%20Plates/Single%20Humbucker/ASSEMBLY.md)
+    - [SSS](/models/Face%20Plates/SSS/ASSEMBLY.md)
     - [Telecaster](/models/Face%20Plates/Telecaster/ASSEMBLY.md)
     - [Stealth Plate](/models/Face%20Plates/StealthPlate/ASSEMBLY.md) - Note: This is an experimental face plate that covers the pickups with a thin piece of plastic that you can add decoration to.  It's fun but likely not the best sounding option. 
     - [Clip-in Compartment](/models/Face%20Plates/Clip-In%20Compartment/ASSEMBLY.md) - Note: This is my initial prototype face plate.  It is not recommended unless you want to swap faces often.
@@ -60,6 +61,7 @@ There are 7 main parts that each have their own options:
         - [Firebird](/models/Wing%20Sets/Firebird/)
         - [Rich](/models/Wing%20Sets/Rich/) - Note: Looks the best with the Headless Bridge Plate
         - [Venom](/models/Wing%20Sets/Venom/) - This is the Rich with spider webs in it.
+        - [Kumiko](/models/Wing%20Sets/Kumiko/ASSEMBLY.md)
     - Parallel Shoulder
         - [Training-V](/models/Wing%20Sets/Training-V/)
     - Both
