@@ -55,6 +55,7 @@ For simplicity, This list only contains suggested hardware.  I will list recomme
 | 1	  | Super Lube |
 | 1   | Locktite Red | 
 | 1   | 1m Wire,  24AWG |
+| 14  | M3x14 Nylon Tipped Hex Set Screw |
 
 ## Links
 
@@ -97,18 +98,19 @@ For this list, QTY is the number of the linked product to buy, not the number of
 | 1   | Jumper Wire | [Amazon](https://amzn.to/40c2IXh) | 560 | $9.99 | $0.05 |
 | 1   | Locktite Red | [Amazon](https://amzn.to/4iA8NEI) | 100 | $23.20 | $0.23 |
 | 1   | Wire | [Amazon](https://amzn.to/41UZiZN) | 91.44 | $26.99 | $0.30 |
+| 1   | M3x14 Nylon Tipped Hex Set Screw | [Amazon](https://amzn.to/4ecwIJk) | 15 | 8.49 | $0.85 |
 
 #### Totals: 
 
 Before we get to the totals, just a reminder that this document is a One-Size-Fits-All BOM.  If you compiled your own BOM from the individual parts you plan to build with, the price might be far less; depending on the options picked.  In essence, this is the most expensive guitar possible in ExoGuitar.
 
-- Price to buy all of this and build only one: $451
-- Price Per Guitar if building many: $115.30
+- Price to buy all of this and build only one: $460
+- Price Per Guitar if building many: $120
 
 If we remove the items only needed for the "Luxury features" on the neck (Metal Frets, M2x6 screws, All electronics items from above list) we get a more reasonable result:
 
-- Price to buy all of this and build only one: $361
-- Price Per Guitar if building many: $82.88
+- Price to buy all of this and build only one: $370
+- Price Per Guitar if building many: $89
 
 ### Kits
 
