@@ -1,2 +1,5 @@
-Qty	Name					Url
-12	M3x14 Nylon Tipped Hex Set Screw	https://amzn.to/4ecwIJk
+Qty	    Name					            Url
+14	    M3x14 Nylon Tipped Hex Set Screw	https://amzn.to/4ecwIJk
+12      6x2mm Magnets                       https://amzn.to/4njDvFh 
+9       BT3x18 Screws                       https://us.store.bambulab.com/products/bt3-socket-head-cap-self-tapping-screws-shcs-new?id=42382271774856 
+1       M5x20 SHCS                          https://amzn.to/4lfbc8V  
