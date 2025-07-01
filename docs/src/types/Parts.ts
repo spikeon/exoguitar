@@ -7,6 +7,7 @@ export interface Part {
     incompatibleParts?: string[]
     reqiresParts?: string[]
     extra2020Length?: number
+    thumb?: string
 }
 
 export interface Section {

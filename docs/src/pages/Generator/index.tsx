@@ -1,20 +1,20 @@
 import PageWrapper from "../../components/PageWrapper/PageWrapper"
+import { GeneratorStateProvider } from "../../contexts/generatorState/provider";
 import { MaterialsProvider } from "../../contexts/materials/provider"
-import { usePartsContext } from "../../contexts/parts/context"
-import GeneratorSection from "./section";
+import Generator from "./Generator";
 
-const Generator = () => {
-    const {sections} = usePartsContext();
 
+const GeneratorPage = () => {
+    
     return (
         <MaterialsProvider>
             <PageWrapper title="Generator">
-                {sections.map((section) => (
-                    <GeneratorSection section={section} />
-                ))}
+                <GeneratorStateProvider>
+                  <Generator />
+                </GeneratorStateProvider>
             </PageWrapper>
         </MaterialsProvider>
     )
 }
 
-export default Generator
+export default GeneratorPage
