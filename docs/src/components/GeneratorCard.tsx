@@ -24,7 +24,7 @@ const GeneratorCard = ({
             <CardContent>
                 <Typography 
                     gutterBottom 
-                    variant="h5" 
+                    variant="h6" 
                     component="div"
                     align="center">
                     {title}
