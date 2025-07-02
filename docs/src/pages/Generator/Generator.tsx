@@ -1,4 +1,4 @@
-import { Box, Stepper, Step, StepLabel, Button, Typography } from "@mui/material";
+import { Box, Stepper, Step, StepLabel, Typography } from "@mui/material";
 import React, { ReactNode, useMemo, useState } from "react";
 import { useGeneratorStateContext} from "../../contexts/generatorState/context";
 import { GeneratorState, GuitarType, NeckType } from "../../types/State";
@@ -75,10 +75,6 @@ const Generator = () => {
 
         return currentSteps;
     }, [guitarType, neckType]);
-
-    const isStepComplete = useMemo(() => {
-        return steps[activeStep]?.validator(generatorState) || true;
-    }, [steps, activeStep, generatorState])
 
     return (
         <>
