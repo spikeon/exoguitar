@@ -36,7 +36,7 @@ const path = require('path');
 const rootPath = path.join(__dirname, '..');
 const modelsPath = path.join(__dirname, '..', 'models');
 const outputPath = path.join(__dirname, '..', 'docs', 'src', 'data');
-const imagesOutputPath = path.join(__dirname, '..', 'docs', 'src', 'images');
+const imagesOutputPath = path.join(__dirname, '..', 'docs', 'public', 'images');
 
 // Data structures
 const parts = [];
@@ -160,7 +160,11 @@ function scanDirectory(dirPath, section) {
                 const bomPath = path.join(itemPath, 'BOM.txt');
                 const assemblyPath = path.join(itemPath, 'ASSEMBLY.md');
                 const metaPath = path.join(itemPath, 'meta.json');
+                const thumbPath = path.join(itemPath, 'photos', 'thumb.wide.png');
                 const hasBOM = fs.existsSync(bomPath);
+                const hasThumb = fs.existsSync(thumbPath);
+                const [,thumbUrl] = thumbPath.replace(/\\/g,'/').split("/models")
+
                 const hasAssembly = fs.existsSync(assemblyPath);
 
                 const hasMeta = fs.existsSync(metaPath)
@@ -176,6 +180,7 @@ function scanDirectory(dirPath, section) {
                     // This is a part
                     const relativePath = path.relative(modelsPath, itemPath);
                     const partPath = relativePath.replace(/\\/g, '/');
+
                     
                     const part = {
                         name: item,
@@ -183,6 +188,7 @@ function scanDirectory(dirPath, section) {
                         path: partPath,
                         hasBOM: hasBOM,
                         hasAssembly: hasAssembly,
+                        thumb: hasThumb ? path.join('images',thumbUrl) : undefined,
                         ...meta
                     };
                                         
