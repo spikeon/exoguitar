@@ -16,7 +16,7 @@ const GeneratorCard = ({
             {image && (
                 <CardMedia
                     component="img"
-                    height="600"
+                    height="260px"
                     image={image}
                     alt=""
                     />

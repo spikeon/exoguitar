@@ -38,7 +38,7 @@ const Summary = () => {
                     </Typography>
             </Grid>
             {selectedParts.filter((p) => p !== undefined).map((part) => (
-                <Grid size={6} key={part?.name}>
+                <Grid size={4} key={part?.name}>
                     <PartCard
                         part={part}
                         onClick={() => {}} />
