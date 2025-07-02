@@ -8,7 +8,7 @@ export interface Part {
     hasAssembly: boolean
     incompatibleParts?: string[]
     compatibleParts?: {[key: string]: string[]}
-    reqiredParts?: string[]
+    requiredParts?: string[]
     extra2020Length?: number
     thumb?: string
     bom?: Material[]

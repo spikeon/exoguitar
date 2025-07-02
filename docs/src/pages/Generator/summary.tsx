@@ -1,6 +1,5 @@
-import { Button, Card, Grid, Paper, Table, TableContainer, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { useGeneratorStateContext } from "../../contexts/generatorState/context";
-import GeneratorCard from "./GeneratorCard";
 import PartCard from "./PartCard";
 import { useMemo } from "react";
 import { Material } from "../../types/Materials";
@@ -44,7 +43,7 @@ const Summary = () => {
             headerName: "Links",
             width: 200,
             sortable: false,            
-            renderCell: ({value}: GridRenderCellParams<any, string>) => (<a href={value} target="_blank"><Button variant="contained">Amazon</Button></a>),
+            renderCell: ({value}: GridRenderCellParams<any, string>) => (<a href={value} target="_blank" rel="noreferrer"><Button variant="contained">Amazon</Button></a>),
             align: "right"
         }
     ]
@@ -62,7 +61,7 @@ const Summary = () => {
                     </Typography>
             </Grid>
             {selectedParts.filter((p) => p !== undefined).map((part) => (
-                <Grid size={6}>
+                <Grid size={6} key={part?.name}>
                     <PartCard
                         part={part}
                         onClick={() => {}} />

@@ -18,8 +18,8 @@ const Step2 = () => {
     const {parts} = usePartsContext();
 
     const addRequiredParts = (part: Part) => {
-        if(!part.reqiredParts) return;
-        for(const rpName of part.reqiredParts){
+        if(!part.requiredParts) return;
+        for(const rpName of part.requiredParts){
             const rp = parts.find((p) => p.name === rpName)
             if(rp) addExtra(rp);
         }

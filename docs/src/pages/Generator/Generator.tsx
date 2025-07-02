@@ -1,7 +1,7 @@
 import { Box, Stepper, Typography, Step, StepLabel, Button } from "@mui/material";
 import React, { useMemo, useState } from "react";
 import Step1 from "./step1";
-import { useGeneratorStateContext, useGeneratorStateActionsContext } from "../../contexts/generatorState/context";
+import { useGeneratorStateContext} from "../../contexts/generatorState/context";
 import { GuitarType, NeckType } from "../../types/State";
 import Step2 from "./step2";
 import Step3 from "./step3";
@@ -18,8 +18,6 @@ const Generator = () => {
     const [skipped, setSkipped] = useState(new Set<number>());
 
     const {guitarType, neckType, bridge, facePlate, head, neck, wingSet} = useGeneratorStateContext();
-    const {reset} = useGeneratorStateActionsContext();
-
 
     const isStepOptional = (step: number) => {
       return false;
@@ -57,11 +55,6 @@ const Generator = () => {
         newSkipped.add(activeStep);
         return newSkipped;
       });
-    };
-
-    const handleReset = () => {
-      reset();
-      setActiveStep(0);
     };
 
     const stepComplete = useMemo(() => {

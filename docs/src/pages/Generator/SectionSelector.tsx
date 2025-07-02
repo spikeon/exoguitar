@@ -61,7 +61,7 @@ const SectionSelector = ({part, sectionName, selectPart, partFilter}: SectionSel
                 ?.filter(checkIncompatibilities)
                 ?.filter(partFilter)
                 .map((part, i) => (
-                    <Grid size={6}>
+                    <Grid size={6} key={part.name}>
                         <PartCard
                             part={part}
                             onClick={() => selectPart(part)} />

@@ -1,5 +1,5 @@
-import {Part, Section} from "../../types/Parts";
-import { GeneratorState, GuitarType, NeckType } from "../../types/State";
+import {Part} from "../../types/Parts";
+import { GuitarType, NeckType } from "../../types/State";
 
 export enum ACTION {
     SET_GUITAR_TYPE,
