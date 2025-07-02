@@ -8,6 +8,7 @@ import partsRawData from "../../data/parts.json"
 
 export const theme = createTheme({
   palette: {
+    mode: "dark",
     primary: {
       main: '#d3ff31',
     },

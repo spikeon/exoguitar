@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material"
-import { Part } from "../../types/Parts"
-import { usePartsContext } from "../../contexts/parts/context"
-import { useGeneratorStateContext } from "../../contexts/generatorState/context"
+import { Part } from "../types/Parts"
+import { usePartsContext } from "../contexts/parts/context"
+import { useGeneratorStateContext } from "../contexts/generatorState/context"
 import PartCard from "./PartCard"
 
 type SectionSelectorProps = {
@@ -47,9 +47,7 @@ const SectionSelector = ({part, sectionName, selectPart, partFilter}: SectionSel
         }
 
         return true;
-    }
-
-    
+    }    
     
     return ( !part ? (<>
         <Grid size={12}><Typography sx={{ mt: 2, mb: 1 }}> Choose {sectionName}: </Typography></Grid>
@@ -58,6 +56,7 @@ const SectionSelector = ({part, sectionName, selectPart, partFilter}: SectionSel
             sections
                 .find((section) => section.name === sectionName)
                 ?.parts
+                ?.filter((part) => !part.hidden)
                 ?.filter(checkIncompatibilities)
                 ?.filter(partFilter)
                 .map((part, i) => (

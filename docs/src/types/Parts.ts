@@ -12,6 +12,8 @@ export interface Part {
     extra2020Length?: number
     thumb?: string
     bom?: Material[]
+    makerWorldUrl?: string
+    hidden?: boolean
 }
 
 export interface Section {

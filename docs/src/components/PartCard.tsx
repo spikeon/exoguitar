@@ -1,4 +1,4 @@
-import { Part } from "../../types/Parts"
+import { Part } from "../types/Parts"
 import GeneratorCard from "./GeneratorCard"
 
 type PartCardProps = {

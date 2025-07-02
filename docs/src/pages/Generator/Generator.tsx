@@ -1,146 +1,110 @@
-import { Box, Stepper, Typography, Step, StepLabel, Button } from "@mui/material";
-import React, { useMemo, useState } from "react";
-import Step1 from "./step1";
+import { Box, Stepper, Step, StepLabel, Button } from "@mui/material";
+import React, { ReactNode, useMemo, useState } from "react";
 import { useGeneratorStateContext} from "../../contexts/generatorState/context";
-import { GuitarType, NeckType } from "../../types/State";
-import Step2 from "./step2";
-import Step3 from "./step3";
+import { GeneratorState, GuitarType, NeckType } from "../../types/State";
 import Summary from "./summary";
+import StepGuitarTypes from "./steps/StepGuitarTypes";
+import StepBridges from "./steps/StepBridges";
+import StepFacePlates from "./steps/StepFacePlates";
+import StepHeads from "./steps/StepHeads";
+import StepNecks from "./steps/StepNecks";
+import StepNeckTypes from "./steps/StepNeckTypes";
+import StepWingSets from "./steps/StepWingSets";
 
-const steps = [
-    "Guitar Type",
-    "Neck",
-    "Wing Set"
-];
+type step = {
+    name: string
+    component: ReactNode
+    validator: (generatorState: GeneratorState) => boolean
+}
 
 const Generator = () => {
     const [activeStep, setActiveStep] = useState(0);
-    const [skipped, setSkipped] = useState(new Set<number>());
 
-    const {guitarType, neckType, bridge, facePlate, head, neck, wingSet} = useGeneratorStateContext();
-
-    const isStepOptional = (step: number) => {
-      return false;
-    };
-
-    const isStepSkipped = (step: number) => {
-      return skipped.has(step);
-    };
+    const generatorState = useGeneratorStateContext();
+    const {guitarType, neckType} = useMemo(() => generatorState, [generatorState]);
 
     const handleNext = () => {
-      let newSkipped = skipped;
-      if (isStepSkipped(activeStep)) {
-        newSkipped = new Set(newSkipped.values());
-        newSkipped.delete(activeStep);
-      }
-
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
-      setSkipped(newSkipped);
     };
 
-    const handleBack = () => {
-      setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    };
+    const steps: step[] = useMemo(() => {
+        const currentSteps: step[] = [{
+            name: "Guitar Type",
+            component: (<StepGuitarTypes onComplete={handleNext} />),
+            validator: ({guitarType}) => guitarType !== undefined
+        }]
 
-    const handleSkip = () => {
-      if (!isStepOptional(activeStep)) {
-        // You probably want to guard against something like this,
-        // it should never occur unless someone's actively trying to break something.
-        throw new Error("You can't skip a step that isn't optional.");
-      }
+        if(guitarType === GuitarType.ELECTRIC){
+            currentSteps.push({
+                name: "Face Plate",
+                component: (<StepFacePlates onComplete={handleNext} />),
+                validator: ({facePlate}) => facePlate !== undefined
+            })
 
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
-      setSkipped((prevSkipped) => {
-        const newSkipped = new Set(prevSkipped.values());
-        newSkipped.add(activeStep);
-        return newSkipped;
-      });
-    };
-
-    const stepComplete = useMemo(() => {
-        switch (steps[activeStep]){
-            case "Guitar Type": 
-                if(guitarType === undefined) return false;
-                if(guitarType === GuitarType.ACCOUSTIC) return true;
-                else {
-                    if(!facePlate) return false;
-                    if(!bridge) return false;
-                }
-                break;
-            case "Neck":
-                if(neckType === undefined) return false;
-                if(neckType === NeckType.WOOD) return true; 
-                else{
-                    if(!neck) return false;
-                    if(!head) return false;
-                }
-                break;
-            case "Wing Set": 
-                if(!wingSet) return false;
+            currentSteps.push({
+                name: "Bridge",
+                component: (<StepBridges onComplete={handleNext} />),
+                validator: ({bridge}) => bridge !== undefined
+            })
         }
-        return true;
-    }, [activeStep, neckType, guitarType, bridge, facePlate, head, neck, wingSet])
+
+        currentSteps.push({
+            name: "Neck Type",
+            component: (<StepNeckTypes onComplete={handleNext} />),
+            validator: ({neckType}) => neckType !== undefined
+        })
+
+        if(neckType === NeckType.PRINTED) {
+            currentSteps.push({
+                name: "Neck",
+                component: (<StepNecks onComplete={handleNext} />),
+                validator: ({neck}) => neck !== undefined
+            })
+            currentSteps.push({
+                name: "Head",
+                component: (<StepHeads onComplete={handleNext} />),
+                validator: ({head}) => head !== undefined
+            })
+        }
+
+        currentSteps.push({
+            name: "Wing Sets",
+            component: (<StepWingSets onComplete={handleNext} />),
+            validator: ({wingSet}) => wingSet !== undefined
+        })
+
+        return currentSteps;
+    }, [guitarType, neckType]);
+
+    const isStepComplete = useMemo(() => {
+        return steps[activeStep]?.validator(generatorState) || true;
+    }, [steps, activeStep, generatorState])
 
     return (
         <Box sx={{ width: '100%' }}>
             <Stepper activeStep={activeStep}>
-                {steps.map((label, index) => {
-                const stepProps: { completed?: boolean } = {};
-                const labelProps: {
-                    optional?: React.ReactNode;
-                } = {};
-                if (isStepOptional(index)) {
-                    labelProps.optional = (
-                    <Typography variant="caption">Optional</Typography>
+                {steps.map(({name}, index) => {
+                    const stepProps: { completed?: boolean } = {};
+                    return (
+                        <Step key={name} {...stepProps}>
+                            <StepLabel>{name}</StepLabel>
+                        </Step>
                     );
-                }
-                if (isStepSkipped(index)) {
-                    stepProps.completed = false;
-                }
-                return (
-                    <Step key={label} {...stepProps}>
-                    <StepLabel {...labelProps}>{label}</StepLabel>
-                    </Step>
-                );
                 })}
             </Stepper>
             {activeStep === steps.length ? (
-                <>
-                    <Summary />
-                </>
+                <Summary />
             ) : (
                 <>
                     
                     <Box sx={{width: "100%", minHeight: "50vh"}}>
-                        { activeStep === 0 && (
-                            <Step1 />
-                        )}
-                        { activeStep === 1 && (
-                            <Step2 />
-                        )}
-                        { activeStep === 2 && (
-                            <Step3 />
-                        )}
-
+                        {steps[activeStep].component}
                     </Box>
                     
                     <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                        <Button
-                        color="inherit"
-                        disabled={activeStep === 0}
-                        onClick={handleBack}
-                        sx={{ mr: 1 }}
-                        >
-                        Back
-                        </Button>
                         <Box sx={{ flex: '1 1 auto' }} />
-                        {isStepOptional(activeStep) && (
-                        <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                            Skip
-                        </Button>
-                        )}
                         <Button 
-                        disabled={!stepComplete}
+                        disabled={!isStepComplete}
                         onClick={handleNext}>
                         {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                         </Button>

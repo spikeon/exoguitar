@@ -21,7 +21,8 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 - [Cyber Butterfly](https://makerworld.com/en/models/946179-exoguitar-cyber-butterfly-wings)
 - [Warlock](https://makerworld.com/en/models/1391383-exoguitar-wing-set-warlock)
 - [Dread-Not](https://makerworld.com/en/models/1357129-exoguitar-acoustic-dread-not-guitar#profileId-1400996) by [TinkerCraft](https://makerworld.com/en/@user_2122378174)
-
+- [Kumiko](https://makerworld.com/en/models/1517226-exoguitar-wings-kumiko)
+- 
 ### Necks
 - [Printed Frets](https://makerworld.com/en/models/1158373-exoguitar-neck-printed-frets)
 - [Metal Frets](https://makerworld.com/en/models/977913-exoguitar-neck)
@@ -52,7 +53,6 @@ _Saddle and Anchor combined_
 - [Less Paul](https://makerworld.com/en/models/1242379-exoguitar-head-less-paul)
 - [King Paul](https://makerworld.com/en/models/1405761-exoguitar-head-king-paul)
 - [Firebird](https://makerworld.com/en/models/1242697-exoguitar-head-firebird)
-- [Kumiko](https://makerworld.com/en/models/1517226-exoguitar-wings-kumiko)
 
 ### Extras 
 - [Stealth Plate v2](https://makerworld.com/en/models/946400-exoguitar-stealth-plate-v2)

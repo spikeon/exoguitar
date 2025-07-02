@@ -1,17 +1,17 @@
-import { Grid,Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import { GuitarType } from "../../../types/State";
+import GeneratorCard from "../../../components/GeneratorCard";
+import { useGeneratorStateContext, useGeneratorStateActionsContext } from "../../../contexts/generatorState/context";
+import { usePartsContext } from "../../../contexts/parts/context";
+import { Part } from "../../../types/Parts";
+
 import accousticImage from "./images/accoustic.jpeg";
 import electricImage from "./images/electric.jpeg";
-import { useGeneratorStateActionsContext, useGeneratorStateContext } from "../../contexts/generatorState/context";
-import { GuitarType } from "../../types/State";
-import GeneratorCard from "./GeneratorCard";
-import { Part } from "../../types/Parts";
-import { usePartsContext } from "../../contexts/parts/context";
-import SectionSelector from "./SectionSelector";
+import { StepProps } from "./step.types";
 
-const Step1 = () => {
-
-    const {guitarType, facePlate, bridge} = useGeneratorStateContext();
-    const {setGuitarType, setFacePlate, setBridge, addExtra} = useGeneratorStateActionsContext();
+const StepGuitarTypes = ({onComplete}: StepProps) => {
+    const {guitarType} = useGeneratorStateContext();
+    const {setGuitarType, setFacePlate, addExtra} = useGeneratorStateActionsContext();
 
     const {parts} = usePartsContext();
 
@@ -26,21 +26,16 @@ const Step1 = () => {
     const handleGuitarTypeAccoustic = () => {
         setGuitarType(GuitarType.ACCOUSTIC);
         const face = parts.find((part) => part.name === "Acoustic");
-        if(face) setFacePlate( face );
+        if(face) {
+            addRequiredParts( face );
+            setFacePlate( face );
+        }
+        onComplete();
     }
 
     const handleGuitarTypeElectric = () => {
         setGuitarType(GuitarType.ELECTRIC);
-    }
-
-    const handleFacePlate = (facePlate: Part) => {
-        addRequiredParts(facePlate);
-        setFacePlate(facePlate);
-    }
-
-    const handleBridge = (bridge: Part) => {
-        addRequiredParts(bridge);
-        setBridge(bridge);
+        onComplete();
     }
 
     return (
@@ -66,22 +61,8 @@ const Step1 = () => {
             </>) : (
                 <Grid size={12}><Typography sx={{ mt: 2, mb: 1 }}>Selected Guitar Type: {guitarType === GuitarType.ACCOUSTIC ? "Accoustic" : "Electric"}</Typography></Grid>
             ) }
-            { guitarType === GuitarType.ELECTRIC && (
-                <SectionSelector
-                    sectionName="Face Plates" 
-                    part={facePlate} 
-                    selectPart={handleFacePlate} 
-                    partFilter={(part: Part) => part.name !== "Acoustic" } />
-            )}
-            { guitarType === GuitarType.ELECTRIC && (
-                <SectionSelector
-                    sectionName="Bridge" 
-                    part={bridge} 
-                    selectPart={handleBridge} 
-                    partFilter={(part: Part) => true } />
-            )}
         </Grid>
     )
 }
 
-export default Step1;
+export default StepGuitarTypes;

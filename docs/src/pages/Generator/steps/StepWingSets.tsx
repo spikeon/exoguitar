@@ -1,10 +1,11 @@
 import { Grid } from "@mui/material";
-import { useGeneratorStateActionsContext, useGeneratorStateContext } from "../../contexts/generatorState/context";
-import { Part } from "../../types/Parts";
-import { usePartsContext } from "../../contexts/parts/context";
-import SectionSelector from "./SectionSelector";
+import { useGeneratorStateActionsContext, useGeneratorStateContext } from "../../../contexts/generatorState/context";
+import { Part } from "../../../types/Parts";
+import { usePartsContext } from "../../../contexts/parts/context";
+import SectionSelector from "../../../components/SectionSelector";
+import { StepProps } from "./step.types";
 
-const Step3 = () => {
+const StepWingSets = ({onComplete}:StepProps) => {
 
     const {wingSet} = useGeneratorStateContext();
     const {setWingSet, addExtra} = useGeneratorStateActionsContext();
@@ -22,6 +23,7 @@ const Step3 = () => {
     const handleWingSet = (wingSet: Part) => {
         addRequiredParts(wingSet);   
         setWingSet(wingSet);
+        onComplete();
     }
 
     return (
@@ -35,4 +37,4 @@ const Step3 = () => {
     )
 }
 
-export default Step3;
+export default StepWingSets;
