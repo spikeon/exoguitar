@@ -95,21 +95,9 @@ const Generator = () => {
             {activeStep === steps.length ? (
                 <Summary />
             ) : (
-                <>
-                    
-                    <Box sx={{width: "100%", minHeight: "50vh"}}>
-                        {steps[activeStep].component}
-                    </Box>
-                    
-                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                        <Box sx={{ flex: '1 1 auto' }} />
-                        <Button 
-                        disabled={!isStepComplete}
-                        onClick={handleNext}>
-                        {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                        </Button>
-                    </Box>
-                </>
+                <Box sx={{width: "100%"}}>
+                    {steps[activeStep].component}
+                </Box>
             )}
         </Box>
     )
