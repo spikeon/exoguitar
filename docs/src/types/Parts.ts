@@ -1,3 +1,5 @@
+import { Material } from "./Materials"
+
 export interface Part {
     name: string
     section: string
@@ -5,9 +7,11 @@ export interface Part {
     hasBOM: boolean
     hasAssembly: boolean
     incompatibleParts?: string[]
-    reqiresParts?: string[]
+    compatibleParts?: {[key: string]: string[]}
+    reqiredParts?: string[]
     extra2020Length?: number
     thumb?: string
+    bom?: Material[]
 }
 
 export interface Section {

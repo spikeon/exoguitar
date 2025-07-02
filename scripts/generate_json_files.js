@@ -171,7 +171,7 @@ function scanDirectory(dirPath, section) {
                 const isBlank = bomPath.endsWith("Blank")
                 const isInterface = bomPath.endsWith("Interface")
                 
-                if ((hasBOM || hasAssembly) && !isWingSetParentFolder && !isBlank && !isInterface) {
+                if ((hasBOM || hasAssembly || isWingSet) && !isWingSetParentFolder && !isBlank && !isInterface) {
                     // This is a part
                     const relativePath = path.relative(modelsPath, itemPath);
                     const partPath = relativePath.replace(/\\/g, '/');
@@ -184,10 +184,7 @@ function scanDirectory(dirPath, section) {
                         hasAssembly: hasAssembly,
                         ...meta
                     };
-                    
-                    parts.push(part);
-                    console.log(`  Found part: ${section}/${item}`);
-                    
+                                        
                     // Parse BOM if exists
                     if (hasBOM) {
                         const bomItems = parseBOMFile(bomPath);
@@ -202,7 +199,7 @@ function scanDirectory(dirPath, section) {
                         if(isWingSet){
                             const bomItems = parseBOMFile(path.normalize(bomPath+"/.."))
                             
-                            partsBOM[partPath] = [... partsBOM[partPath], ...bomItems] || [];
+                            partsBOM[partPath] = [ ...(partsBOM[partPath]??[]), ...bomItems] || [];
                             
                             for(const bomItem of bomItems){
                                 addToUnifiedBOM(bomItem)
@@ -220,9 +217,14 @@ function scanDirectory(dirPath, section) {
                             addToUnifiedBOM(bomItem)
                         }
                     }
+
+                    part.bom = partsBOM[partPath] ?? [];
                     
                     // Copy images
                     copyImages(itemPath, section, item);
+
+                    parts.push(part);
+                    console.log(`  Found part: ${section}/${item}`);
                 } else {
                     // Check subdirectories
                     scanDirectory(itemPath, section);

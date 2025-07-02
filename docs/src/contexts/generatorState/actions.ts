@@ -1,7 +1,7 @@
 import { Dispatch } from "react";
 import { ACTION, GeneratorStateAction, GeneratorStateActions } from "./types";
 import { Part } from "../../types/Parts";
-import { GuitarType } from "../../types/State";
+import { GuitarType, NeckType } from "../../types/State";
 
 const getActions = (dispatch: Dispatch<GeneratorStateAction>): GeneratorStateActions => ({
     setGuitarType: (guitarType: GuitarType) => {
@@ -10,19 +10,16 @@ const getActions = (dispatch: Dispatch<GeneratorStateAction>): GeneratorStateAct
             payload: {guitarType}
         })
     },
-    unsetGuitarType: () => {
-        dispatch({type: ACTION.UNSET_GUITAR_TYPE, payload: {}})
+    setNeckType: (neckType: NeckType) => {
+        dispatch({
+            type: ACTION.SET_NECK_TYPE,
+            payload: {neckType}
+        })
     },
     setNeck: (neck: Part) => {
         dispatch({
             type: ACTION.SET_NECK,
             payload: { neck }
-        });
-    },
-    unsetNeck: () => {
-        dispatch({
-            type: ACTION.UNSET_NECK,
-            payload: {}
         });
     },
     setHead: (head: Part) => {
@@ -31,22 +28,10 @@ const getActions = (dispatch: Dispatch<GeneratorStateAction>): GeneratorStateAct
             payload: { head }
         });
     },
-    unsetHead: () => {
-        dispatch({
-            type: ACTION.UNSET_HEAD,
-            payload: {}
-        });
-    },
     setWingSet: (wingSet: Part) => {
         dispatch({
             type: ACTION.SET_WING_SET,
             payload: { wingSet }
-        });
-    },
-    unsetWingSet: () => {
-        dispatch({
-            type: ACTION.UNSET_WING_SET,
-            payload: {}
         });
     },
     setFacePlate: (facePlate: Part) => {
@@ -55,24 +40,24 @@ const getActions = (dispatch: Dispatch<GeneratorStateAction>): GeneratorStateAct
             payload: { facePlate }
         });
     },
-    unsetFacePlate: () => {
-        dispatch({
-            type: ACTION.UNSET_FACE_PLATE,
-            payload: {}
-        });
-    },
     setBridge: (bridge: Part) => {
         dispatch({
             type: ACTION.SET_BRIDGE,
             payload: { bridge }
         });
     },
-    unsetBridge: () => {
+    addExtra: (part: Part) => {
         dispatch({
-            type: ACTION.UNSET_BRIDGE,
-            payload: {}
-        });
+            type: ACTION.ADD_EXTRA,
+            payload: {part}
+        })
     },
+    reset: () => {
+        dispatch({
+            type: ACTION.RESET,
+            payload: {}
+        })
+    }
 
 })
 

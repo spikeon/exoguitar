@@ -1,4 +1,4 @@
-import { Grid, Card, CardActionArea, CardMedia, CardContent, Typography } from "@mui/material";
+import { Grid,Typography } from "@mui/material";
 import accousticImage from "./images/accoustic.jpeg";
 import electricImage from "./images/electric.jpeg";
 import { useGeneratorStateActionsContext, useGeneratorStateContext } from "../../contexts/generatorState/context";
@@ -6,16 +6,27 @@ import { GuitarType } from "../../types/State";
 import GeneratorCard from "./GeneratorCard";
 import { Part } from "../../types/Parts";
 import { usePartsContext } from "../../contexts/parts/context";
+import SectionSelector from "./SectionSelector";
 
 const Step1 = () => {
 
     const {guitarType, facePlate, bridge} = useGeneratorStateContext();
-    const {setGuitarType, setFacePlate, setBridge} = useGeneratorStateActionsContext();
+    const {setGuitarType, setFacePlate, setBridge, setNeck, addExtra} = useGeneratorStateActionsContext();
 
-    const {sections} = usePartsContext();
+    const {parts} = usePartsContext();
+
+    const addRequiredParts = (part: Part) => {
+        if(!part.reqiredParts) return;
+        for(const rpName of part.reqiredParts){
+            const rp = parts.find((p) => p.name === rpName)
+            if(rp) addExtra(rp);
+        }
+    }
 
     const handleGuitarTypeAccoustic = () => {
         setGuitarType(GuitarType.ACCOUSTIC);
+        const face = parts.find((part) => part.name === "Acoustic");
+        if(face) setFacePlate( face );
     }
 
     const handleGuitarTypeElectric = () => {
@@ -23,10 +34,12 @@ const Step1 = () => {
     }
 
     const handleFacePlate = (facePlate: Part) => {
+        addRequiredParts(facePlate);
         setFacePlate(facePlate);
     }
 
     const handleBridge = (bridge: Part) => {
+        addRequiredParts(bridge);
         setBridge(bridge);
     }
 
@@ -50,63 +63,25 @@ const Step1 = () => {
                         image={electricImage}
                         title="Electric" />
                 </Grid>
-            </>) : (<>
-                <Grid size={12}>
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        Selected Guitar Type: {guitarType === GuitarType.ACCOUSTIC ? "Accoustic" : "Electric"}
-                    </Typography>
-                </Grid>
-            </>) }
-            { guitarType == GuitarType.ELECTRIC && (!facePlate ? (<>
-                <Grid size={12}>
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        Choose Face Plate:
-                    </Typography>
-                </Grid>
-                {sections.find((section) => section.name === "Face Plates")?.parts?.filter((part) => part.name !== "Acoustic").map((part, i) => (
-                    <Grid size={6}>
-                        <GeneratorCard
-                            onClick={() => handleFacePlate(part)}
-                            image={part.thumb}
-                            title={part.name} />
-                    </Grid>
-                ))}
-            </>) : (<>
-                <Grid size={12}>
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        Selected Face Plate: {facePlate.name}
-                    </Typography>
-                </Grid>
-            
-            </>)) }
-            { guitarType == GuitarType.ELECTRIC && (!bridge ? (<>
-                <Grid size={12}>
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        Choose Bridge:
-                    </Typography>
-                </Grid>
-                {sections.find((section) => section.name === "Bridge")?.parts?.map((part, i) => (
-                    <Grid size={6}>
-                        <GeneratorCard
-                            onClick={() => handleBridge(part)}
-                            image={part.thumb}
-                            title={part.name} />
-                    </Grid>
-                ))}
-
-            </>) : (<>
-                <Grid size={12}>
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        Selected Bridge: {bridge.name}
-                    </Typography>
-                </Grid>
-
-            </>)) }
-
-        
+            </>) : (
+                <Grid size={12}><Typography sx={{ mt: 2, mb: 1 }}>Selected Guitar Type: {guitarType === GuitarType.ACCOUSTIC ? "Accoustic" : "Electric"}</Typography></Grid>
+            ) }
+            { guitarType === GuitarType.ELECTRIC && (
+                <SectionSelector
+                    sectionName="Face Plates" 
+                    part={facePlate} 
+                    selectPart={handleFacePlate} 
+                    partFilter={(part: Part) => part.name !== "Acoustic" } />
+            )}
+            { guitarType === GuitarType.ELECTRIC && (
+                <SectionSelector
+                    sectionName="Bridge" 
+                    part={bridge} 
+                    selectPart={handleBridge} 
+                    partFilter={(part: Part) => true } />
+            )}
         </Grid>
     )
-
 }
 
 export default Step1;

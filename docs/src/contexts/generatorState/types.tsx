@@ -1,21 +1,16 @@
 import {Part, Section} from "../../types/Parts";
-import { GeneratorState, GuitarType } from "../../types/State";
+import { GeneratorState, GuitarType, NeckType } from "../../types/State";
 
 export enum ACTION {
     SET_GUITAR_TYPE,
-    UNSET_GUITAR_TYPE,
+    SET_NECK_TYPE,
     SET_NECK,
-    UNSET_NECK,
     SET_HEAD,
-    UNSET_HEAD,
     SET_WING_SET,
-    UNSET_WING_SET,
     SET_FACE_PLATE,
-    UNSET_FACE_PLATE,
     SET_BRIDGE,
-    UNSET_BRIDGE,
-    // ADD_EXTRA,
-    // REMOVE_EXTRA, 
+    ADD_EXTRA,
+    RESET
 }
 
 type SetGuitarTypeAction = {
@@ -25,9 +20,11 @@ type SetGuitarTypeAction = {
     }
 }
 
-type UnsetGuitarTypeAction = {
-    type: ACTION.UNSET_GUITAR_TYPE,
-    payload: {}
+type SetNeckTypeAction = {
+    type: ACTION.SET_NECK_TYPE,
+    payload: {
+        neckType: NeckType
+    }
 }
 
 type SetNeckAction = {
@@ -37,8 +34,8 @@ type SetNeckAction = {
     }
 }
 
-type UnsetNeckAction = {
-    type: ACTION.UNSET_NECK,
+type ResetAction = {
+    type: ACTION.RESET,
     payload: {}
 }
 
@@ -49,11 +46,6 @@ type SetHeadAction = {
     }
 }
 
-type UnsetHeadAction = {
-    type: ACTION.UNSET_HEAD,
-    payload: {}
-}
-
 type SetWingSetAction = {
     type: ACTION.SET_WING_SET,
     payload: {
@@ -61,9 +53,11 @@ type SetWingSetAction = {
     }
 }
 
-type UnsetWingSetAction = {
-    type: ACTION.UNSET_WING_SET,
-    payload: {}
+type AddExtraAction = {
+    type: ACTION.ADD_EXTRA;
+    payload: {
+        part: Part
+    }
 }
 
 type SetFacePlateAction = {
@@ -73,11 +67,6 @@ type SetFacePlateAction = {
     }
 }
 
-type UnsetFacePlateAction = {
-    type: ACTION.UNSET_FACE_PLATE,
-    payload: {}
-}
-
 type SetBridgeAction = {
     type: ACTION.SET_BRIDGE,
     payload: {
@@ -85,43 +74,26 @@ type SetBridgeAction = {
     }
 }
 
-type UnsetBridgeAction = {
-    type: ACTION.UNSET_BRIDGE,
-    payload: {}
-}
-
 
 export type GeneratorStateAction = 
     SetGuitarTypeAction |
-    UnsetGuitarTypeAction |
+    SetNeckTypeAction | 
     SetHeadAction | 
-    UnsetHeadAction | 
     SetNeckAction | 
-    UnsetNeckAction |
     SetWingSetAction |
-    UnsetWingSetAction |
     SetFacePlateAction | 
-    UnsetFacePlateAction | 
     SetBridgeAction |
-    UnsetBridgeAction;
+    AddExtraAction | 
+    ResetAction
 
 export type GeneratorStateActions = {
-
     setGuitarType: (guitarType: GuitarType) => void,
-    unsetGuitarType: () => void,
-
+    setNeckType: (neckType: NeckType) => void,
     setNeck: (neck: Part) => void,
-    unsetNeck: () => void,
-
     setHead: (head: Part) => void,
-    unsetHead: () => void,
-
     setWingSet: (wingSet: Part) => void,
-    unsetWingSet: () => void,
-
     setFacePlate: (facePlate: Part) => void,
-    unsetFacePlate: () => void,
-
     setBridge: (bridge: Part) => void,
-    unsetBridge: () => void,
+    addExtra: (part: Part) => void,
+    reset: () => void
 }

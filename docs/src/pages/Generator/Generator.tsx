@@ -2,26 +2,10 @@ import { Box, Stepper, Typography, Step, StepLabel, Button } from "@mui/material
 import React, { useMemo, useState } from "react";
 import Step1 from "./step1";
 import { useGeneratorStateContext, useGeneratorStateActionsContext } from "../../contexts/generatorState/context";
-import { GuitarType } from "../../types/State";
-
-    /*
-    Page 1: Guitar Type
-        - Accoustic or Electric
-        - Electric: 
-            - Which face plate
-            - Which Bridge
-    Page 2: Neck
-        - Wooden or Printed
-            - Wooden
-                - Offset
-            - Printed
-                - Which Neck
-                - Which Head
-    Page 3: Wing Set
-        - Choose Wing Set
-    
-
-    */
+import { GuitarType, NeckType } from "../../types/State";
+import Step2 from "./step2";
+import Step3 from "./step3";
+import Summary from "./summary";
 
 const steps = [
     "Guitar Type",
@@ -33,8 +17,8 @@ const Generator = () => {
     const [activeStep, setActiveStep] = useState(0);
     const [skipped, setSkipped] = useState(new Set<number>());
 
-    const {guitarType, bridge, facePlate, head, neck, wingSet} = useGeneratorStateContext();
-    const {unsetGuitarType, unsetBridge, unsetFacePlate, unsetHead, unsetNeck, unsetWingSet} = useGeneratorStateActionsContext();
+    const {guitarType, neckType, bridge, facePlate, head, neck, wingSet} = useGeneratorStateContext();
+    const {reset} = useGeneratorStateActionsContext();
 
 
     const isStepOptional = (step: number) => {
@@ -76,15 +60,7 @@ const Generator = () => {
     };
 
     const handleReset = () => {
-
-      unsetBridge();
-      unsetFacePlate();
-      unsetGuitarType();
-      unsetHead();
-      unsetNeck();
-      unsetFacePlate();
-      unsetWingSet();
-
+      reset();
       setActiveStep(0);
     };
 
@@ -92,14 +68,25 @@ const Generator = () => {
         switch (steps[activeStep]){
             case "Guitar Type": 
                 if(guitarType === undefined) return false;
-                if(guitarType == GuitarType.ACCOUSTIC) return true;
+                if(guitarType === GuitarType.ACCOUSTIC) return true;
                 else {
                     if(!facePlate) return false;
                     if(!bridge) return false;
                 }
+                break;
+            case "Neck":
+                if(neckType === undefined) return false;
+                if(neckType === NeckType.WOOD) return true; 
+                else{
+                    if(!neck) return false;
+                    if(!head) return false;
+                }
+                break;
+            case "Wing Set": 
+                if(!wingSet) return false;
         }
         return true;
-    }, [guitarType, bridge, facePlate, head, neck, wingSet])
+    }, [activeStep, neckType, guitarType, bridge, facePlate, head, neck, wingSet])
 
     return (
         <Box sx={{ width: '100%' }}>
@@ -126,26 +113,20 @@ const Generator = () => {
             </Stepper>
             {activeStep === steps.length ? (
                 <>
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        All steps completed - you&apos;re finished
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                        <Box sx={{ flex: '1 1 auto' }} />
-                        <Button onClick={handleReset}>Reset</Button>
-                    </Box>
+                    <Summary />
                 </>
             ) : (
                 <>
                     
                     <Box sx={{width: "100%", minHeight: "50vh"}}>
-                        { activeStep == 0 && (
+                        { activeStep === 0 && (
                             <Step1 />
                         )}
-                        { activeStep == 1 && (
-                            <></>
+                        { activeStep === 1 && (
+                            <Step2 />
                         )}
-                        { activeStep == 2 && (
-                            <></>
+                        { activeStep === 2 && (
+                            <Step3 />
                         )}
 
                     </Box>
