@@ -2,27 +2,18 @@ import { Grid, Typography } from "@mui/material";
 import { useGeneratorStateContext } from "../../contexts/generatorState/context";
 import PartCard from "../../components/PartCard";
 import { useMemo } from "react";
-import { Material } from "../../types/Materials";
 import BomGrid from "../../components/BomGrid";
+import { generateCombinedBOM } from "../../utils/BomUtils";
+import { Part } from "../../types/Parts";
 
 const Summary = () => {
 
     const {head, neck, facePlate, bridge, wingSet, extras} = useGeneratorStateContext();
 
-    const selectedParts = useMemo(() => [head, neck, facePlate, bridge, wingSet, ...extras], [head, neck, facePlate, bridge, wingSet, extras]);
+    const selectedParts: Part[] = useMemo(() : Part[] =>  [head, neck, facePlate, bridge, wingSet, ...extras].filter((p) => p !== undefined) as Part[], [head, neck, facePlate, bridge, wingSet, extras]);
     
     const bom = useMemo(() => {
-        const materials: Material[] = []
-        for(const selectedPart of selectedParts){
-            if(!selectedPart) continue;
-            if(!selectedPart.bom) continue;
-            for(const mat of selectedPart.bom){
-                const mid = materials.findIndex((m) => m.name === mat.name);
-                if(mid === -1) materials.push(mat);
-                else materials[mid].qty += mat.qty;
-            }
-        }
-        return materials;
+        return generateCombinedBOM(selectedParts);
     }, [selectedParts]);
 
     return (
