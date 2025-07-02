@@ -1,4 +1,4 @@
-import { Box, Stepper, Step, StepLabel, Button } from "@mui/material";
+import { Box, Stepper, Step, StepLabel, Button, Typography } from "@mui/material";
 import React, { ReactNode, useMemo, useState } from "react";
 import { useGeneratorStateContext} from "../../contexts/generatorState/context";
 import { GeneratorState, GuitarType, NeckType } from "../../types/State";
@@ -81,25 +81,32 @@ const Generator = () => {
     }, [steps, activeStep, generatorState])
 
     return (
-        <Box sx={{ width: '100%' }}>
-            <Stepper activeStep={activeStep}>
-                {steps.map(({name}, index) => {
-                    const stepProps: { completed?: boolean } = {};
-                    return (
-                        <Step key={name} {...stepProps}>
-                            <StepLabel>{name}</StepLabel>
-                        </Step>
-                    );
-                })}
-            </Stepper>
-            {activeStep === steps.length ? (
-                <Summary />
-            ) : (
-                <Box sx={{width: "100%"}}>
-                    {steps[activeStep].component}
-                </Box>
-            )}
-        </Box>
+        <>
+            <Box sx={{ width: '100%' }}>
+                <Typography variant="h4" align="center" sx={{mb: 10, mt:10}}>
+                    WARNING: THIS TOOL IS CURRENTLY UNDER ACTIVE DEVELOPMENT AND MAY NOT RETURN CORRECT VALUES.
+                </Typography>
+            </Box>
+            <Box sx={{ width: '100%' }}>
+                <Stepper activeStep={activeStep}>
+                    {steps.map(({name}, index) => {
+                        const stepProps: { completed?: boolean } = {};
+                        return (
+                            <Step key={name} {...stepProps}>
+                                <StepLabel>{name}</StepLabel>
+                            </Step>
+                        );
+                    })}
+                </Stepper>
+                {activeStep === steps.length ? (
+                    <Summary />
+                ) : (
+                    <Box sx={{width: "100%"}}>
+                        {steps[activeStep].component}
+                    </Box>
+                )}
+            </Box>
+        </>
     )
 }
 
