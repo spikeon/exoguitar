@@ -33,6 +33,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
+const rootPath = path.join(__dirname, '..');
 const modelsPath = path.join(__dirname, '..', 'models');
 const outputPath = path.join(__dirname, '..', 'docs', 'src', 'data');
 const imagesOutputPath = path.join(__dirname, '..', 'docs', 'src', 'images');
@@ -274,6 +275,19 @@ function main() {
         scanDirectory(sectionPath, section);
     }
     
+    // Update Readme.md
+    console.log('\n🚀 Generate new Readme...');    
+    const readmeTemplate = fs.readFileSync(path.join(rootPath,"README.template.md"));
+    var readmeLinksSection = "## Makerworld Links \n";
+    for(const section of sectionsFileData){
+        readmeLinksSection += `\n### ${section.name}\n\n`;
+        parts.filter((p) => p.section === section.name).forEach((part) => {
+            if(part.makerWorldUrl) readmeLinksSection += `- [${part.name}](${part.makerWorldUrl})\n`
+            else readmeLinksSection += `- ${part.name} - Coming soon to MakerWorld!\n`
+        })
+    }
+    const readme = readmeTemplate.toString().replace("[[GENERATED_MAKERWORLD_LINKS]]", readmeLinksSection);
+
     // Generate JSON files
     console.log('\n💾 Writing JSON files...');
     
@@ -301,6 +315,11 @@ function main() {
         path.join(outputPath, 'bom.json'),
         JSON.stringify(partsBOM, null, 2)
     );
+
+    fs.writeFileSync(
+        path.join(rootPath, "README.md"),
+        readme
+    )
     
     // Summary
     console.log(`\n✅ Generation complete!`);
