@@ -54,6 +54,7 @@ const Header = () => {
                 <nav>
                     <HeaderButton title="Generator" href="/generator" />
                     <HeaderButton title="Gallery" href="/gallery" />
+                    <HeaderButton title="Unified BOM" href="/bom" />
                 </nav>
 
             </StyledToolbar>
