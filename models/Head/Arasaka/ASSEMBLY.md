@@ -1,3 +1,12 @@
-# Assembly
+# Assembly - Arasaka Head
 
-The assembly for this file is the same as the [loop head](../Loop/ASSEMBLY.md)
+While the images may show the Loop Head, the assembly is the same for both of these heads. 
+
+## Step 1: Install Heat Set Inserts
+![](./exploded%20views/Step%201%20-%20Insert%20Heat%20Set%20Inserts.png)
+
+## Step 2: Install Adjustment Screws
+![](./exploded%20views/Step%202%20-%20Insert%20adjustment%20screws.png)
+
+# Step 3: Install Tuners
+![](./exploded%20views/Step%203%20-%20Install%20Tuners.png)
