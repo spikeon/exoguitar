@@ -1,1 +1,5 @@
-Qty     Name    Url
+Qty     Name    		Url
+1	Telecaster Plate	https://amzn.to/414uZAi
+8       M5 Slide In Nuts        https://amzn.to/3SYdIEF 
+8       M5x30 SHCS              https://amzn.to/3ZFyQDp
+5	M3x4x5 Heat Set Inserts	
