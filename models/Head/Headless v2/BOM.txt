@@ -1,0 +1,5 @@
+Qty	Name				Url
+8	M3x5x3 Heat Set Inserts		https://amzn.to/3IVU5Lx
+2	M3x16 Grub Screws		https://amzn.to/4lZ64GS
+1	BT3x6				https://us.store.bambulab.com/products/bt3-socket-head-cap-self-tapping-screws-shcs-new?id=42382271578248
+2	BT3x20				https://us.store.bambulab.com/products/bt3-socket-head-cap-self-tapping-screws-shcs-new?id=42382271807624
