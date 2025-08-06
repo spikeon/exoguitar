@@ -78,3 +78,27 @@ _if you choose to use lighting, make sure that these pieces were printed in a tr
 - Use a M5x10 BHCS Screw to secure that neck chunk to the 2020.
 - Repeat the last two steps for each screw hole in the sides of the fretboard.
 
+## Step 5: Shoulder
+
+### Step 5a: Insert Carbon Fiber Rods
+
+For each rectangular hole on the bottom of the shoulder:
+
+1. Put in a few drops of heavy CA glue
+2. Insert the Carbon Fiber Rod until it's all the way in (may take a few taps with a hammer) 
+3. cut off any sticking out.
+
+  I prefer to score the Carbon Fiber Rod all the way around with a box-cutter and then bend it until it snaps.
+
+  You may find it easier to use a hack-saw or a dremel.
+ 
+### Step 5b: Attach Shoulder to body 2020's
+
+- Insert 3 M5 slide in nuts into the front-facing channel of the left 2020, and 1 M5 Slide In nut into the inside face of the left 2020
+- Use M5/M6 (depending on 2020 hole size) screws to attach shoulder to the end of the body 2020 pieces
+- Use 3 M5x16 to affix the front of the left shoulder to the 3 M5 Slide In Nuts
+- Use 1 M5x10 to affix the inside of the left shoulder to the M5 Slide In Nut
+
+### Step 5c: Attach neck to Shoulder
+- Insert 4 M5 slide in nuts into the back of the Neck 2020
+- Using the rest of the M5 Screws, attach the Shoulder to the Neck.
