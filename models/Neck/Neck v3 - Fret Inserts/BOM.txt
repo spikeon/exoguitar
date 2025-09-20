@@ -2,11 +2,7 @@ Qty	Name					Url
 2	M3x500 Threaded Rod			https://amzn.to/4ohOlvJ 
 2	M3 Acorn Nuts				https://amzn.to/46xpwpl 
 2	M3x5x4 Heat Set Inserts			https://amzn.to/3IWuQJe 
-1	Carbon Fiber Neck Rod 3 x 6 x 450mm	https://amzn.to/4ohi7AS 
 1	Aluminum Extrusion 500mm		https://amzn.to/3IT8tnT 
 19	M5x10 BHCS				https://amzn.to/4frELCz 
-1	M5x14 BHCS				https://amzn.to/4mguYBu 
-1	M5x35 BHCS				https://amzn.to/4ohihZ0 
-1	M5x40 BHCS				https://amzn.to/40HlNSn 
-22	M5 Slide In Nuts			https://amzn.to/4oc8uDD 
+19	M5 Slide In Nuts			https://amzn.to/4oc8uDD 
 1	(Optional) Metal Frets 7in Radius	https://amzn.to/4l3akDL 
