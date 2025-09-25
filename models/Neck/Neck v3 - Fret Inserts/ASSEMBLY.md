@@ -7,7 +7,7 @@
 - Tap one end of the 2020 with M5 or M6 thread depending on your 2020's hole size
 
 ### Threaded Rods
-- Cut two pieces of M3 Threaded rod to 480mm
+- Cut two pieces of M3 Threaded rod to 488mm
 - Put a dot of Locktite on one end of the Threaded Rod and then screw one of the M3 Acorn Nuts onto that end until it's snug
 
 ### Metal Frets
