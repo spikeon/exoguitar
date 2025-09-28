@@ -1,3 +1,3 @@
 Qty     Name                Url
-2       Torsion Spring      https://us.store.bambulab.com/products/torsion-spring?id=42739256492168
 1       2in Nylon Strap     https://amzn.to/4nahPe9 
+2	M3x30 Steel Pin	
