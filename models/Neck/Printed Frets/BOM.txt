@@ -1,7 +1,0 @@
-Qty	Name				Url
-8	M5x6 BHCS			https://amzn.to/40ad3Di
-12	M5x10 BHCS			https://amzn.to/40t1uYX
-3	M5x16 BHCS			https://amzn.to/4iaxqrH
-20	M5 2020 Slide Nuts		https://amzn.to/40tPEOo
-1	500mm 2020 Aluminum Extrusion	https://amzn.to/40dqOAR
-20	Prewired SMD Led 0603		https://amzn.to/4g1B8SI
