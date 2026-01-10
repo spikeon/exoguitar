@@ -52,7 +52,7 @@ const Header = () => {
                 </NavLink>
                 
                 <nav>
-                    <HeaderButton title="Generator" href="/generator" />
+                    <HeaderButton title="Generator" href="/" />
                     <HeaderButton title="Gallery" href="/gallery" />
                     <HeaderButton title="Unified BOM" href="/bom" />
                 </nav>
