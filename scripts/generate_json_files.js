@@ -113,7 +113,7 @@ function addToUnifiedBOM(item) {
  * Copy images from part directories
  */
 function copyImages(partPath, section, partName) {
-    const imageDirs = ['exploded views', 'photos', 'gallery'];
+    const imageDirs = ['exploded views', 'photos', 'gallery', 'pictures', 'Photos'];
     
     for (const imageDir of imageDirs) {
         const sourcePath = path.join(partPath, imageDir);
