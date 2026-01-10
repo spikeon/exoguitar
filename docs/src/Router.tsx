@@ -6,8 +6,7 @@ import UnifiedBom from "./pages/UnifiedBom";
 
 const Router = () => (
     <Routes>
-        <Route index element={<Home />} />
-        <Route path="generator" element={<GeneratorPage />} />
+        <Route index element={<GeneratorPage />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="bom" element={<UnifiedBom />} />
     </Routes>
