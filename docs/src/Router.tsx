@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router";
-import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import GeneratorPage from "./pages/Generator";
 import UnifiedBom from "./pages/UnifiedBom";
