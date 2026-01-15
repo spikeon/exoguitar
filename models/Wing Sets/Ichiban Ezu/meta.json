@@ -1,3 +1,19 @@
 {
-    "makerWorldUrl": ""
+    "makerWorldUrl": "",
+    "extrusions" : {
+        "left" : {
+            "length" : 227,
+            "tapped" : {
+                "top" : true,
+                "bottom" : true
+            }
+        },
+        "right" : {
+            "length" : 184,
+            "tapped" : {
+                "top" : true,
+                "bottom" : true
+            }
+        }
+    } 
 }

@@ -51,28 +51,20 @@ function parseBOMFile(filePath) {
     
     try {
         const content = fs.readFileSync(filePath, 'utf8');
-        const lines = content.split('\n').filter(line => line.trim());
-        
-        for (const line of lines) {
-            // Skip empty lines and headers
-            if (!line.trim() || line.toLowerCase().includes('qty')) continue;
-            
-            // Parse tab-separated: qty \t name \t url
-            // Filter out empty parts caused by multiple tabs
-            const parts = line.split('\t').map(p => p.trim()).filter(p => p !== '');
-            
-            if (parts.length >= 2) {
-                const qty = parseInt(parts[0]);
-                if (!isNaN(qty)) {
-                    bomItems.push({
-                        qty: qty,
-                        name: parts[1],
-                        amazon_url: parts[2] && parts[2] !== '' ? parts[2] : '',
-                        optional: false
-                    });
-                }
-            }
+        const regex = /^(?<qty>\d{1,4})[\s\t]{2,100}(?<name>(?:\w\s?)+)[\s\t]{0,100}(?<link>[^\s\t]*)[\s\t]{0,100}$/gm
+
+        const matches = content.matchAll(regex);
+
+        for(let {groups:{qty, name, link}} of matches){
+            if(isNaN(qty)) continue;
+            bomItems.push({
+                qty,
+                name: name.trim(),
+                amazon_url: link,
+                optional: false
+            });
         }
+
     } catch (error) {
         console.warn(`Warning: Could not parse BOM file ${filePath}: ${error.message}`);
     }
@@ -85,14 +77,16 @@ function parseBOMFile(filePath) {
  * 
  * TODO: This needs logic so that items from the same group don't get counted more than once.  If one head needs 3 M3x5 screws and another head needs 5, then this should end up with 5 and not 8.
  */
-function addToUnifiedBOM(item) {
+function addToUnifiedBOM(item, directory) {
     // Normalize name for better aggregation
     const normalizedName = item.name
-        .replace(/s$/i, '')  // Remove trailing 's' for plurals
         .replace(/\s+/g, ' ')  // Normalize whitespace
-        .trim();
+        .trim()
+        .replace(/s$/i, '');  // Remove trailing 's' for plurals
     
     const key = normalizedName.toLowerCase();
+    
+    if(!partsBOM[directory]) partsBOM[directory] = {};
     
     if (unifiedBOM.has(key)) {
         const existing = unifiedBOM.get(key);
@@ -107,6 +101,22 @@ function addToUnifiedBOM(item) {
             name: normalizedName  // Use normalized name
         });
     }
+
+    if (partsBOM[directory][key]) {
+        const existing = partsBOM[directory][key];
+        existing.qty += item.qty;
+        // Keep URL if we don't have one
+        if (!existing.amazon_url && item.amazon_url) {
+            existing.amazon_url = item.amazon_url;
+        }
+        partsBOM[directory][key] = existing;
+    } else {
+        partsBOM[directory][key] = { 
+            ...item,
+            name: normalizedName  // Use normalized name
+        };
+    }
+
 }
 
 /**
@@ -155,6 +165,7 @@ function scanDirectory(dirPath, section) {
             
             const itemPath = path.join(dirPath, item);
             const stat = fs.statSync(itemPath);
+
             
             if (stat.isDirectory()) {
                 const bomPath = path.join(itemPath, 'BOM.txt');
@@ -196,32 +207,20 @@ function scanDirectory(dirPath, section) {
                     if (hasBOM) {
                         const bomItems = parseBOMFile(bomPath);
                         if (bomItems.length > 0) {
-                            partsBOM[partPath] = bomItems;
-                            
                             // Add to unified BOM
                             for (const bomItem of bomItems) {
-                                addToUnifiedBOM(bomItem);
+                                addToUnifiedBOM(bomItem, partPath);
                             }
                         }
-                        if(isWingSet){
-                            const bomItems = parseBOMFile(path.normalize(bomPath+"/.."))
-                            
-                            partsBOM[partPath] = [ ...(partsBOM[partPath]??[]), ...bomItems] || [];
-                            
-                            for(const bomItem of bomItems){
-                                addToUnifiedBOM(bomItem)
-                            }                            
-                        }
-                    } else if (isWingSet) {
+                    } 
+                    if (isWingSet) {
                         part.hasBOM = true;
                         part.hasAssembly = true;
 
-                        const bomItems = parseBOMFile(path.normalize(bomPath+"/.."))
-                        
-                        partsBOM[partPath] = bomItems || [];
+                        const bomItems = parseBOMFile(path.normalize(itemPath+"/../BOM.txt"))
                         
                         for(const bomItem of bomItems){
-                            addToUnifiedBOM(bomItem)
+                            addToUnifiedBOM(bomItem, partPath)
                         }
                     }
 
