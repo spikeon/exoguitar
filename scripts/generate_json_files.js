@@ -56,9 +56,8 @@ function parseBOMFile(filePath) {
         const matches = content.matchAll(regex);
 
         for(let {groups:{qty, name, link}} of matches){
-            if(isNaN(qty)) continue;
             bomItems.push({
-                qty,
+                qty: +qty,
                 name: name.trim(),
                 amazon_url: link,
                 optional: false
@@ -86,8 +85,6 @@ function addToUnifiedBOM(item, directory) {
     
     const key = normalizedName.toLowerCase();
     
-    if(!partsBOM[directory]) partsBOM[directory] = {};
-    
     if (unifiedBOM.has(key)) {
         const existing = unifiedBOM.get(key);
         existing.qty += item.qty;
@@ -102,19 +99,22 @@ function addToUnifiedBOM(item, directory) {
         });
     }
 
-    if (partsBOM[directory][key]) {
-        const existing = partsBOM[directory][key];
+    if(!partsBOM.hasOwnProperty(directory)) partsBOM[directory] = [];
+    const existingIndex = partsBOM[directory].findIndex((b) => b.name === normalizedName)
+    console.log("Found Index: ", existingIndex)
+    if(existingIndex != -1){
+        const existing = partsBOM[directory][existingIndex];
         existing.qty += item.qty;
         // Keep URL if we don't have one
         if (!existing.amazon_url && item.amazon_url) {
             existing.amazon_url = item.amazon_url;
         }
-        partsBOM[directory][key] = existing;
+        partsBOM[directory][existingIndex] = existing;
     } else {
-        partsBOM[directory][key] = { 
+        partsBOM[directory].push({
             ...item,
             name: normalizedName  // Use normalized name
-        };
+        });
     }
 
 }
