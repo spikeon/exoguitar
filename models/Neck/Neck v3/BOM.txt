@@ -5,4 +5,5 @@ Qty	Name					Url
 1	Aluminum Extrusion 500mm		https://amzn.to/3IT8tnT 
 19	M5x10 BHCS				https://amzn.to/4frELCz 
 19	M5 Slide In Nuts			https://amzn.to/4oc8uDD 
+26	10mm rubber bands			https://amzn.to/4pf6Txq
 1	(Optional) Metal Frets 7in Radius	https://amzn.to/4l3akDL 
