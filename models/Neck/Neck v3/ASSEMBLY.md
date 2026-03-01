@@ -34,7 +34,7 @@ It will help to organize your pieces so that you have them grouped by number.  F
 Now put the rest of the pieces on the M3 threaded rods in this order: 
 
 1. Fret Insert, number facing up
-2. 10mm Bubber Band, stretched around both M3 Threaded Rods, 
+2. 10mm Rubber Band, stretched around both M3 Threaded Rods, 
 3. Fret Chunk, flat side facing up
 4. Repeat until all frets are on the M3 Threaded Rods.
 
