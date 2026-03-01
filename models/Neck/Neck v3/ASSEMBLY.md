@@ -29,7 +29,7 @@ Starting with the very bottom fret chunk (the one that has two recesses in it fo
 
 ### Step 2b: All the rest of them
 
-It will help to organize your pieces so that you have them grouped by number.  Fret Insert, TPU pad, and Fret Chunk. 
+It will help to organize your pieces so that you have them grouped by number.  Fret Insert, rubber band, and Fret Chunk. 
 
 Now put the rest of the pieces on the M3 threaded rods in this order: 
 
