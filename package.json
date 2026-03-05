@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest",
+    "check-links": "node ./scripts/check_links.js",
     "check-missing-docs": "node ./scripts/check_missing_docs.js",
     "format-bom-columns": "node ./scripts/format_bom_columns.js",
     "generate-json-files": "node ./scripts/generate_json_files.js",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/spikeon/exoguitar#readme",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "markdown-link-check": "^3.11.2"
   }
 }

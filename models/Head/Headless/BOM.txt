@@ -1,6 +1,6 @@
-Qty   Name                     Url                      Optional
-   8  M3x4x4 Heat Set Inserts  https://amzn.to/4gSAk3M  false
-   3  M5x6 Button Head Screw   https://amzn.to/4jeqLxq  false
-   1  M5x12 Button Head Screw  https://amzn.to/4jeqLxq  false
-   3  M5 Slide In Nut          https://amzn.to/40tPEOo  false
-   2  M3x25 Socket Head Screw  https://amzn.to/4jePKRd  false
+Qty   Name                         Url                      Optional
+   8  M3x4x4 Heat Set Inserts      https://amzn.to/4gSAk3M  false
+   3  Screw - Button Head - M5x6   https://amzn.to/4jeqLxq  false
+   1  Screw - Button Head - M5x12  https://amzn.to/4jeqLxq  false
+   3  Nut - Slide In - M5          https://amzn.to/40tPEOo  false
+   2  Screw - Socket Head - M3x25  https://amzn.to/4jePKRd  false

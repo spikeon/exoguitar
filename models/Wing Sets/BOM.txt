@@ -1,7 +1,7 @@
 Qty   Name                                 Url                      Optional
-  12  M5x10 Button Head Screw              https://amzn.to/41DhzuH  false
-  12  M5 Slide In Nuts                     https://amzn.to/4ie0m23  false
+  12  Screw - Button Head - M5x10          https://amzn.to/41DhzuH  false
+  12  Nut - Slide In - M5                  https://amzn.to/4ie0m23  false
    2  M3x4.8x4.6 Flanged Heat Set Inserts  https://amzn.to/4kOFT5J  false
-  10  M3x10 Flat Head Screw                https://amzn.to/4iCkiM0  false
-  10  M3x20 Flat Head Screw                https://amzn.to/4bVan1y  false
+  10  Screw - Flat Head - M3x10            https://amzn.to/4iCkiM0  false
+  10  Screw - Flat Head - M3x20            https://amzn.to/4bVan1y  false
   20  M3x4x5 Heat Set Inserts              https://amzn.to/4kBjzwc  false

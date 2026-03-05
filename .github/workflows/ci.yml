@@ -17,6 +17,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm test
+      - run: npm run check-links
       - run: npm run generate-json-files
       - name: Install docs dependencies
         run: npm ci

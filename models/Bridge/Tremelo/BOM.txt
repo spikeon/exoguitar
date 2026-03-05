@@ -1,8 +1,8 @@
-Qty   Name                     Url                      Optional
-   4  M5x16 Socket Head Screw  https://amzn.to/42s4kyt  false
-   4  M5x30 Socket Head Screw  https://amzn.to/3R20buE  false
-   8  M5 Slide In Nuts         https://amzn.to/4hYYDg9  false
-   2  M8 Heat Set Inserts      https://amzn.to/3DUSEuV  false
-   4  M3x4x5 Heat Set Inserts  https://amzn.to/3YknHHd  false
-   1  Tremolo Tailpiece        https://amzn.to/42tQiMK  false
-   1  Tune O' Matic Saddle     https://amzn.to/4cgSWJ0  false
+Qty   Name                         Url                      Optional
+   4  Screw - Socket Head - M5x16  https://amzn.to/42s4kyt  false
+   4  Screw - Socket Head - M5x30  https://amzn.to/3R20buE  false
+   8  Nut - Slide In - M5          https://amzn.to/4hYYDg9  false
+   2  M8 Heat Set Inserts          https://amzn.to/3DUSEuV  false
+   4  M3x4x5 Heat Set Inserts      https://amzn.to/3YknHHd  false
+   1  Tremolo Tailpiece            https://amzn.to/42tQiMK  false
+   1  Tune O' Matic Saddle         https://amzn.to/4cgSWJ0  false

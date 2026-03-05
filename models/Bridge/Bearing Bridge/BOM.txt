@@ -1,11 +1,11 @@
-Qty   Name                     Url                      Optional
-   2  M4x6x6 Heat Set Inserts  https://amzn.to/3WdVVLz  false
-   5  M3x4x5 Heat Set Inserts  https://amzn.to/4jk12nw  false
-   5  M3x35 Socket Head Screw  https://amzn.to/3C4CAFL  false
-   2  M4x35 Socket Head Screw  https://amzn.to/3DOC3s2  false
-   5  M3x20 Socket Head Screw  https://amzn.to/4gSbS2j  false
-   6  M3x8 Grub Screw          https://amzn.to/4hqwGht  false
-   6  3x10x3 V-Bearing         https://amzn.to/4fW4pOq  false
-   6  M3x4x5 Heat Set Insert   https://amzn.to/4jk12nw  false
-   6  M3x35 Button Head Screw  https://amzn.to/4a9PA9D  false
-   1  Super Lube               https://amzn.to/3WeCouC  false
+Qty   Name                         Url                      Optional
+   2  M4x6x6 Heat Set Inserts      https://amzn.to/3WdVVLz  false
+   5  M3x4x5 Heat Set Inserts      https://amzn.to/4jk12nw  false
+   5  Screw - Socket Head - M3x35  https://amzn.to/3C4CAFL  false
+   2  Screw - Socket Head - M4x35  https://amzn.to/3DOC3s2  false
+   5  Screw - Socket Head - M3x20  https://amzn.to/4gSbS2j  false
+   6  Screw - Grub - M3x8          https://amzn.to/4hqwGht  false
+   6  3x10x3 V-Bearing             https://amzn.to/4fW4pOq  false
+   6  M3x4x5 Heat Set Insert       https://amzn.to/4jk12nw  false
+   6  Screw - Button Head - M3x35  https://amzn.to/4a9PA9D  false
+   1  Super Lube                   https://amzn.to/3WeCouC  false

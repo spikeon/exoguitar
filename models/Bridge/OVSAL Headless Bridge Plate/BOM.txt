@@ -1,6 +1,6 @@
-Qty   Name                     Url                      Optional
-   1  OVSAL Headless Bridge    https://amzn.to/4navL8k  false
-   4  M5 Slide In Nuts         https://amzn.to/3SYdIEF  false
-   4  M5x30 Socket Head Screw  https://amzn.to/3ZFyQDp  false
-   4  M3x16 Flat Head Screw    https://amzn.to/3T1fKnm  false
-   4  M3x4x5 Heat Set Inserts  https://amzn.to/45smyBY  false
+Qty   Name                         Url                      Optional
+   1  OVSAL Headless Bridge        https://amzn.to/4navL8k  false
+   4  Nut - Slide In - M5          https://amzn.to/3SYdIEF  false
+   4  Screw - Socket Head - M5x30  https://amzn.to/3ZFyQDp  false
+   4  Screw - Flat Head - M3x16    https://amzn.to/3T1fKnm  false
+   4  M3x4x5 Heat Set Inserts      https://amzn.to/45smyBY  false

@@ -27,7 +27,7 @@
 - **BOM.md:** Fret Wire Bender points to `./models/Neck/tools/Fret%20Bender/ASSEMBLY.md`. If the path is `models/Neck/Tools/` (capital T) or the Fret Bender folder is missing, this link will 404.
 
 ### External links
-- **Not checked.** All MakerWorld, Amazon (amzn.to), OnShape, Etsy, and other external URLs were left as-is. Consider running a link checker (e.g. markdown-link-check) periodically for dead external links.
+- **markdown-link-check** is now in CI (`npm run check-links`). Relative paths (`/`, `./`), amzn.to, makerworld.com, etsy.com, and localhost are ignored so CI passes; external links that are checked may still report 403/404 (e.g. some MakerWorld pages).
 
 ### Readability / style (optional)
 - **README.md:** "Makerworld" vs "MakerWorld" – heading says "Makerworld Links"; elsewhere "MakerWorld" is used. Unify if desired.
@@ -42,4 +42,4 @@
 
 ## Recommendation
 - Re-run this audit after major repo structure changes (e.g. renaming `Neck` subfolders or adding Fret Bender).
-- Add a pre-commit or CI step for markdown link checking if you want to catch broken links automatically.
+- CI now runs `npm run check-links` (markdown-link-check with `.markdown-link-check.json`).

@@ -1,5 +1,5 @@
-Qty   Name                     Url                      Optional
-   3  M3x5x4 Heat Set Inserts  https://amzn.to/4qBGwBF  false
-   1  6L Tuning Pegs           https://amzn.to/3N1Ocyq  false
-   1  M6x20 Socket Head Screw  https://amzn.to/4qxr8Gc  false
-   2  M3x16 Grub Screw         https://amzn.to/491vPSP  false
+Qty   Name                         Url                      Optional
+   3  M3x5x4 Heat Set Inserts      https://amzn.to/4qBGwBF  false
+   1  6L Tuning Pegs               https://amzn.to/3N1Ocyq  false
+   1  Screw - Socket Head - M6x20  https://amzn.to/4qxr8Gc  false
+   2  Screw - Grub - M3x16         https://amzn.to/491vPSP  false

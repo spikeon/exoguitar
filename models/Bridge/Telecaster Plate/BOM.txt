@@ -1,5 +1,5 @@
-Qty   Name                     Url                      Optional
-   1  Telecaster Plate         https://amzn.to/414uZAi  false
-   8  M5 Slide In Nuts         https://amzn.to/3SYdIEF  false
-   8  M5x30 Socket Head Screw  https://amzn.to/3ZFyQDp  false
-   5  M3x4x5 Heat Set Inserts                           false
+Qty   Name                         Url                      Optional
+   1  Telecaster Plate             https://amzn.to/414uZAi  false
+   8  Nut - Slide In - M5          https://amzn.to/3SYdIEF  false
+   8  Screw - Socket Head - M5x30  https://amzn.to/3ZFyQDp  false
+   5  M3x4x5 Heat Set Inserts                               false

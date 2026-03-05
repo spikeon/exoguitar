@@ -1,6 +1,6 @@
-Qty   Name                     Url         Optional
-   7  M5 Slide In Nuts                     false
-   4  M5x35 Socket Head Screw              false
-   3  M5x16 Socket Head Screw              false
-   2  M6x20 Button Head Screw              false
-   1  3x6 Carbon Fiber Bar                 false
+Qty   Name                         Url         Optional
+   7  Nut - Slide In - M5                      false
+   4  Screw - Socket Head - M5x35              false
+   3  Screw - Socket Head - M5x16              false
+   2  Screw - Button Head - M6x20              false
+   1  3x6 Carbon Fiber Bar                     false

@@ -1,10 +1,10 @@
 Qty   Name                          Url                      Optional
   10  M3x4x4 Heat Set Inserts       https://amzn.to/4gSAk3M  false
-   2  M5x12 Button Head Screw       https://amzn.to/4jeqLxq  false
-   1  M5x45 Socket Head Screw       https://amzn.to/4akIBuH  false
-   2  M5 Slide In Nut               https://amzn.to/40tPEOo  false
-   8  M3x25 Socket Head Screw       https://amzn.to/4jePKRd  false
-   6  M2x20 Socket Head Screw       https://amzn.to/4ij7Lgc  false
+   2  Screw - Button Head - M5x12   https://amzn.to/4jeqLxq  false
+   1  Screw - Socket Head - M5x45   https://amzn.to/4akIBuH  false
+   2  Nut - Slide In - M5           https://amzn.to/40tPEOo  false
+   8  Screw - Socket Head - M3x25   https://amzn.to/4jePKRd  false
+   6  Screw - Socket Head - M2x20   https://amzn.to/4ij7Lgc  false
    6  M3 Washer                     https://amzn.to/3ETb4fq  false
   12  MR128ZZ Bearings              https://amzn.to/4kudK3t  false
    6  2mmx6mmx8mm Nylon Worm Gears  https://amzn.to/4hxKhD5  false

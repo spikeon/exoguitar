@@ -12,7 +12,7 @@ I have now tested this with several types of plastic and can say for certain tha
 
 I would still say that you need to be careful regarding the placement of the guitar in relation to the sun if you choose to use PLA Tough or PETG of any form.  
 
-I have had very good results using PLA Tough for the gears.  I did NOT have good results using regular PLA for the gears.  Specifically, I recommend PLA that was made from 3DC870 Resin like (3D Fuel Tough PLA+)[https://amzn.to/43JGNtU] for it's specific mechanical properties (Special shout out to @nte on the West3D Discord for this).
+I have had very good results using PLA Tough for the gears.  I did NOT have good results using regular PLA for the gears.  Specifically, I recommend PLA that was made from 3DC870 Resin like [3D Fuel Tough PLA+](https://amzn.to/43JGNtU) for its specific mechanical properties (Special shout out to @nte on the West3D Discord for this).
 
 ## To use: 
 

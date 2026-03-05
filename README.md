@@ -65,7 +65,6 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 ### Neck
 
 - Neck v3 - Coming soon to MakerWorld!
-- Sanding Jig - Coming soon to MakerWorld!
 
 ### Nut
 

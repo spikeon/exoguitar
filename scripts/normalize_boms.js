@@ -23,6 +23,39 @@ function transformLine(line) {
   name = name.replace(/\bBHCS\b/g, 'Button Head Screw');
   name = name.replace(/\bSHCS\b/g, 'Socket Head Screw');
 
+  // Rename screw/nut hardware to: [Nut|Screw] - ([Type] -)? M[diameter](x[length])?
+  const nutMatch = name.match(/^M(\d+(?:\.\d+)?)\s+(.*?)\s*Nut(s)?\s*$/i);
+  if (nutMatch) {
+    const diam = nutMatch[1];
+    const type = nutMatch[2].trim().replace(/\s*-\s*$/, ''); // e.g. "T-" -> "T"
+    if (/^Slide\s+In$/i.test(type)) name = `Nut - Slide In - M${diam}`;
+    else if (/^Acorn$/i.test(type)) name = `Nut - Acorn - M${diam}`;
+    else if (/^T$/i.test(type) || /^T-?Nuts?$/i.test(type)) name = `Nut - Slide In - M${diam}`;
+    else if (!type || /^M\d+$/i.test(type)) name = `Nut - M${diam}`;
+    else name = `Nut - ${type} - M${diam}`;
+  } else {
+    const screwMatch = name.match(/^M(\d+(?:\.\d+)?)x?(\d*)\s+(.*?)\s+Screw(s)?\s*$/i);
+    if (screwMatch) {
+      const diam = screwMatch[1];
+      const len = screwMatch[2];
+      const type = screwMatch[3].trim();
+      const size = len ? `M${diam}x${len}` : `M${diam}`;
+      const typeMap = {
+        'Button Head': 'Button Head',
+        'Flat Head': 'Flat Head',
+        'Socket Head': 'Socket Head',
+        'Grub': 'Grub',
+        'Set': 'Set',
+        'Nylon Tipped Set': 'Nylon Tipped Set',
+      };
+      const t = typeMap[type] || type;
+      name = t ? `Screw - ${t} - ${size}` : `Screw - ${size}`;
+    }
+  }
+
+  // T-nuts are slide-in nuts; fix if already in "Nut - T - M..." form
+  if (/^Nut - T - M\d+/.test(name)) name = name.replace(/^Nut - T - /, 'Nut - Slide In - ');
+
   return `${qtyAndSpace}${name}${urlPart}`.trimEnd();
 }
 

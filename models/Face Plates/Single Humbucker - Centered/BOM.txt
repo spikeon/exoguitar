@@ -1,4 +1,4 @@
-Qty   Name                     Url                      Optional
-   4  M5 Slide In Nuts         https://amzn.to/4ie0m23  false
-   4  M5x30 Button Head Screw                           false
-   1  Electronics Kit                                   false
+Qty   Name                         Url                      Optional
+   4  Nut - Slide In - M5          https://amzn.to/4ie0m23  false
+   4  Screw - Button Head - M5x30                           false
+   1  Electronics Kit                                       false

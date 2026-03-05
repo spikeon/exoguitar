@@ -1,4 +1,4 @@
-Qty   Name                     Url                      Optional
-   6  M5 Slide In Nuts         https://amzn.to/3SYdIEF  false
-   6  M5x30 Socket Head Screw  https://amzn.to/3ZFyQDp  false
-   4  M8 Heat Set Inserts      https://amzn.to/3TV07yg  false
+Qty   Name                         Url                      Optional
+   6  Nut - Slide In - M5          https://amzn.to/3SYdIEF  false
+   6  Screw - Socket Head - M5x30  https://amzn.to/3ZFyQDp  false
+   4  M8 Heat Set Inserts          https://amzn.to/3TV07yg  false

@@ -1,13 +1,13 @@
 Qty   Name                             Url                      Optional
    1  2020 Aluminum Extrusion - 250mm  https://amzn.to/4ig9fHU  false
    1  2020 Aluminum Extrusion - 200mm  https://amzn.to/4iloM9A  false
-   8  M3 Slide In Nut                  https://amzn.to/4i9GfBE  false
-   7  M5 Slide In Nut                  https://amzn.to/40tPEOo  false
-   3  M5x8 Button Head Screw           https://amzn.to/4bmHoDI  false
-   6  M5x30 Button Head Screw          https://amzn.to/3D6UoRf  false
-   3  M3x8 Button Head Screw           https://amzn.to/4hWLhlj  false
+   8  Nut - Slide In - M3              https://amzn.to/4i9GfBE  false
+   7  Nut - Slide In - M5              https://amzn.to/40tPEOo  false
+   3  Screw - Button Head - M5x8       https://amzn.to/4bmHoDI  false
+   6  Screw - Button Head - M5x30      https://amzn.to/3D6UoRf  false
+   3  Screw - Button Head - M3x8       https://amzn.to/4hWLhlj  false
    6  M3x5x4 Heat Set Inserts          https://amzn.to/4jk12nw  false
-   2  M3x8 Grub Screws                 https://amzn.to/3QIKW9T  false
+   2  Screw - Grub - M3x8              https://amzn.to/3QIKW9T  false
    1  Nylon Strings                    https://amzn.to/3XgaFKf  false
    1  Piezo Pickups                    https://amzn.to/3Xm2SKZ  true
-   8  M3x5 Flat Head Screw             https://amzn.to/43XTCzx  false
+   8  Screw - Flat Head - M3x5         https://amzn.to/43XTCzx  false

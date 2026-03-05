@@ -8,32 +8,32 @@ For simplicity, This list only contains suggested hardware.  I will list recomme
 
 ## Materials
 
-| Qty | Name | 
+| Qty | Name |
 | :-- | :--- |
-| 20  | M2x6 SHCS |
-| 6	  | M2x16 SHCS |
-| 6	  | M3 Washer |
-| 8   | M3x8 Grub Screw |
-| 8   | M3x6 FHCS |
-| 10  | M3x10 FHSC |
-| 10  | M3x20 FHCS |
-| 6   | M3x25 FHCS |
-| 6   | M3x8 BHCS | 
-| 11  | M3x35 BHCS |
-| 6	  | M3x10 SHCS |
-| 5   | M3x20 SHCS |
-| 8	  | M3x25 SHCS |
-| 12  | M3x40 SHCS |
-| 2   | M4x35 SHCS |
-| 11  |	M5x6 BHCS |
-| 6   | M5x8 BHCS |
-| 26  | M5x10 BHCS | 
-| 4	  | M5x12 BHCS |
-| 17  | M5x30 BHCS | 
-| 1	  | M5x45 SHCS |	        
-| 2	  | M6x12 BHCS |
-| 24  | M3 Slide In Nuts |
-| 60  | M5 Slide In Nuts |
+| 20  | Screw - Socket Head - M2x6 |
+| 6   | Screw - Socket Head - M2x16 |
+| 6   | M3 Washer |
+| 8   | Screw - Grub - M3x8 |
+| 8   | Screw - Flat Head - M3x6 |
+| 10  | Screw - Flat Head - M3x10 |
+| 10  | Screw - Flat Head - M3x20 |
+| 6   | Screw - Flat Head - M3x25 |
+| 6   | Screw - Button Head - M3x8 |
+| 11  | Screw - Button Head - M3x35 |
+| 6   | Screw - Socket Head - M3x10 |
+| 5   | Screw - Socket Head - M3x20 |
+| 8   | Screw - Socket Head - M3x25 |
+| 12  | Screw - Socket Head - M3x40 |
+| 2   | Screw - Socket Head - M4x35 |
+| 11  | Screw - Button Head - M5x6 |
+| 6   | Screw - Button Head - M5x8 |
+| 26  | Screw - Button Head - M5x10 |
+| 4   | Screw - Button Head - M5x12 |
+| 17  | Screw - Button Head - M5x30 |
+| 1   | Screw - Socket Head - M5x45 |
+| 2   | Screw - Button Head - M6x12 |
+| 24  | Nut - Slide In - M3 |
+| 60  | Nut - Slide In - M5 |
 | 26  | M2x3x3.5 Heat Set Inserts | 
 | 2   | M3x4.8x4.6 Flanged Heat Set Inserts |
 | 12  | M3x4x4 Heat Set Inserts |
@@ -55,7 +55,7 @@ For simplicity, This list only contains suggested hardware.  I will list recomme
 | 1	  | Super Lube |
 | 1   | Locktite Red | 
 | 1   | 1m Wire,  24AWG |
-| 14  | M3x14 Nylon Tipped Hex Set Screw |
+| 14  | Screw - Nylon Tipped Set - M3x14 |
 
 ## Links
 
@@ -75,18 +75,18 @@ For this list, QTY is the number of the linked product to buy, not the number of
 | 1   | M3x4x4 Heat Set Inserts | [Amazon](https://amzn.to/4i5ozHH) | 100 | $7.99 | $0.73 |
 | 1   | M3x4x5 Heat Set Inserts | [Amazon](https://amzn.to/4kBjzwc) | 130 | $6.97 | $2.62 |
 | 1   | M4x6x6 Heat Set Inserts | [Amazon](https://amzn.to/3WdVVLz) | 110 | $7.99 | $0.58 |
-| 1   | M5 Slide-In Nuts | [Amazon](https://amzn.to/4ie0m23) | 100 | $14.59 | $3.50 |
-| 1   | M3 Slide In Nuts | [Amazon](https://amzn.to/3DQQRa3) | 100 | $11.99 | $7.20 |
-| 1   | M2x16 SHCS | [Amazon](https://amzn.to/4ij7Lgc) | 100 | $7.16 | $0.42 |
-| 1   | M3x8 Grub Screws | [Amazon](https://amzn.to/4hqwGht) | 40 | $6.19 | $1.25 |
+| 1   | Nut - Slide In - M5 | [Amazon](https://amzn.to/4ie0m23) | 100 | $14.59 | $3.50 |
+| 1   | Nut - Slide In - M3 | [Amazon](https://amzn.to/3DQQRa3) | 100 | $11.99 | $7.20 |
+| 1   | Screw - Socket Head - M2x16 | [Amazon](https://amzn.to/4ij7Lgc) | 100 | $7.16 | $0.42 |
+| 1   | Screw - Grub - M3x8 | [Amazon](https://amzn.to/4hqwGht) | 40 | $6.19 | $1.25 |
 | 1   | M3 SHCS 6-35 Pack | [Amazon](https://amzn.to/3DBNML3) | N/A | $12.99 | $6.50 |
 | 1   | M3 FHCS 4-40 Pack | [Amazon](https://amzn.to/3FM6DDw) | N/A| $18.70 | $9.35 |
-| 1   | M4x35 SHCS | [Amazon](https://amzn.to/3DOC3s2) | 50 | $7.68 | $0.30 |
-| 1   | M5x6 BHCS | [Amazon](https://amzn.to/3FyT36q) | 100 | $8.68 | $0.95 |
-| 1   | M5x8 BHCS | [Amazon](https://amzn.to/42eKKFG) | 100 | $9.68 | $0.58 |
-| 1   | M5x10 BHCS | [Amazon](https://amzn.to/41DhzuH) | 100 | $9.96 | $2.60 |
-| 1   | M5x30 BHCS | [Amazon](https://amzn.to/41upYjY) | 50 | $9.02 | $3.06 |
-| 1   | M5x45 SHCS | [Amazon](https://amzn.to/4akIBuH) | 20 | $9.49 | $0.47 |
+| 1   | Screw - Socket Head - M4x35 | [Amazon](https://amzn.to/3DOC3s2) | 50 | $7.68 | $0.30 |
+| 1   | Screw - Button Head - M5x6 | [Amazon](https://amzn.to/3FyT36q) | 100 | $8.68 | $0.95 |
+| 1   | Screw - Button Head - M5x8 | [Amazon](https://amzn.to/42eKKFG) | 100 | $9.68 | $0.58 |
+| 1   | Screw - Button Head - M5x10 | [Amazon](https://amzn.to/41DhzuH) | 100 | $9.96 | $2.60 |
+| 1   | Screw - Button Head - M5x30 | [Amazon](https://amzn.to/41upYjY) | 50 | $9.02 | $3.06 |
+| 1   | Screw - Socket Head - M5x45 | [Amazon](https://amzn.to/4akIBuH) | 20 | $9.49 | $0.47 |
 | 1   | 3x10x3mm V-Bearings | [Amazon](https://amzn.to/4fW4pOq) | 10 | $9.09 | $5.45 |
 | 1   | MR128ZZ Bearings | [Amazon](https://amzn.to/3FPtVIE) | 20 | $14.40 | $8.64 |
 | 1   | Fret Wire Set | [Amazon](https://amzn.to/4abYcNa) | 1 | $17.49 | $17.49 |
@@ -98,7 +98,7 @@ For this list, QTY is the number of the linked product to buy, not the number of
 | 1   | Jumper Wire | [Amazon](https://amzn.to/40c2IXh) | 560 | $9.99 | $0.05 |
 | 1   | Locktite Red | [Amazon](https://amzn.to/4iA8NEI) | 100 | $23.20 | $0.23 |
 | 1   | Wire | [Amazon](https://amzn.to/41UZiZN) | 91.44 | $26.99 | $0.30 |
-| 1   | M3x14 Nylon Tipped Hex Set Screw | [Amazon](https://amzn.to/4ecwIJk) | 15 | $8.49 | $0.85 |
+| 1   | Screw - Nylon Tipped Set - M3x14 | [Amazon](https://amzn.to/4ecwIJk) | 15 | $8.49 | $0.85 |
 
 #### Totals: 
 

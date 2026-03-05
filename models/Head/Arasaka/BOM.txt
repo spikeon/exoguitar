@@ -1,6 +1,6 @@
-Qty   Name                          Url                      Optional
-   2  M3x4x5 Heat Set Inserts                                false
-   1  3L3R Tuning Pegs              https://amzn.to/3Whyrp0  false
-   1  M5x20 Socket Head Screw                                false
-   2  M3x14 Nylon Tipped Set Screw                           false
-   1  3mm COB LED lights            https://amzn.to/4kBaCBK  true
+Qty   Name                              Url                      Optional
+   2  M3x4x5 Heat Set Inserts                                    false
+   1  3L3R Tuning Pegs                  https://amzn.to/3Whyrp0  false
+   1  Screw - Socket Head - M5x20                                false
+   2  Screw - Nylon Tipped Set - M3x14                           false
+   1  3mm COB LED lights                https://amzn.to/4kBaCBK  true

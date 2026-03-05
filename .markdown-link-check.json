@@ -1,0 +1,14 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^https://amzn\\.to/" },
+    { "pattern": "^file:" },
+    { "pattern": "^mailto:" },
+    { "pattern": "^http://localhost" },
+    { "pattern": "^https://makerworld\\.com/" },
+    { "pattern": "^https://www\\.etsy\\.com/" },
+    { "pattern": "^/" },
+    { "pattern": "^\\./" }
+  ],
+  "timeout": "10s",
+  "aliveStatusCodes": [200, 206, 403, 999]
+}

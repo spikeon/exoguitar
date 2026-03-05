@@ -1,9 +1,9 @@
-Qty   Name                      Url                      Optional
-   2  M3x500 Threaded Rod       https://amzn.to/4ohOlvJ  false
-   2  M3 Acorn Nuts             https://amzn.to/46xpwpl  false
-   2  M3x5x4 Heat Set Inserts   https://amzn.to/3IWuQJe  false
-   1  Aluminum Extrusion 500mm  https://amzn.to/3IT8tnT  false
-  19  M5x10 Button Head Screw   https://amzn.to/4frELCz  false
-  19  M5 Slide In Nuts          https://amzn.to/4oc8uDD  false
-  26  10mm rubber bands         https://amzn.to/4pf6Txq  false
-   1  Metal Frets 7in Radius    https://amzn.to/4l3akDL  true
+Qty   Name                         Url                      Optional
+   2  M3x500 Threaded Rod          https://amzn.to/4ohOlvJ  false
+   2  Nut - Acorn - M3             https://amzn.to/46xpwpl  false
+   2  M3x5x4 Heat Set Inserts      https://amzn.to/3IWuQJe  false
+   1  Aluminum Extrusion 500mm     https://amzn.to/3IT8tnT  false
+  19  Screw - Button Head - M5x10  https://amzn.to/4frELCz  false
+  19  Nut - Slide In - M5          https://amzn.to/4oc8uDD  false
+  26  10mm rubber bands            https://amzn.to/4pf6Txq  false
+   1  Metal Frets 7in Radius       https://amzn.to/4l3akDL  true
