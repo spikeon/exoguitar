@@ -8,11 +8,14 @@ type PartCardProps = {
     onClick: () => void
 }
 const PartCard = ({part, onClick}:PartCardProps) => {
+    const imageSrc = part?.thumb
+        ? `${process.env.PUBLIC_URL || ""}/${part.thumb.replace(/\\/g, "/")}`
+        : placeholderImage;
 
     return (
         <GeneratorCard
             onClick={onClick}
-            image={part?.thumb || placeholderImage}
+            image={imageSrc}
             title={part?.name ?? ""} />        
     )
 }

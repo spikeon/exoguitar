@@ -23,7 +23,8 @@ const Gallery = () => {
                     </Typography>
                     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5 }}>
                         {(part.images ?? []).map((relPath) => {
-                            const src = `/${relPath.replace(/\\/g, "/")}`
+                            const normalized = relPath.replace(/\\/g, "/");
+                            const src = `${process.env.PUBLIC_URL || ""}/${normalized}`.replace(/\/+/g, "/");
                             return (
                                 <Box
                                     key={src}
