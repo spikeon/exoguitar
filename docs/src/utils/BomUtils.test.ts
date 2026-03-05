@@ -458,3 +458,75 @@ describe('BOM Utils: Generate Minimum Combined Bom', () => {
         expect(rp1?.amazon_url).toBe("123")
     });
 });
+
+describe('BOM Utils: edge cases', () => {
+    test('generateCombinedBOM returns empty array for empty parts', () => {
+        const result = generateCombinedBOM([]);
+        expect(result).toEqual([]);
+    });
+
+    test('generateCombinedBOM skips parts with no bom', () => {
+        const p: Part = {
+            name: 'no-bom',
+            section: 'A',
+            path: 'A/no-bom',
+            hasBOM: false,
+            hasAssembly: false,
+        };
+        const result = generateCombinedBOM([p]);
+        expect(result).toEqual([]);
+    });
+
+    test('generateCombinedBOM skips parts with empty bom', () => {
+        const p: Part = {
+            name: 'empty-bom',
+            section: 'A',
+            path: 'A/empty',
+            hasBOM: true,
+            hasAssembly: false,
+            bom: [],
+        };
+        const result = generateCombinedBOM([p]);
+        expect(result).toEqual([]);
+    });
+
+    test('generateCombinedBOM preserves optional from first occurrence when merging same material', () => {
+        const p1: Part = {
+            name: 'p1',
+            section: 'A',
+            path: '',
+            hasBOM: true,
+            hasAssembly: true,
+            bom: [{ name: 'm1', qty: 1, amazon_url: 'x', optional: true }],
+        };
+        const p2: Part = {
+            name: 'p2',
+            section: 'A',
+            path: '',
+            hasBOM: true,
+            hasAssembly: true,
+            bom: [{ name: 'm1', qty: 2, amazon_url: '', optional: false }],
+        };
+        const result = generateCombinedBOM([p1, p2]);
+        const m1 = result.find((m) => m.name === 'm1');
+        expect(m1?.qty).toBe(3);
+        expect(m1?.optional).toBe(true);
+    });
+
+    test('generateMinimumCombinedBom returns empty array for empty parts', () => {
+        const result = generateMinimumCombinedBom([]);
+        expect(result).toEqual([]);
+    });
+
+    test('generateMinimumCombinedBom skips parts with no bom', () => {
+        const p: Part = {
+            name: 'no-bom',
+            section: 'A',
+            path: 'A/no-bom',
+            hasBOM: false,
+            hasAssembly: false,
+        };
+        const result = generateMinimumCombinedBom([p]);
+        expect(result).toEqual([]);
+    });
+});

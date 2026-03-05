@@ -21,6 +21,13 @@ const columns: GridColDef<Material>[] = [
         flex: 5
     },
     {
+        field: "optional",
+        headerName: "Optional",
+        type: "boolean",
+        flex: 1,
+        align: "center",
+    },
+    {
         field: "amazon_url",
         headerName: "Links",
         flex: 2,

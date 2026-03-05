@@ -11,6 +11,7 @@ export interface Part {
     requiredParts?: string[]
     extra2020Length?: number
     thumb?: string
+    images?: string[]
     bom?: Material[]
     makerWorldUrl?: string
     hidden?: boolean

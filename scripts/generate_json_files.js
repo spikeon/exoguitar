@@ -180,38 +180,52 @@ function addToUnifiedBOM(item, directory, state) {
 
 }
 
+const THUMB_EXCLUDE = ['thumb.tall.png', 'thumb.wide.png'];
+
 /**
- * Copy images from part directories
+ * Copy images from part directories. Returns relative paths (from public root)
+ * for each copied image, excluding thumb.tall.png and thumb.wide.png.
  */
 function copyImages(partPath, section, partName, imagesOutputPath) {
     const imageDirs = ['exploded views', 'photos', 'gallery', 'pictures', 'Photos'];
-    
+    const collected = [];
+
     for (const imageDir of imageDirs) {
         const sourcePath = path.join(partPath, imageDir);
-        
+
         if (fs.existsSync(sourcePath)) {
-            const targetPath = path.join(imagesOutputPath, section, partName, imageDir.replace(' ', '_'));
-            
-            // Create target directory
+            const targetDirName = imageDir.replace(' ', '_');
+            const targetPath = path.join(imagesOutputPath, section, partName, targetDirName);
+
             fs.mkdirSync(targetPath, { recursive: true });
-            
+
             try {
                 const files = fs.readdirSync(sourcePath);
-                
+
                 for (const file of files) {
-                    if (file.match(/\.(jpg|jpeg|png|gif|svg|webp)$/i)) {
-                        const sourceFile = path.join(sourcePath, file);
-                        const targetFile = path.join(targetPath, file);
-                        fs.copyFileSync(sourceFile, targetFile);
+                    if (!file.match(/\.(jpg|jpeg|png|gif|svg|webp)$/i)) continue;
+
+                    const sourceFile = path.join(sourcePath, file);
+                    const targetFile = path.join(targetPath, file);
+                    fs.copyFileSync(sourceFile, targetFile);
+
+                    // Exclude thumbs from Gallery list only (configurator still uses them)
+                    if (!THUMB_EXCLUDE.includes(file)) {
+                        const relative = path.join('images', section, partName, targetDirName, file).replace(/\\/g, '/');
+                        collected.push(relative);
                     }
                 }
-                
-                console.log(`  ✓ Copied images from ${imageDir} for ${section}/${partName}`);
+
+                if (files.some((f) => f.match(/\.(jpg|jpeg|png|gif|svg|webp)$/i))) {
+                    console.log(`  ✓ Copied images from ${imageDir} for ${section}/${partName}`);
+                }
             } catch (error) {
                 console.warn(`  Warning: Could not copy images from ${sourcePath}: ${error.message}`);
             }
         }
     }
+
+    return collected;
 }
 
 /**
@@ -291,9 +305,9 @@ function scanDirectory(dirPath, section, context) {
                     }
 
                     part.bom = state.partsBOM[partPath] ?? [];
-                    
-                    // Copy images (can be mocked in tests via copyImagesFn)
-                    copyImagesFn(itemPath, section, item, imagesOutputPath);
+
+                    // Copy images (can be mocked in tests via copyImagesFn); attach list for Gallery
+                    part.images = copyImagesFn(itemPath, section, item, imagesOutputPath);
 
                     state.parts.push(part);
                     console.log(`  Found part: ${section}/${item}`);
