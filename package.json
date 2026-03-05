@@ -10,7 +10,8 @@
     "test": "jest",
     "check-missing-docs": "node ./scripts/check_missing_docs.js",
     "format-bom-columns": "node ./scripts/format_bom_columns.js",
-    "generate-json-files": "node ./scripts/generate_json_files.js"
+    "generate-json-files": "node ./scripts/generate_json_files.js",
+    "prepare-boms": "node ./scripts/prepare_boms.js"
   },
   "repository": {
     "type": "git",

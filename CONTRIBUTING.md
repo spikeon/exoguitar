@@ -1,5 +1,7 @@
 # Contributing
 
+**Do not edit `README.md` by hand.** It is generated from `README.template.md` when you run `npm run generate-json-files`. Edit the template instead.
+
 To contribute to this project you need to follow these rules: 
 - All pieces must attach to the 2020 extrusion without needing to change their positions. 
 - All pieces must fit on a 256x256x256 build volume

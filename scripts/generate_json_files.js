@@ -69,8 +69,9 @@ function makeItemKey(name) {
  * Expected format per data line (header rows are ignored):
  *   Qty  Name  Url  Optional
  *
- * - Columns are separated by tabs or 2+ spaces.
- * - Url and Optional are optional; Optional defaults to false when omitted.
+ * Columns are separated by tabs or 2+ spaces. Name is parsed as a single field
+ * (regex capture) so it may contain single or multiple spaces. Url and Optional
+ * are optional; Optional defaults to false when omitted.
  */
 function parseBOMFile(filePath) {
     const bomItems = [];
@@ -84,33 +85,39 @@ function parseBOMFile(filePath) {
             if (!trimmed) continue;
             if (/^\s*qty\b/i.test(line)) continue; // skip header
 
-            // Data lines must start with a quantity number
             if (!/^\d{1,4}\b/.test(trimmed)) continue;
 
-            // Split into logical columns: Qty, Name, Url?, Optional?
-            const cols = trimmed.split(/\t+|\s{2,}/);
-            if (cols.length < 2) continue;
+            let qty; let name; let amazon_url = ''; let optional = false;
 
-            const qty = parseInt(cols[0], 10);
+            // Parse so name is one capture (allows spaces). Try 4-col, then 3-col with url, then 3-col with optional, then 2-col.
+            const fourCol = trimmed.match(/^\s*(\d{1,4})\s+(.+?)\s{2,}(https?:\S+)\s{2,}(true|false)\s*$/i);
+            const threeColUrl = trimmed.match(/^\s*(\d{1,4})\s+(.+?)\s{2,}(https?:\S+)\s*$/i);
+            const threeColOpt = trimmed.match(/^\s*(\d{1,4})\s+(.+?)\s{2,}(true|false)\s*$/i);
+            const twoCol = trimmed.match(/^\s*(\d{1,4})\s+(.+)\s*$/);
+
+            if (fourCol) {
+                [, qty, name, amazon_url, optional] = fourCol;
+                optional = optional.toLowerCase() === 'true';
+            } else if (threeColUrl) {
+                [, qty, name, amazon_url] = threeColUrl;
+            } else if (threeColOpt) {
+                [, qty, name, optional] = threeColOpt;
+                optional = optional.toLowerCase() === 'true';
+            } else if (twoCol) {
+                [, qty, name] = twoCol;
+            } else {
+                continue;
+            }
+
+            qty = parseInt(qty, 10);
             if (!Number.isFinite(qty)) continue;
 
-            const name = cols[1].trim();
-            let amazon_url = '';
-            let optional = false;
-
-            const rest = cols.slice(2);
-            for (const token of rest) {
-                if (/^https?:\/\//i.test(token)) {
-                    amazon_url = token.trim();
-                } else if (/^(true|false)$/i.test(token)) {
-                    optional = token.toLowerCase() === 'true';
-                }
-            }
+            name = name.trim();
 
             bomItems.push({
                 qty,
                 name,
-                amazon_url,
+                amazon_url: amazon_url.trim(),
                 optional,
             });
         }
@@ -122,9 +129,9 @@ function parseBOMFile(filePath) {
 }
 
 /**
- * Add item to unified BOM with quantity aggregation
- * 
- * TODO: This needs logic so that items from the same group don't get counted more than once.  If one head needs 3 M3x5 screws and another head needs 5, then this should end up with 5 and not 8.
+ * Add item to unified BOM with quantity aggregation.
+ * Unified BOM is a global sum across all parts (by design). Optional is merged:
+ * if any part marks the item optional, the unified entry is optional.
  */
 function addToUnifiedBOM(item, directory, state) {
     // Normalize name for better aggregation
@@ -137,10 +144,10 @@ function addToUnifiedBOM(item, directory, state) {
     if (state.unifiedBOM.has(key)) {
         const existing = state.unifiedBOM.get(key);
         existing.qty += item.qty;
-        // Keep URL if we don't have one
         if (!existing.amazon_url && item.amazon_url) {
             existing.amazon_url = item.amazon_url;
         }
+        existing.optional = existing.optional || item.optional;
     } else {
         state.unifiedBOM.set(key, { 
             ...item,
@@ -374,6 +381,7 @@ function main(options = {}) {
                     ...item,
                     name: canonical.name,
                     amazon_url: canonical.amazon_url,
+                    optional: canonical.optional,
                 };
             }
             return item;

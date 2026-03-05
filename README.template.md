@@ -1,6 +1,8 @@
 # ExoGuitar
 This is the Repo for the ExoGuitar project
 
+> **Note:** The file `README.md` in the repo root is **generated** from this template by `npm run generate-json-files`. Do not edit `README.md` by hand—edit `README.template.md` and the script will regenerate the links section.
+
 ## Documentation
 
 - [Assembly Documentation](./ASSEMBLY.md)

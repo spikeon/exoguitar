@@ -10,78 +10,92 @@ const {
 } = require('../generate_json_files');
 
 describe('generate_json_files helpers', () => {
-  test('parseBOMFile parses simple BOM lines with and without URLs', () => {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'exoguitar-bom-'));
-    const bomPath = path.join(tmpDir, 'BOM.txt');
-    const content = [
-      'Qty\tName\tUrl\tOptional',
-      '2    M3x4x5 Heat Set Inserts    https://amzn.to/example    false',
-      '5    M5 Slide In Nuts    false',
-    ].join('\n');
-    fs.writeFileSync(bomPath, content, 'utf8');
+  describe('parseBOMFile (mocked fs – no temp files)', () => {
+    let readFileSyncSpy;
 
-    const items = parseBOMFile(bomPath);
-    expect(items).toEqual([
-      {
-        qty: 2,
-        name: 'M3x4x5 Heat Set Inserts',
-        amazon_url: 'https://amzn.to/example',
-        optional: false,
-      },
-      {
-        qty: 5,
-        name: 'M5 Slide In Nuts',
-        amazon_url: '',
-        optional: false,
-      },
-    ]);
-  });
+    afterEach(() => {
+      if (readFileSyncSpy) readFileSyncSpy.mockRestore();
+    });
 
-  test('parseBOMFile supports punctuation-heavy names (previously missing)', () => {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'exoguitar-bom-'));
-    const bomPath = path.join(tmpDir, 'BOM.txt');
-    const content = [
-      'Qty\tName\tUrl\tOptional',
-      '1    12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521    https://amzn.to/battery    false',
-    ].join('\n');
-    fs.writeFileSync(bomPath, content, 'utf8');
+    test('parses simple BOM lines with and without URLs', () => {
+      const content = [
+        'Qty\tName\tUrl\tOptional',
+        '2    M3x4x5 Heat Set Inserts    https://amzn.to/example    false',
+        '5    M5 Slide In Nuts    false',
+      ].join('\n');
+      readFileSyncSpy = jest.spyOn(fs, 'readFileSync').mockReturnValue(content);
 
-    const items = parseBOMFile(bomPath);
-    expect(items).toEqual([
-      {
-        qty: 1,
-        name: '12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521',
-        amazon_url: 'https://amzn.to/battery',
-        optional: false,
-      },
-    ]);
-  });
+      const items = parseBOMFile('/fake/path/BOM.txt');
+      expect(items).toEqual([
+        {
+          qty: 2,
+          name: 'M3x4x5 Heat Set Inserts',
+          amazon_url: 'https://amzn.to/example',
+          optional: false,
+        },
+        {
+          qty: 5,
+          name: 'M5 Slide In Nuts',
+          amazon_url: '',
+          optional: false,
+        },
+      ]);
+    });
 
-  test('parseBOMFile respects Optional boolean column', () => {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'exoguitar-bom-'));
-    const bomPath = path.join(tmpDir, 'BOM.txt');
-    const content = [
-      'Qty\tName\tUrl\tOptional',
-      '1    Piezo Pickups    https://amzn.to/piezo    true',
-      '2    M3x8 Button Head Screw    https://amzn.to/screw    false',
-    ].join('\n');
-    fs.writeFileSync(bomPath, content, 'utf8');
+    test('supports punctuation-heavy names (previously missing)', () => {
+      const content = [
+        'Qty\tName\tUrl\tOptional',
+        '1    12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521    https://amzn.to/battery    false',
+      ].join('\n');
+      readFileSyncSpy = jest.spyOn(fs, 'readFileSync').mockReturnValue(content);
 
-    const items = parseBOMFile(bomPath);
-    expect(items).toEqual([
-      {
-        qty: 1,
-        name: 'Piezo Pickups',
-        amazon_url: 'https://amzn.to/piezo',
-        optional: true,
-      },
-      {
-        qty: 2,
-        name: 'M3x8 Button Head Screw',
-        amazon_url: 'https://amzn.to/screw',
-        optional: false,
-      },
-    ]);
+      const items = parseBOMFile('/fake/path/BOM.txt');
+      expect(items).toEqual([
+        {
+          qty: 1,
+          name: '12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521',
+          amazon_url: 'https://amzn.to/battery',
+          optional: false,
+        },
+      ]);
+    });
+
+    test('respects Optional boolean column', () => {
+      const content = [
+        'Qty\tName\tUrl\tOptional',
+        '1    Piezo Pickups    https://amzn.to/piezo    true',
+        '2    M3x8 Button Head Screw    https://amzn.to/screw    false',
+      ].join('\n');
+      readFileSyncSpy = jest.spyOn(fs, 'readFileSync').mockReturnValue(content);
+
+      const items = parseBOMFile('/fake/path/BOM.txt');
+      expect(items).toEqual([
+        {
+          qty: 1,
+          name: 'Piezo Pickups',
+          amazon_url: 'https://amzn.to/piezo',
+          optional: true,
+        },
+        {
+          qty: 2,
+          name: 'M3x8 Button Head Screw',
+          amazon_url: 'https://amzn.to/screw',
+          optional: false,
+        },
+      ]);
+    });
+
+    test('preserves names with multiple spaces (regex capture)', () => {
+      const content = [
+        'Qty   Name                     Url               Optional',
+        '1     Part   with   spaces     https://amzn.to/x  false',
+      ].join('\n');
+      readFileSyncSpy = jest.spyOn(fs, 'readFileSync').mockReturnValue(content);
+
+      const items = parseBOMFile('/fake/path/BOM.txt');
+      expect(items).toHaveLength(1);
+      expect(items[0].name).toBe('Part   with   spaces');
+    });
   });
 
   test('addToUnifiedBOM aggregates quantities and preserves URLs', () => {
@@ -110,6 +124,24 @@ describe('generate_json_files helpers', () => {
       name: 'M3x4x5 Heat Set Inserts',
       qty: 5,
     });
+  });
+
+  test('addToUnifiedBOM merges optional (any part optional => unified optional)', () => {
+    const state = createState();
+    addToUnifiedBOM(
+      { qty: 1, name: 'Piezo Pickups', amazon_url: 'https://amzn.to/piezo', optional: false },
+      'Face Plates/Acoustic',
+      state
+    );
+    addToUnifiedBOM(
+      { qty: 1, name: 'Piezo Pickups', amazon_url: '', optional: true },
+      'Face Plates/Other',
+      state
+    );
+
+    const items = Array.from(state.unifiedBOM.values());
+    expect(items).toHaveLength(1);
+    expect(items[0].optional).toBe(true);
   });
 
   test('scanDirectory discovers parts and attaches BOM items (without moving files)', () => {

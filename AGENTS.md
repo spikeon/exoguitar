@@ -16,7 +16,7 @@ This file gives AI agents and contributors a shared picture of the project so we
 | **models/** | Source of truth for physical parts. Each part folder can have CAD (`.stl`, `.3mf`, `.step`), `BOM.txt`, `ASSEMBLY.md`, `meta.json`, and image folders (`photos`, `exploded views`, etc.). |
 | **docs/** | React (Create React App) configurator that reads generated JSON and images from `docs/src/data/` and `docs/public/images/`. |
 | **scripts/** | Node scripts: `generate_json_files.js` (main data generator), `check_missing_docs.js` (doc completeness), and `scripts/__tests__/` (Jest tests). |
-| **Root** | `README.md` (partially generated), `ASSEMBLY.md`, `BOM.md`, `README.template.md`. |
+| **Root** | `README.md` is **generated** from `README.template.md` (do not edit by hand). Also `ASSEMBLY.md`, `BOM.md`. |
 
 ## Wing sets – important behavior
 
@@ -30,10 +30,11 @@ So: shared BOM + optional per-wing BOM → one combined BOM per wing-set part.
 
 - **Outputs**: `docs/src/data/` gets `sections.json`, `parts.json`, `unified_bom.json`, `bom.json`; images are copied into `docs/public/images/{section}/{part}/...`; root `README.md` is regenerated from `README.template.md` using generated MakerWorld links.
 - **Sections skipped when scanning**: `Extras`, `Strap` (and hidden files / non-directories).
-- **BOM format**: All `BOM.txt` files use columns `Qty`, `Name`, `Url`, `Optional` (tabs or 2+ spaces). For editor alignment, run `npm run format-bom-columns` to space-pad columns so they line up in a monospace view.
+- **BOM format**: All `BOM.txt` files use columns `Qty`, `Name`, `Url`, `Optional` (tabs or 2+ spaces). Run `npm run prepare-boms` to normalize names (M1–M8, FHCS/BHCS/SHCS), ensure Optional column, and align columns. Names may contain multiple spaces; the parser uses regex so the name is one field.
   - `Url` may be blank.
   - `Optional` is a `true`/`false` flag. Any `(Optional)` text in the name is stripped and moved into this column.
-- **BOM parsing**: The parser splits on tabs / 2+ spaces and understands both old 3-column and new 4-column forms; `optional` defaults to `false` when the column is missing.
+- **BOM parsing**: Regex-based so the name is a single capture (allows spaces). Supports 4-, 3-, and 2-column forms; `optional` defaults to `false` when missing.
+- **Unified BOM**: Intentionally a **global sum** across all parts. When merging the same item from multiple parts, `optional` is true if any part marks it optional.
 - **Canonicalization**: Item names are aggregated using a stable key (`makeItemKey`: normalize whitespace, collapse `M3 x 4 x 5` → `M3x4x5`, lowercase, strip trailing `s` for simple plurals). Per-part BOMs are later **backfilled** with the canonical display name and Amazon URL from the unified BOM so the configurator shows consistent names and links.
 - **Testability**: The script uses a `createState()` pattern and accepts an optional `copyImagesFn` in the scan context so tests can avoid real file copies (Jest mocks `copyImages` in the two `scanDirectory` tests).
 
@@ -50,7 +51,8 @@ So: shared BOM + optional per-wing BOM → one combined BOM per wing-set part.
 ## Commands
 
 - `npm run generate-json-files` – regenerate all JSON, images copy, and README.
-- `npm run format-bom-columns` – align BOM.txt columns with space padding for readability in the editor.
+- `npm run prepare-boms` – run full BOM pipeline: normalize names → add Optional column → align columns (use after editing BOM.txt files).
+- `npm run format-bom-columns` – align BOM.txt columns only (if you already ran prepare-boms and only need alignment).
 - `npm run check-missing-docs` – report parts missing BOM or ASSEMBLY docs.
 - `npm test` – run Jest tests.
 
