@@ -90,6 +90,11 @@ This is a MakerWorld exclusive project; so all print profiles are hosted and mai
 - MultiBoard - Coming soon to MakerWorld!
 - Plastic X - Coming soon to MakerWorld!
 - Portal - Coming soon to MakerWorld!
+- [Rich](https://makerworld.com/en/models/1078060-exoguitar-wings-rich)
+- Symmertrical Guitar - Coming soon to MakerWorld!
+- Training-V - Coming soon to MakerWorld!
+- Venom - Coming soon to MakerWorld!
+- [Warlock](https://makerworld.com/en/models/1391383-exoguitar-wing-set-warlock)
 
 
 ## Multi-Neck Configuration

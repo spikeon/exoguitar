@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "check-missing-docs": "node ./scripts/check_missing_docs.js",
-    "generate-json-files" : "node ./scripts/generate_json_files.js"
+    "generate-json-files": "node ./scripts/generate_json_files.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/spikeon/exoguitar/issues"
   },
-  "homepage": "https://github.com/spikeon/exoguitar#readme"
+  "homepage": "https://github.com/spikeon/exoguitar#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }

@@ -32,34 +32,62 @@
 const fs = require('fs');
 const path = require('path');
 
-// Configuration
-const rootPath = path.join(__dirname, '..');
-const modelsPath = path.join(__dirname, '..', 'models');
-const outputPath = path.join(__dirname, '..', 'docs', 'src', 'data');
-const imagesOutputPath = path.join(__dirname, '..', 'docs', 'public', 'images');
-
-// Data structures
-const parts = [];
-const unifiedBOM = new Map();
-const partsBOM = {};
+/**
+ * Factory for in-memory BOM + parts state.
+ * Kept separate so tests can create and reset their own state.
+ */
+function createState() {
+    return {
+        parts: [],
+        unifiedBOM: new Map(),
+        partsBOM: {}
+    };
+}
 
 /**
- * Parse BOM.txt file - simple tab-separated format
+ * Normalize an item name into a stable aggregation key.
+ * - Collapses whitespace
+ * - Normalizes patterns like "M3 x 4 x 5" -> "M3x4x5"
+ * - Lowercases
+ * - Strips a single trailing "s" (Insert/Inserts, Nut/Nuts, Screw/Screws)
+ */
+function makeItemKey(name) {
+    if (!name) return '';
+    let n = name.replace(/\s+/g, ' ').trim();
+    // Remove spaces around "x" when used as a separator between numbers
+    // e.g. "M3 x 4 x 5" -> "M3x4x5"
+    n = n.replace(/(\d)\s*x\s*(\d)/gi, '$1x$2');
+    n = n.toLowerCase();
+    // Strip a single trailing "s" to merge simple plurals
+    n = n.replace(/s$/i, '');
+    return n;
+}
+
+/**
+ * Parse BOM.txt file.
+ *
+ * Expected format per line (ignores header rows):
+ *   <qty><whitespace><name>[<whitespace><whitespace><url>]
+ *
+ * Name may contain spaces and punctuation; URL is optional.
  */
 function parseBOMFile(filePath) {
     const bomItems = [];
     
     try {
         const content = fs.readFileSync(filePath, 'utf8');
-        const regex = /^(?<qty>\d{1,4})[\s\t]{2,100}(?<name>(?:\w\s?)+)[\s\t]{0,100}(?<link>[^\s\t]*)[\s\t]{0,100}$/gm
+        // Allow any characters in the name field; URL (if present) is assumed to be
+        // the last column separated by at least two whitespace characters.
+        const lineRegex = /^\s*(?<qty>\d{1,4})\s+(?<name>.+?)(?:\s{2,}(?<link>\S+))?\s*$/gm;
 
-        const matches = content.matchAll(regex);
+        const matches = content.matchAll(lineRegex);
 
-        for(let {groups:{qty, name, link}} of matches){
+        for (const match of matches) {
+            const { qty, name, link } = match.groups;
             bomItems.push({
                 qty: +qty,
                 name: name.trim(),
-                amazon_url: link,
+                amazon_url: link ? link.trim() : '',
                 optional: false
             });
         }
@@ -76,42 +104,46 @@ function parseBOMFile(filePath) {
  * 
  * TODO: This needs logic so that items from the same group don't get counted more than once.  If one head needs 3 M3x5 screws and another head needs 5, then this should end up with 5 and not 8.
  */
-function addToUnifiedBOM(item, directory) {
+function addToUnifiedBOM(item, directory, state) {
     // Normalize name for better aggregation
     const normalizedName = item.name
         .replace(/\s+/g, ' ')  // Normalize whitespace
-        .trim()
-        .replace(/s$/i, '');  // Remove trailing 's' for plurals
+        .trim();
     
-    const key = normalizedName.toLowerCase();
+    const key = makeItemKey(normalizedName);
     
-    if (unifiedBOM.has(key)) {
-        const existing = unifiedBOM.get(key);
+    if (state.unifiedBOM.has(key)) {
+        const existing = state.unifiedBOM.get(key);
         existing.qty += item.qty;
         // Keep URL if we don't have one
         if (!existing.amazon_url && item.amazon_url) {
             existing.amazon_url = item.amazon_url;
         }
     } else {
-        unifiedBOM.set(key, { 
+        state.unifiedBOM.set(key, { 
             ...item,
             name: normalizedName  // Use normalized name
         });
     }
 
-    if(!partsBOM.hasOwnProperty(directory)) partsBOM[directory] = [];
-    const existingIndex = partsBOM[directory].findIndex((b) => b.name === normalizedName)
-    console.log("Found Index: ", existingIndex)
-    if(existingIndex != -1){
-        const existing = partsBOM[directory][existingIndex];
+    if (!Object.prototype.hasOwnProperty.call(state.partsBOM, directory)) {
+        state.partsBOM[directory] = [];
+    }
+
+    const existingIndex = state.partsBOM[directory].findIndex(
+        (b) => makeItemKey(b.name) === key
+    );
+
+    if (existingIndex !== -1) {
+        const existing = state.partsBOM[directory][existingIndex];
         existing.qty += item.qty;
         // Keep URL if we don't have one
         if (!existing.amazon_url && item.amazon_url) {
             existing.amazon_url = item.amazon_url;
         }
-        partsBOM[directory][existingIndex] = existing;
+        state.partsBOM[directory][existingIndex] = existing;
     } else {
-        partsBOM[directory].push({
+        state.partsBOM[directory].push({
             ...item,
             name: normalizedName  // Use normalized name
         });
@@ -122,7 +154,7 @@ function addToUnifiedBOM(item, directory) {
 /**
  * Copy images from part directories
  */
-function copyImages(partPath, section, partName) {
+function copyImages(partPath, section, partName, imagesOutputPath) {
     const imageDirs = ['exploded views', 'photos', 'gallery', 'pictures', 'Photos'];
     
     for (const imageDir of imageDirs) {
@@ -156,7 +188,8 @@ function copyImages(partPath, section, partName) {
 /**
  * Scan directory for parts (directories with BOM.txt or ASSEMBLY.md)
  */
-function scanDirectory(dirPath, section) {
+function scanDirectory(dirPath, section, context) {
+    const { modelsPath, imagesOutputPath, state, copyImagesFn = copyImages } = context;
     try {
         const items = fs.readdirSync(dirPath);
         
@@ -174,18 +207,17 @@ function scanDirectory(dirPath, section) {
                 const thumbPath = path.join(itemPath, 'photos', 'thumb.wide.png');
                 const hasBOM = fs.existsSync(bomPath);
                 const hasThumb = fs.existsSync(thumbPath);
-                const [,thumbUrl] = thumbPath.replace(/\\/g,'/').split("/models")
-
                 const hasAssembly = fs.existsSync(assemblyPath);
 
-                const hasMeta = fs.existsSync(metaPath)
-                const meta = !hasMeta ? {} : JSON.parse(fs.readFileSync(metaPath))
-                
-                const isWingSet = bomPath.includes("Wing Sets")
-                
-                const isWingSetParentFolder = bomPath.endsWith("Wing Sets")
-                const isBlank = bomPath.endsWith("Blank")
-                const isInterface = bomPath.endsWith("Interface")
+                const hasMeta = fs.existsSync(metaPath);
+                const meta = !hasMeta ? {} : JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+
+                const baseName = path.basename(itemPath);
+                const isWingSetSection = section === 'Wing Sets';
+                const isWingSetParentFolder = isWingSetSection && baseName === 'Wing Sets';
+                const isWingSet = isWingSetSection && !isWingSetParentFolder;
+                const isBlank = baseName === 'Blank';
+                const isInterface = baseName === 'Interface';
                 
                 if ((hasBOM || hasAssembly || isWingSet) && !isWingSetParentFolder && !isBlank && !isInterface) {
                     // This is a part
@@ -199,7 +231,12 @@ function scanDirectory(dirPath, section) {
                         path: partPath,
                         hasBOM: hasBOM,
                         hasAssembly: hasAssembly,
-                        thumb: hasThumb ? path.join('images',thumbUrl) : undefined,
+                        thumb: hasThumb
+                            ? path.join(
+                                'images',
+                                thumbPath.replace(/\\/g, '/').split('/models')[1]
+                              )
+                            : undefined,
                         ...meta
                     };
                                         
@@ -209,7 +246,7 @@ function scanDirectory(dirPath, section) {
                         if (bomItems.length > 0) {
                             // Add to unified BOM
                             for (const bomItem of bomItems) {
-                                addToUnifiedBOM(bomItem, partPath);
+                                addToUnifiedBOM(bomItem, partPath, state);
                             }
                         }
                     } 
@@ -217,23 +254,23 @@ function scanDirectory(dirPath, section) {
                         part.hasBOM = true;
                         part.hasAssembly = true;
 
-                        const bomItems = parseBOMFile(path.normalize(itemPath+"/../BOM.txt"))
+                        const bomItems = parseBOMFile(path.normalize(path.join(itemPath, '..', 'BOM.txt')));
                         
-                        for(const bomItem of bomItems){
-                            addToUnifiedBOM(bomItem, partPath)
+                        for (const bomItem of bomItems) {
+                            addToUnifiedBOM(bomItem, partPath, state);
                         }
                     }
 
-                    part.bom = partsBOM[partPath] ?? [];
+                    part.bom = state.partsBOM[partPath] ?? [];
                     
-                    // Copy images
-                    copyImages(itemPath, section, item);
+                    // Copy images (can be mocked in tests via copyImagesFn)
+                    copyImagesFn(itemPath, section, item, imagesOutputPath);
 
-                    parts.push(part);
+                    state.parts.push(part);
                     console.log(`  Found part: ${section}/${item}`);
                 } else {
                     // Check subdirectories
-                    scanDirectory(itemPath, section);
+                    scanDirectory(itemPath, section, context);
                 }
             }
         }
@@ -245,7 +282,13 @@ function scanDirectory(dirPath, section) {
 /**
  * Main execution
  */
-function main() {
+function main(options = {}) {
+    const rootPath = options.rootPath || path.join(__dirname, '..');
+    const modelsPath = options.modelsPath || path.join(rootPath, 'models');
+    const outputPath = options.outputPath || path.join(rootPath, 'docs', 'src', 'data');
+    const imagesOutputPath = options.imagesOutputPath || path.join(rootPath, 'docs', 'public', 'images');
+
+    const state = createState();
     console.log('🚀 Starting ExoGuitar JSON generation...\n');
     
     // Create output directories
@@ -277,16 +320,16 @@ function main() {
     for (const section of sections) {
         console.log(`📁 Scanning section: ${section}`);
         const sectionPath = path.join(modelsPath, section);
-        scanDirectory(sectionPath, section);
+        scanDirectory(sectionPath, section, { modelsPath, imagesOutputPath, state });
     }
     
     // Update Readme.md
     console.log('\n🚀 Generate new Readme...');    
     const readmeTemplate = fs.readFileSync(path.join(rootPath,"README.template.md"));
     var readmeLinksSection = "## Makerworld Links \n";
-    for(const section of sectionsFileData){
+    for (const section of sectionsFileData) {
         readmeLinksSection += `\n### ${section.name}\n\n`;
-        parts.filter((p) => p.section === section.name).forEach((part) => {
+        state.parts.filter((p) => p.section === section.name).forEach((part) => {
             if(part.makerWorldUrl) readmeLinksSection += `- [${part.name}](${part.makerWorldUrl})\n`
             else readmeLinksSection += `- ${part.name} - Coming soon to MakerWorld!\n`
         })
@@ -297,8 +340,24 @@ function main() {
     console.log('\n💾 Writing JSON files...');
     
     // Convert unified BOM to array
-    const unifiedBOMArray = Array.from(unifiedBOM.values());
-    
+    const unifiedBOMArray = Array.from(state.unifiedBOM.values());
+
+    // Backfill canonical names/URLs into per-part BOMs using unified map
+    for (const [partPath, items] of Object.entries(state.partsBOM)) {
+        state.partsBOM[partPath] = items.map((item) => {
+            const key = makeItemKey(item.name);
+            const canonical = state.unifiedBOM.get(key);
+            if (canonical) {
+                return {
+                    ...item,
+                    name: canonical.name,
+                    amazon_url: canonical.amazon_url,
+                };
+            }
+            return item;
+        });
+    }
+
     // Write files
 
     fs.writeFileSync(
@@ -308,7 +367,7 @@ function main() {
 
     fs.writeFileSync(
         path.join(outputPath, 'parts.json'),
-        JSON.stringify(parts, null, 2)
+        JSON.stringify(state.parts, null, 2)
     );
     
     fs.writeFileSync(
@@ -318,7 +377,7 @@ function main() {
     
     fs.writeFileSync(
         path.join(outputPath, 'bom.json'),
-        JSON.stringify(partsBOM, null, 2)
+        JSON.stringify(state.partsBOM, null, 2)
     );
 
     fs.writeFileSync(
@@ -328,9 +387,9 @@ function main() {
     
     // Summary
     console.log(`\n✅ Generation complete!`);
-    console.log(`  📊 Found ${parts.length} parts`);
+    console.log(`  📊 Found ${state.parts.length} parts`);
     console.log(`  📊 ${unifiedBOMArray.length} unique BOM items`);
-    console.log(`  📊 ${Object.keys(partsBOM).length} parts with BOMs`);
+    console.log(`  📊 ${Object.keys(state.partsBOM).length} parts with BOMs`);
 }
 
 // Run if called directly
@@ -338,4 +397,12 @@ if (require.main === module) {
     main();
 }
 
-module.exports = { main };
+module.exports = {
+    main,
+    parseBOMFile,
+    addToUnifiedBOM,
+    copyImages,
+    scanDirectory,
+    createState,
+    makeItemKey,
+};
