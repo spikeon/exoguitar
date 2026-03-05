@@ -1,14 +1,12 @@
 import { Box, Stepper, Step, StepLabel, Typography } from "@mui/material";
 import React, { ReactNode, useMemo, useState } from "react";
 import { useGeneratorStateContext} from "../../contexts/generatorState/context";
-import { GeneratorState, GuitarType, NeckType } from "../../types/State";
+import { GeneratorState, GuitarType } from "../../types/State";
 import Summary from "./summary";
 import StepGuitarTypes from "./steps/StepGuitarTypes";
 import StepBridges from "./steps/StepBridges";
 import StepFacePlates from "./steps/StepFacePlates";
 import StepHeads from "./steps/StepHeads";
-import StepNecks from "./steps/StepNecks";
-import StepNeckTypes from "./steps/StepNeckTypes";
 import StepWingSets from "./steps/StepWingSets";
 
 type step = {
@@ -21,7 +19,7 @@ const Generator = () => {
     const [activeStep, setActiveStep] = useState(0);
 
     const generatorState = useGeneratorStateContext();
-    const {guitarType, neckType} = useMemo(() => generatorState, [generatorState]);
+    const {guitarType} = useMemo(() => generatorState, [generatorState]);
 
     const handleNext = () => {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -49,23 +47,10 @@ const Generator = () => {
         }
 
         currentSteps.push({
-            name: "Neck Type",
-            component: (<StepNeckTypes onComplete={handleNext} />),
-            validator: ({neckType}) => neckType !== undefined
+            name: "Head",
+            component: (<StepHeads onComplete={handleNext} />),
+            validator: ({head}) => head !== undefined
         })
-
-        if(neckType === NeckType.PRINTED) {
-            currentSteps.push({
-                name: "Neck",
-                component: (<StepNecks onComplete={handleNext} />),
-                validator: ({neck}) => neck !== undefined
-            })
-            currentSteps.push({
-                name: "Head",
-                component: (<StepHeads onComplete={handleNext} />),
-                validator: ({head}) => head !== undefined
-            })
-        }
 
         currentSteps.push({
             name: "Wing Sets",
@@ -74,7 +59,7 @@ const Generator = () => {
         })
 
         return currentSteps;
-    }, [guitarType, neckType]);
+    }, [guitarType]);
 
     return (
         <>

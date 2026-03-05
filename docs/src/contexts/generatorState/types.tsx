@@ -1,10 +1,8 @@
 import {Part} from "../../types/Parts";
-import { GuitarType, NeckType } from "../../types/State";
+import { GuitarType } from "../../types/State";
 
 export enum ACTION {
     SET_GUITAR_TYPE,
-    SET_NECK_TYPE,
-    SET_NECK,
     SET_HEAD,
     SET_WING_SET,
     SET_FACE_PLATE,
@@ -17,20 +15,6 @@ type SetGuitarTypeAction = {
     type: ACTION.SET_GUITAR_TYPE,
     payload: {
         guitarType: GuitarType
-    }
-}
-
-type SetNeckTypeAction = {
-    type: ACTION.SET_NECK_TYPE,
-    payload: {
-        neckType: NeckType
-    }
-}
-
-type SetNeckAction = {
-    type: ACTION.SET_NECK,
-    payload: {
-        neck: Part
     }
 }
 
@@ -77,9 +61,7 @@ type SetBridgeAction = {
 
 export type GeneratorStateAction = 
     SetGuitarTypeAction |
-    SetNeckTypeAction | 
     SetHeadAction | 
-    SetNeckAction | 
     SetWingSetAction |
     SetFacePlateAction | 
     SetBridgeAction |
@@ -88,8 +70,6 @@ export type GeneratorStateAction =
 
 export type GeneratorStateActions = {
     setGuitarType: (guitarType: GuitarType) => void,
-    setNeckType: (neckType: NeckType) => void,
-    setNeck: (neck: Part) => void,
     setHead: (head: Part) => void,
     setWingSet: (wingSet: Part) => void,
     setFacePlate: (facePlate: Part) => void,

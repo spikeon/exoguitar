@@ -1,7 +1,7 @@
 import reducer from './reducer';
 import initialState from './initialState';
 import { ACTION } from './types';
-import { GuitarType, NeckType } from '../../types/State';
+import { GuitarType } from '../../types/State';
 import { Part } from '../../types/Parts';
 
 const mockPart: Part = {
@@ -19,14 +19,6 @@ describe('generatorState reducer', () => {
             payload: { guitarType: GuitarType.ELECTRIC },
         });
         expect(state.guitarType).toBe(GuitarType.ELECTRIC);
-    });
-
-    it('SET_NECK_TYPE updates neckType', () => {
-        const state = reducer(initialState, {
-            type: ACTION.SET_NECK_TYPE,
-            payload: { neckType: NeckType.WOOD },
-        });
-        expect(state.neckType).toBe(NeckType.WOOD);
     });
 
     it('SET_HEAD updates head', () => {

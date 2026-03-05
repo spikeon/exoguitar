@@ -98,7 +98,7 @@ For this list, QTY is the number of the linked product to buy, not the number of
 | 1   | Jumper Wire | [Amazon](https://amzn.to/40c2IXh) | 560 | $9.99 | $0.05 |
 | 1   | Locktite Red | [Amazon](https://amzn.to/4iA8NEI) | 100 | $23.20 | $0.23 |
 | 1   | Wire | [Amazon](https://amzn.to/41UZiZN) | 91.44 | $26.99 | $0.30 |
-| 1   | M3x14 Nylon Tipped Hex Set Screw | [Amazon](https://amzn.to/4ecwIJk) | 15 | 8.49 | $0.85 |
+| 1   | M3x14 Nylon Tipped Hex Set Screw | [Amazon](https://amzn.to/4ecwIJk) | 15 | $8.49 | $0.85 |
 
 #### Totals: 
 
@@ -122,7 +122,7 @@ I am also in talks with a company about providing these kits for me; which will 
 
 ### Hardware
 
-- [Fret Wire Bender](https://amzn.to/3E202E7) - There is a printable one (with it's own BOM) in this project [here](./models/Neck/tools/Fret%20Bender/ASSEMBLY.md)
+- [Fret Wire Bender](https://amzn.to/3E202E7) - There is a printable one (with its own BOM) in this project [here](./models/Neck/tools/Fret%20Bender/ASSEMBLY.md)
 - [Metric Tap Bits](https://amzn.to/41XLL3B)
 - [Fanttik E2 Ultra Precision Screwdriver](https://www.amazon.com/dp/B0DSVKLNQR?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.2OELBEF4F6OST&linkCode=tr1&tag=spikeon-20&linkId=amzn1.campaign.2OELBEF4F6OST_1748062070280) - There are a lot of screws in this project.  This helps. 
 - [Fanttik T1 Max Soldering Iron](https://www.amazon.com/dp/B0D41ZMDPD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.2TDDOHR1DT4TG&linkCode=tr1&tag=spikeon-20&linkId=amzn1.campaign.2TDDOHR1DT4TG_1748061889591) - This wireless Soldering Iron comes in really handy for soldering parts inside of a guitar. 

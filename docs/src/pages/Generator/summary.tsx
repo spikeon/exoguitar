@@ -1,16 +1,23 @@
 import { Grid, Typography } from "@mui/material";
 import { useGeneratorStateContext } from "../../contexts/generatorState/context";
+import { usePartsContext } from "../../contexts/parts/context";
 import PartCard from "../../components/PartCard";
 import { useMemo } from "react";
 import BomGrid from "../../components/BomGrid";
 import { generateCombinedBOM } from "../../utils/BomUtils";
 import { Part } from "../../types/Parts";
 
+const NECK_V3_PART_NAME = "Neck v3";
+
 const Summary = () => {
 
-    const {head, neck, facePlate, bridge, wingSet, extras} = useGeneratorStateContext();
+    const {head, facePlate, bridge, wingSet, extras} = useGeneratorStateContext();
+    const {parts} = usePartsContext();
 
-    const selectedParts: Part[] = useMemo(() : Part[] =>  [head, neck, facePlate, bridge, wingSet, ...extras].filter((p) => p !== undefined) as Part[], [head, neck, facePlate, bridge, wingSet, extras]);
+    const selectedParts: Part[] = useMemo(() => {
+        const neckV3 = parts.find((p) => p.name === NECK_V3_PART_NAME);
+        return [head, facePlate, bridge, wingSet, neckV3, ...extras].filter((p): p is Part => p !== undefined);
+    }, [head, facePlate, bridge, wingSet, extras, parts]);
     
     const bom = useMemo(() => {
         return generateCombinedBOM(selectedParts);

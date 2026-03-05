@@ -9,20 +9,10 @@ const reducer = (state: GeneratorState, action: GeneratorStateAction) => {
                 ...state,
                 guitarType: action.payload.guitarType
             }
-        case ACTION.SET_NECK_TYPE: 
-            return {
-                ...state,
-                neckType: action.payload.neckType
-            }
         case ACTION.SET_HEAD: 
             return {
                 ...state,
                 head: action.payload.head
-            }
-        case ACTION.SET_NECK: 
-            return {
-                ...state,
-                neck: action.payload.neck
             }
         case ACTION.SET_WING_SET: 
             return {

@@ -52,8 +52,8 @@ type SectionSelectorProps = {
 
 const SectionSelector = ({part, sectionName, selectPart, partFilter}: SectionSelectorProps) => {
     const {sections} = usePartsContext();
-    const {head, neck, bridge, facePlate, wingSet} = useGeneratorStateContext();
-    const selectedParts = [head, neck, bridge, facePlate, wingSet];    
+    const {head, bridge, facePlate, wingSet} = useGeneratorStateContext();
+    const selectedParts = [head, bridge, facePlate, wingSet];    
     
     return ( !part ? (<>
         <Grid size={12}><Typography sx={{ mt: 2, mb: 1 }}> Choose {sectionName}: </Typography></Grid>

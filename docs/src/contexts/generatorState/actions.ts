@@ -1,7 +1,7 @@
 import { Dispatch } from "react";
 import { ACTION, GeneratorStateAction, GeneratorStateActions } from "./types";
 import { Part } from "../../types/Parts";
-import { GuitarType, NeckType } from "../../types/State";
+import { GuitarType } from "../../types/State";
 
 const getActions = (dispatch: Dispatch<GeneratorStateAction>): GeneratorStateActions => ({
     setGuitarType: (guitarType: GuitarType) => {
@@ -9,18 +9,6 @@ const getActions = (dispatch: Dispatch<GeneratorStateAction>): GeneratorStateAct
             type: ACTION.SET_GUITAR_TYPE,
             payload: {guitarType}
         })
-    },
-    setNeckType: (neckType: NeckType) => {
-        dispatch({
-            type: ACTION.SET_NECK_TYPE,
-            payload: {neckType}
-        })
-    },
-    setNeck: (neck: Part) => {
-        dispatch({
-            type: ACTION.SET_NECK,
-            payload: { neck }
-        });
     },
     setHead: (head: Part) => {
         dispatch({

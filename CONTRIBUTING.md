@@ -15,7 +15,7 @@ Please follow the file structure already in place in your PR.
 
 To add it to this project, please fork this project and then submit a PR to me with the files in it.  
 
-This project was built in OnShape and you are welcome to copy the it as a starting point for your build.  [Check it out here!](https://cad.onshape.com/documents/f8519e054e386d34fe7f717c/w/4b68044692bbe5e682fcb1e9/e/030bc3a27bf0944a8a68be66?renderMode=0&uiState=67c742332bca82445e94f5f6).  While I am providing this as a resource, I am not apologizing for how disorganized or inefficient it may be.  This is a passion project I've been doing in my spare time.  
+This project was built in OnShape and you are welcome to copy it as a starting point for your build.  [Check it out here!](https://cad.onshape.com/documents/f8519e054e386d34fe7f717c/w/4b68044692bbe5e682fcb1e9/e/030bc3a27bf0944a8a68be66?renderMode=0&uiState=67c742332bca82445e94f5f6).  While I am providing this as a resource, I am not apologizing for how disorganized or inefficient it may be.  This is a passion project I've been doing in my spare time.  
 
 ## Interface .step file
 
@@ -31,7 +31,7 @@ The M5 bolts should be positioned 10mm from the center of the hole to the bottom
 If there isn't 100mm of clearance above the M5 bolt to get a screw driver in there to tighten the bolt, then a 12mm hole needs to be put in the side of the piece to allow for access.   If you feel so inclined you can provide plugs that users can glue in after the fact. 
 
 If you are designing for the Offset Neck, you need to plan for at least 250mm of 2020 extrusion on the left side and 200mm on the right side.  
-If you are designing for the Paralell neck, you need to plan for at least 250mm of 2020 extrusion on both sides. 
+If you are designing for the Parallel neck, you need to plan for at least 250mm of 2020 extrusion on both sides. 
 
 You are free to extend the size of the extrusion needed, but you cannot reduce it. 
 
@@ -43,5 +43,5 @@ I have provided a [blank template file](/models/Bridge/Blank/) that you can use 
 
 ## Head
 
-I have provided a [blank template file](/models/Head/Blank/ExoGuitar%20-%20Head%20-%20Blank.step) that you can use as a starting point to create your own bridge.  It includes the 2020 mount points, the battery + switch, and the Adjustable Nut; this way you can focus on just creating the styled head of your dreams.  
+I have provided a [blank template file](/models/Head/Blank/ExoGuitar%20-%20Head%20-%20Blank.step) that you can use as a starting point to create your own head.  It includes the 2020 mount points, the battery + switch, and the Adjustable Nut; this way you can focus on just creating the styled head of your dreams.  
 

@@ -1,35 +1,28 @@
 # Assembly
 
-ExoGuitar is a complicated project.  It has a bunch of hardware and a bunch of different parts.  I hope you can understand how this can make documenting this a challenge, especially for a single person with a full-time job on top of a small business to run.  That being said; there are likely gaps in this documentation.  If you want to assist, it is EXTREMELY welcone for you to reach out. 
+ExoGuitar is a complicated project.  It has a bunch of hardware and a bunch of different parts.  I hope you can understand how this can make documenting this a challenge, especially for a single person with a full-time job on top of a small business to run.  That being said; there are likely gaps in this documentation.  If you want to assist, it is EXTREMELY welcome for you to reach out. 
 
 ## Choosing your parts
 
-Before you start printing an ExoGuitar, you need to decide which kind of guitar you are trying to build.  Do you want an electric or an accoustic?  Printed neck or wooden neck?  What body style do you want? Headless or Head?  Printed bridge or one off-the-shelf?
+Before you start printing an ExoGuitar, you need to decide which kind of guitar you are trying to build.  Do you want an electric or an acoustic?  What body style do you want? Headless or Head?  Printed bridge or one off-the-shelf?
 
 One day I hope I can have the time and resources to build a configurator.  For right now, however, this is a pretty manual process. 
 
 There are 7 main parts that each have their own options:
 
 1. [Shoulder](/models/Shoulders/)
-    - Offset 
-        - ExoGuitar Neck - See Chosen ExoGuitar Neck Assembly
-        - [Wood Neck](/models/Shoulders/Offset%20-%20Regular%20Neck/ASSEMBLY.md)
-    - Paralell
-        - [Wood Neck](/models/Shoulders/Parallel%20-%20Regular%20Neck/ASSEMBLY.md)
-2. [Neck](/models/Neck/) - Note: you can skip this if you use a wooden neck. 
-    - [Metal Frets](/models/Neck/Metal Frets/ASSEMBLY.md) - Note: this is a REALLY intensive build
-    - [Filament Frets](/models/Neck/Filament%20Frets/ASSEMBLY.md) - Note: This is my recommendation.
-    - [Fretless](/models/Neck/Fretless/ASSEMBLY.md)
-    - [Printed Frets](/models/Neck/Printed%20Frets/ASSEMBLY.md)
-3. [Head](/models/Head/) - Note: you can skip this if you use a wooden neck
+    - [Single Cut](/models/Shoulders/Single%20Cut/)
+    - [Double Cut](/models/Shoulders/Double%20Cut/)
+2. [Neck](/models/Neck/Neck%20v3/)
+3. [Head](/models/Head/)
     - [Classical](/models/Head/Classical/ASSEMBLY.md) - Note: I have only tested this with nylon strings; I make NO promises that it can handle metal strings or the forces that they apply. 
-    - [Arrow](/models/Head/Head/ASSEMBLY.md)
+    - [Arrow](/models/Head/Arrow/ASSEMBLY.md)
     - [Explorer](/models/Head/Explorer/ASSEMBLY.md)
     - [Firebird](/models/Head/Firebird/ASSEMBLY.md)
     - [Jack's Son](/models/Head/Jack's%20Son/ASSEMBLY.md)
     - [Less Paul](/models/Head/Less%20Paul/ASSEMBLY.md)
     - [Loop](/models/Head/Loop/ASSEMBLY.md)
-    - [Headless](/models/Head/Headless%20Adjustable%20Nut/ASSEMBLY.md)
+    - [Headless](/models/Head/Headless/ASSEMBLY.md)
 4. [Bridge](/models/Bridge/)
     - Headless 
         - [Headless for Bearing Bridge](/models/Bridge/Headless%20Bridge%20Plate/ASSEMBLY.md)
@@ -47,7 +40,7 @@ There are 7 main parts that each have their own options:
     - [Stealth Plate](/models/Face%20Plates/StealthPlate/ASSEMBLY.md) - Note: This is an experimental face plate that covers the pickups with a thin piece of plastic that you can add decoration to.  It's fun but likely not the best sounding option. 
     - [Clip-in Compartment](/models/Face%20Plates/Clip-In%20Compartment/ASSEMBLY.md) - Note: This is my initial prototype face plate.  It is not recommended unless you want to swap faces often.
 6. [Back](/models/Back/)
-    Note: The accoustic face plate has it's own back as part of it's resonation chamber. 
+    Note: The acoustic face plate has its own back as part of its resonance chamber. 
     - [Screw On](/models/Back/Screw%20On/) - Do you want to be able to get to your electronics from the back?  This is the option for you
     - [Slide In](/models/Back/Slide%20In/) - Do you want to glue the back in place and access electronics from the front?  Use this one
 7. [Wing Set](/models/Wing%20Sets/)
@@ -67,7 +60,7 @@ There are 7 main parts that each have their own options:
     - Both
         - [Cyber Butterfly](/models/Wing%20Sets/Cyber%20Butterfly/)
 8. [Strap](/models/Strap/)
-    - [Printed Strap](./models/Strap/Chain%20Link%20Strap/ASSEMBLY.md) - Works but you must be gentile with it; any twisting could break it. 
+    - [Printed Strap](./models/Strap/Chain%20Link%20Strap/ASSEMBLY.md) - Works but you must be gentle with it; any twisting could break it. 
     - [Nylon Strap](./models/Strap/Nylon%20Strap/ASSEMBLY.md) - Requires a Heavy Duty Sewing Machine
     
 ## Ordering your Hardware
@@ -97,7 +90,7 @@ Follow the assembly guide in your chosen bridge plate, then come back here.
 ### Wing Set
 
 All wing sets follow a certain pattern, so I'll just describe it here in general for now. 
-- If you are printing an electric you need to print the solid part with the electronics compartment and assemble that.  If you are printing an accoustic, you can print whatever part you feel makes it look coolest. 
+- If you are printing an electric you need to print the solid part with the electronics compartment and assemble that.  If you are printing an acoustic, you can print whatever part you feel makes it look coolest. 
 - There should be blank files if you want a different knob / switch / User Interface setup than the one in the standard files. 
 - The back of the electronics compartment will be held on by press-insert magnets.  Insert them into the body and then pop a magnet onto the ones you have inserted and then press the back onto those magnets to ensure that you have the correct polarity.  They should be press fit but if that doesn't work you can use super glue to hold them in
 - All wing pieces attach to the sides of the 2020 extrusion using M5x10 BHCS bolts and M5 Slide in Nuts.  If there wasn't enough clearance to get a screw driver into the wing to tighten the bolt, a hole should've been added to the outside of the part to allow for access. 
@@ -110,26 +103,24 @@ All wing sets follow a certain pattern, so I'll just describe it here in general
  - For the slide-in back, put in the pieces making sure that the holes allow access to the sections that need adjustment. 
 
 ### Head
-- If you are using a wooden neck, you can skip this
 - If you are using Nylon Strings, you want the classical Head.  
 
 Follow the assembly guide in your chosen head and then come back here
 
 ### Neck
- - If you chose to use a wooden neck, you can attach it to the shoulder using a metal neck plate and the basic wood screws that come with the neck plate. 
- - If you are using a printed neck, follow the assembly guide and then come back here. 
+ - Follow the [assembly guide](/models/Neck/Neck%20v3/ASSEMBLY.md) and then come back here. 
 
 ### Take a breath
 At this point you are done with the ExoGuitar setup for the printed parts; you should have a fully assembled guitar body without any actual guitar parts.  
 
 ### Electronics and Strings
 
-Since there are limitless options for electronics, I'm not goint to try to describe how to install them all here.  I will say the following, however: 
+Since there are limitless options for electronics, I'm not going to try to describe how to install them all here.  I will say the following, however: 
 
 - When attaching the ground wire that would normally attach to the bridge, if you're using the Bearing Bridge setup you need to attach the ground wire to the Heat Set inserts that the Strings attach to.  You can do this by either soldering wire to the Heat Set Inserts or by using conduictive tape with holes poked in it between the strings and the heat set inserts.  Both of these methods worked well for me.
-- I suggest that you add quick-disconnects to all wires running between parts of the guitar, so you can remove those parts without having to remove all the electronics.  This will make maintence or upgrades MUCH easier.  You'll find that once you build your own guitar you keep wanting to tinker with it. 
+- I suggest that you add quick-disconnects to all wires running between parts of the guitar, so you can remove those parts without having to remove all the electronics.  This will make maintenance or upgrades MUCH easier.  You'll find that once you build your own guitar you keep wanting to tinker with it. 
 
-For the strings, You will want to use Ball End strings.  Run the strings through the row of 6 heat set inserts, alllll the way through to the tensioners.  Put on the thickest string first, thren run it to the tensioner.  Tighten it just enough that it won't come out on it's own, and then slide in your nut plate.  If you are building an acoustic, this is where you will insert your bridge as well.  With all of the pieces in place, now run the rest of your strings.  Tighten them and tune your guitar. 
+For the strings, You will want to use Ball End strings.  Run the strings through the row of 6 heat set inserts, all the way through to the tensioners.  Put on the thickest string first, then run it to the tensioner.  Tighten it just enough that it won't come out on its own, and then slide in your nut plate.  If you are building an acoustic, this is where you will insert your bridge as well.  With all of the pieces in place, now run the rest of your strings.  Tighten them and tune your guitar. 
 
 Now for the fine tuning: 
 - Play each string without pressing on any frets.  If you hear any fret-buzz with the string open, you need to raise the strings using the nut using the screws on the back of the head. You will want to lower the nut as much as possible on both sides WITHOUT getting any fret buzz when the strings are open.  
