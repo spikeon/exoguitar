@@ -29,12 +29,12 @@ Starting with the very bottom fret chunk (the one that has two recesses in it fo
 
 ### Step 2b: All the rest of them
 
-It will help to organize your pieces so that you have them grouped by number.  Fret Insert, TPU pad, and Fret Chunk. 
+It will help to organize your pieces so that you have them grouped by number.  Fret Insert, Rubber Band, and Fret Chunk. 
 
 Now put the rest of the pieces on the M3 threaded rods in this order: 
 
 1. Fret Insert, number facing up
-2. 10mm rubber band, streched around both M3 Threaded Rods, 
+2. 10mm Rubber Band, stretched around both M3 Threaded Rods, 
 3. Fret Chunk, flat side facing up
 4. Repeat until all frets are on the M3 Threaded Rods.
 
