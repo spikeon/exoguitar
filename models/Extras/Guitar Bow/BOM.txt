@@ -1,3 +1,2 @@
-Qty	Name				Url
-1	Rosin				https://amzn.to/43BsGqF
-
+Qty   Name   Url                      Optional
+   1  Rosin  https://amzn.to/43BsGqF  false

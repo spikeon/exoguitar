@@ -66,32 +66,54 @@ function makeItemKey(name) {
 /**
  * Parse BOM.txt file.
  *
- * Expected format per line (ignores header rows):
- *   <qty><whitespace><name>[<whitespace><whitespace><url>]
+ * Expected format per data line (header rows are ignored):
+ *   Qty  Name  Url  Optional
  *
- * Name may contain spaces and punctuation; URL is optional.
+ * - Columns are separated by tabs or 2+ spaces.
+ * - Url and Optional are optional; Optional defaults to false when omitted.
  */
 function parseBOMFile(filePath) {
     const bomItems = [];
     
     try {
         const content = fs.readFileSync(filePath, 'utf8');
-        // Allow any characters in the name field; URL (if present) is assumed to be
-        // the last column separated by at least two whitespace characters.
-        const lineRegex = /^\s*(?<qty>\d{1,4})\s+(?<name>.+?)(?:\s{2,}(?<link>\S+))?\s*$/gm;
+        const lines = content.split(/\r?\n/);
 
-        const matches = content.matchAll(lineRegex);
+        for (const line of lines) {
+            const trimmed = line.trim();
+            if (!trimmed) continue;
+            if (/^\s*qty\b/i.test(line)) continue; // skip header
 
-        for (const match of matches) {
-            const { qty, name, link } = match.groups;
+            // Data lines must start with a quantity number
+            if (!/^\d{1,4}\b/.test(trimmed)) continue;
+
+            // Split into logical columns: Qty, Name, Url?, Optional?
+            const cols = trimmed.split(/\t+|\s{2,}/);
+            if (cols.length < 2) continue;
+
+            const qty = parseInt(cols[0], 10);
+            if (!Number.isFinite(qty)) continue;
+
+            const name = cols[1].trim();
+            let amazon_url = '';
+            let optional = false;
+
+            const rest = cols.slice(2);
+            for (const token of rest) {
+                if (/^https?:\/\//i.test(token)) {
+                    amazon_url = token.trim();
+                } else if (/^(true|false)$/i.test(token)) {
+                    optional = token.toLowerCase() === 'true';
+                }
+            }
+
             bomItems.push({
-                qty: +qty,
-                name: name.trim(),
-                amazon_url: link ? link.trim() : '',
-                optional: false
+                qty,
+                name,
+                amazon_url,
+                optional,
             });
         }
-
     } catch (error) {
         console.warn(`Warning: Could not parse BOM file ${filePath}: ${error.message}`);
     }

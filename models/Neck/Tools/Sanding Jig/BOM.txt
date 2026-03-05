@@ -1,2 +1,2 @@
-Qty	Name				Url
-1	Sandpaper Roll - 400 Grit	https://amzn.to/4dRJHQp
+Qty   Name                       Url                      Optional
+   1  Sandpaper Roll - 400 Grit  https://amzn.to/4dRJHQp  false

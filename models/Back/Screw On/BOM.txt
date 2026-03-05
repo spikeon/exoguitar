@@ -1,3 +1,3 @@
-Qty	Name				Url
-8   M3 Slide In Nuts    https://amzn.to/3DQQRa3 
-8   M3x6 FHCS           https://amzn.to/4bWM7w6
+Qty   Name                  Url                      Optional
+   8  M3 Slide In Nuts      https://amzn.to/3DQQRa3  false
+   8  M3x6 Flat Head Screw  https://amzn.to/4bWM7w6  false

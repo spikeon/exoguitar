@@ -14,9 +14,9 @@ describe('generate_json_files helpers', () => {
     const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'exoguitar-bom-'));
     const bomPath = path.join(tmpDir, 'BOM.txt');
     const content = [
-      'Qty  Name                Url',
-      '2    M3x4x5 Heat Set Inserts    https://amzn.to/example',
-      '5    M5 Slide In Nuts',
+      'Qty\tName\tUrl\tOptional',
+      '2    M3x4x5 Heat Set Inserts    https://amzn.to/example    false',
+      '5    M5 Slide In Nuts    false',
     ].join('\n');
     fs.writeFileSync(bomPath, content, 'utf8');
 
@@ -41,8 +41,8 @@ describe('generate_json_files helpers', () => {
     const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'exoguitar-bom-'));
     const bomPath = path.join(tmpDir, 'BOM.txt');
     const content = [
-      'Qty  Name                Url',
-      '1    12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521    https://amzn.to/battery',
+      'Qty\tName\tUrl\tOptional',
+      '1    12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521    https://amzn.to/battery    false',
     ].join('\n');
     fs.writeFileSync(bomPath, content, 'utf8');
 
@@ -52,6 +52,33 @@ describe('generate_json_files helpers', () => {
         qty: 1,
         name: '12V 1200mAh Rechargeable Li-ion Battery, 12 Volt DC5521',
         amazon_url: 'https://amzn.to/battery',
+        optional: false,
+      },
+    ]);
+  });
+
+  test('parseBOMFile respects Optional boolean column', () => {
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'exoguitar-bom-'));
+    const bomPath = path.join(tmpDir, 'BOM.txt');
+    const content = [
+      'Qty\tName\tUrl\tOptional',
+      '1    Piezo Pickups    https://amzn.to/piezo    true',
+      '2    M3x8 Button Head Screw    https://amzn.to/screw    false',
+    ].join('\n');
+    fs.writeFileSync(bomPath, content, 'utf8');
+
+    const items = parseBOMFile(bomPath);
+    expect(items).toEqual([
+      {
+        qty: 1,
+        name: 'Piezo Pickups',
+        amazon_url: 'https://amzn.to/piezo',
+        optional: true,
+      },
+      {
+        qty: 2,
+        name: 'M3x8 Button Head Screw',
+        amazon_url: 'https://amzn.to/screw',
         optional: false,
       },
     ]);

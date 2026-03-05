@@ -1,5 +1,5 @@
-Qty	Name			Url
-6	M5x30 BHCS
-6	M5 Slide In Nut
-6	M4x6x6 Heat Set Insert
-1	Tune-O-Matic Bridge	https://amzn.to/4hDBjF1 
+Qty   Name                     Url                      Optional
+   6  M5x30 Button Head Screw                           false
+   6  M5 Slide In Nut                                   false
+   6  M4x6x6 Heat Set Insert                            false
+   1  Tune-O-Matic Bridge      https://amzn.to/4hDBjF1  false

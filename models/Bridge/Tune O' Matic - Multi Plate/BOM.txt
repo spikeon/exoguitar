@@ -1,5 +1,5 @@
-Qty	Name				Url
-1	Tune O' Matic Saddle		https://amzn.to/4cgSWJ0
-2	M8 Heat Set Inserts		https://amzn.to/3DUSEuV
-4 	M5 Slide In Nuts		https://amzn.to/4hYYDg9
-4	M5x16 SHCS			https://amzn.to/42s4kyt
+Qty   Name                     Url                      Optional
+   1  Tune O' Matic Saddle     https://amzn.to/4cgSWJ0  false
+   2  M8 Heat Set Inserts      https://amzn.to/3DUSEuV  false
+   4  M5 Slide In Nuts         https://amzn.to/4hYYDg9  false
+   4  M5x16 Socket Head Screw  https://amzn.to/42s4kyt  false
